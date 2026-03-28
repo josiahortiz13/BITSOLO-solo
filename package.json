@@ -1,0 +1,8 @@
+{
+  "name": "bitsolo-site",
+  "version": "1.0.0",
+  "description": "BitSolo website and Stripe checkout",
+  "dependencies": {
+    "stripe": "^14.0.0"
+  }
+}
