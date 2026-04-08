@@ -6,7 +6,19 @@
       "use": "@vercel/node"
     },
     {
+      "src": "api/stripe-webhook.js",
+      "use": "@vercel/node"
+    },
+    {
+      "src": "api/raffle-stats.js",
+      "use": "@vercel/node"
+    },
+    {
       "src": "index.html",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "raffle.html",
       "use": "@vercel/static"
     }
   ],
@@ -14,6 +26,22 @@
     {
       "src": "/api/checkout",
       "dest": "/api/checkout.js"
+    },
+    {
+      "src": "/api/stripe-webhook",
+      "dest": "/api/stripe-webhook.js"
+    },
+    {
+      "src": "/api/raffle-stats",
+      "dest": "/api/raffle-stats.js"
+    },
+    {
+      "src": "/raffle",
+      "dest": "/raffle.html"
+    },
+    {
+      "src": "/raffle.html",
+      "dest": "/raffle.html"
     },
     {
       "src": "/(.*)",
