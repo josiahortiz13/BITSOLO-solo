@@ -23,6 +23,7 @@ return res.status(200).json({
   total,
   mine,
   endDate: process.env.RAFFLE_END_DATE || '2026-05-07T23:59:59-05:00',
+
   prize: {
     name: 'Canaan Avalon Nano3S',
     tagline: 'Plug-and-play Bitcoin miner',
