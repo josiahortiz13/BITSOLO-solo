@@ -128,20 +128,15 @@ nav{padding:14px 16px}
 <section class="hero">
   <div class="hero-glow"></div>
   <div class="hero-content">
-    <div class="badge"><div class="badge-dot"></div> LIMITED TIME GIVEAWAY</div>
+    <div class="badge"><div class="badge-dot"></div> &#x23F0; DRAWING SOON</div>
     <h1>
-      <span class="l1">Win a FREE</span>
-      <span class="l2">Bitcoin Miner.</span>
+      <span class="l1">Drawing soon.</span>
+      <span class="l2">One winner.</span>
     </h1>
-    <p class="subhead">Every miner purchase on BitSolo enters you to win a <strong>Canaan Avalon Nano3S</strong>. Buy more miners, earn more entries. Winner announced across all BitSolo platforms.</p>
+    <p class="subhead">One lucky BitSolo customer walks away with a brand new <strong>Canaan Avalon Nano3S</strong> &mdash; a $299 Bitcoin miner, free. Every miner you buy is another entry. Don't sleep on this.</p>
 
 ```
-<div class="live-stats">
-  <div class="stat-card">
-    <div class="stat-label">Total Entries</div>
-    <div class="stat-val" id="totalEntries">—</div>
-    <div class="stat-sub">and counting</div>
-  </div>
+<div class="live-stats" style="grid-template-columns:repeat(2,1fr);max-width:420px">
   <div class="stat-card">
     <div class="stat-label">Draw In</div>
     <div class="stat-val cyan" id="countdown">—</div>
@@ -152,6 +147,7 @@ nav{padding:14px 16px}
     <div class="stat-val orange">$299</div>
     <div class="stat-sub">free shipping</div>
   </div>
+</div>
 </div>
 
 <div class="btns">
@@ -232,12 +228,10 @@ function loadStats() {
     .then(function(r){return r.json()})
     .then(function(d){
       statsData = d;
-      document.getElementById('totalEntries').textContent = (d.total || 0).toLocaleString();
       updateCountdown();
     })
     .catch(function(err){
       console.error('Stats failed:', err);
-      document.getElementById('totalEntries').textContent = '0';
     });
 }
 
