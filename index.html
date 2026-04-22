@@ -11,6 +11,18 @@
 <meta property="og:url" content="https://bitsolo.co"/>
 <meta property="og:type" content="website"/>
 <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2220%22 fill=%22%23000%22/><text x=%2250%22 y=%2270%22 font-size=%2260%22 text-anchor=%22middle%22 fill=%22%23f7931a%22 font-family=%22Arial%22 font-weight=%22900%22>₿</text></svg>"/>
+<!-- Meta Pixel — swap YOUR_PIXEL_ID with your real Pixel ID from Meta Business -->
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+document,'script','https://connect.facebook.net/en_US/fbevents.js');
+fbq('init','YOUR_PIXEL_ID');
+fbq('track','PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=YOUR_PIXEL_ID&ev=PageView&noscript=1"/></noscript>
+<!-- End Meta Pixel -->
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet"/>
 <style>
@@ -339,6 +351,14 @@ footer{background:#050505;padding:48px 20px 32px;border-top:1px solid var(–bor
 </div>
 
 <div class="page-offset">
+
+<!-- ══ BITCOIN 2026 CONFERENCE BANNER ══ -->
+<div style="background:linear-gradient(90deg,#f7931a,#ff6b00);padding:12px 20px;text-align:center;position:relative;z-index:100">
+  <p style="font-size:13px;font-weight:800;color:#000;letter-spacing:1px">
+    ⚡ BITCOIN 2026 — LAS VEGAS · APRIL 27–29 · THE VENETIAN &nbsp;|&nbsp;
+    <span style="text-decoration:underline;cursor:pointer" onclick="document.getElementById('tab-shop').scrollIntoView({behavior:'smooth'});goTab({dataset:{go:'shop'}})">Shop miners before the conference →</span>
+  </p>
+</div>
 
 <!-- ══ HOME TAB ══ -->
 
@@ -769,34 +789,46 @@ function toggleSMS(){
 function handleNewsletter(e){
   e.preventDefault();
   var name = document.getElementById('nl-name').value;
+  var email = document.getElementById('nl-email').value;
   var phone = document.getElementById('nl-phone').value;
-  var msg = (phone && smsOn)
-    ? 'Welcome ' + name + '! You are in the BitSolo Inner Circle. Text alerts are ON.'
-    : 'Welcome ' + name + '! You are in the BitSolo Inner Circle.';
   var s = document.getElementById('nl-success');
-  if(s){ s.style.display='block'; s.textContent = msg; }
-  var inputs = e.target.querySelectorAll('input');
-  for(var i=0;i<inputs.length;i++) inputs[i].value='';
+  submitSignup(name, email, phone, 'newsletter-tab', s, e.target);
 }
 
 // Make logo clickable
 var logo = document.querySelector('.logo');
 if(logo) logo.onclick = function(){ switchTab('home'); };
 
-// Home signup form
+function submitSignup(name, email, phone, source, successEl, formEl) {
+  fetch('/api/signup', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ name: name, email: email, phone: phone, source: source })
+  }).then(function(r){ return r.json(); }).then(function(d){
+    if (window.fbq) {
+      fbq('track', 'Lead', { content_name: source });
+    }
+    if (successEl) {
+      successEl.style.display = 'block';
+      successEl.textContent = 'Welcome ' + name + '! You\'re in the BitSolo Inner Circle.' + (phone ? ' Text alerts are ON.' : '');
+    }
+    if (formEl) formEl.querySelectorAll('input').forEach(function(i){ i.value=''; });
+  }).catch(function(err){
+    console.error('Signup error:', err);
+    if (successEl) {
+      successEl.style.display = 'block';
+      successEl.textContent = 'Something went wrong. Try again.';
+    }
+  });
+}
+
 function handleHomeSignup(e){
   e.preventDefault();
   var name = document.getElementById('home-name').value;
   var email = document.getElementById('home-email').value;
   var phone = document.getElementById('home-phone').value;
-  // TODO: POST to your email/SMS platform API (Mailchimp, Twilio, etc.)
-  console.log('New signup:', name, email, phone);
   var s = document.getElementById('home-signup-success');
-  if(s){
-    s.style.display='block';
-    s.textContent = 'Welcome ' + name + '! You are in the BitSolo Inner Circle.' + (phone ? ' Text alerts are ON.' : '');
-  }
-  e.target.querySelectorAll('input').forEach(function(i){ i.value=''; });
+  submitSignup(name, email, phone, 'home-form', s, e.target);
 }
 
 // Buy miner — capture signup then redirect
@@ -826,10 +858,18 @@ function closePurchaseModal(){
 
 function completePurchaseSignup(e){
   if(e) e.preventDefault();
-  var email = document.getElementById('pm-email');
-  var name = document.getElementById('pm-name');
-  if(email && email.value){
-    console.log('Purchase auto-signup:', name ? name.value : '', email.value);
+  var emailEl = document.getElementById('pm-email');
+  var nameEl = document.getElementById('pm-name');
+  var phoneEl = document.getElementById('pm-phone');
+  if(emailEl && emailEl.value){
+    submitSignup(
+      nameEl ? nameEl.value : '',
+      emailEl.value,
+      phoneEl ? phoneEl.value : '',
+      'purchase-modal',
+      null, null
+    );
+    if(window.fbq) fbq('track', 'InitiateCheckout');
   }
   closePurchaseModal();
   window.open('https://bitsolo.co');
