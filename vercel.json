@@ -24,6 +24,10 @@
     {
       "src": "raffle.html",
       "use": "@vercel/static"
+    },
+    {
+      "src": "favicon.svg",
+      "use": "@vercel/static"
     }
   ],
   "routes": [
@@ -42,6 +46,10 @@
     {
       "src": "/api/signup",
       "dest": "/api/signup.js"
+    },
+    {
+      "src": "/favicon.svg",
+      "dest": "/favicon.svg"
     },
     {
       "src": "/raffle",
