@@ -33,30 +33,28 @@ module.exports = async (req, res) => {
       await kv.incr('leads:count');
     }
 
-    // Klaviyo integration — add KLAVIYO_API_KEY to Vercel env vars to enable
-    if (process.env.KLAVIYO_API_KEY) {
+    // Apollo integration — add APOLLO_API_KEY to Vercel env vars to enable
+    if (process.env.APOLLO_API_KEY) {
       try {
-        await fetch('https://a.klaviyo.com/api/profiles/', {
+        const firstName = (name || '').split(' ')[0];
+        const lastName = (name || '').split(' ').slice(1).join(' ');
+        await fetch('https://api.apollo.io/api/v1/contacts', {
           method: 'POST',
           headers: {
-            'Authorization': `Klaviyo-API-Key ${process.env.KLAVIYO_API_KEY}`,
-            'revision': '2024-02-15',
             'Content-Type': 'application/json',
+            'Cache-Control': 'no-cache',
+            'X-Api-Key': process.env.APOLLO_API_KEY,
           },
           body: JSON.stringify({
-            data: {
-              type: 'profile',
-              attributes: {
-                email: key,
-                first_name: name || '',
-                phone_number: phone || '',
-                properties: { source: source || 'website' },
-              },
-            },
+            first_name: firstName,
+            last_name: lastName,
+            email: key,
+            phone_numbers: phone ? [{ raw_number: phone }] : [],
+            label_names: [source || 'website'],
           }),
         });
       } catch (err) {
-        console.error('Klaviyo sync error:', err.message);
+        console.error('Apollo sync error:', err.message);
       }
     }
 
