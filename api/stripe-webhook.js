@@ -41,7 +41,6 @@ const email = (session.customer_details && session.customer_details.email)
 || null;
 const name = (session.customer_details && session.customer_details.name) || null;
 
-```
 if (!email) {
   console.log('No email on session, skipping raffle entry');
   return res.status(200).json({ received: true });
@@ -93,7 +92,6 @@ try {
   console.error('Failed to record raffle entry:', err);
   // Don't fail the webhook — Stripe will retry otherwise
 }
-```
 
 }
 
