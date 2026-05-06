@@ -33,6 +33,20 @@ module.exports = async (req, res) => {
       await kv.incr('leads:count');
     }
 
+    // Telegram notification — add TELEGRAM_BOT_TOKEN and TELEGRAM_CHAT_ID to Vercel env vars
+    if (!existing && process.env.TELEGRAM_BOT_TOKEN && process.env.TELEGRAM_CHAT_ID) {
+      try {
+        const msg = `🟠 New BitSolo Lead!\n👤 ${lead.name || 'Unknown'}\n📧 ${lead.email}${lead.phone ? '\n📱 ' + lead.phone : ''}\n📌 Source: ${lead.source}`;
+        await fetch(`https://api.telegram.org/bot${process.env.TELEGRAM_BOT_TOKEN}/sendMessage`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ chat_id: process.env.TELEGRAM_CHAT_ID, text: msg }),
+        });
+      } catch (err) {
+        console.error('Telegram notify error:', err.message);
+      }
+    }
+
     // Apollo integration — add APOLLO_API_KEY to Vercel env vars to enable
     if (process.env.APOLLO_API_KEY) {
       try {
