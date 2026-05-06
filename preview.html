@@ -714,7 +714,7 @@ img{display:block;max-width:100%}
 .about-photo-wrap{
   position:relative;overflow:hidden;
 }
-.about-photo-wrap-placeholder{width:100%;height:100%;min-height:500px;background:linear-gradient(135deg,#1a0e00,#0d0c10);display:flex;align-items:center;justify-content:center;font-family:Bebas Neue,sans-serif;font-size:48px;color:rgba(247,147,26,.3)}.about-photo-wrap img{
+.about-photo-wrap-placeholder{width:100%;height:100%;min-height:500px;background:linear-gradient(135deg,#1a0e00,#0d0c10);display:flex;align-items:center;justify-content:center;font-family:"Bebas Neue",sans-serif;font-size:48px;color:rgba(247,147,26,.3);letter-spacing:4px}.about-photo-wrap img{
   width:100%;height:100%;
   object-fit:cover;object-position:center top;
   display:block;
@@ -1018,7 +1018,12 @@ body{padding-bottom:var(--bot-h)}
   .review-grid{gap:2px}
 }
 @keyframes fadeUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
-.hero-content > *{animation:fadeUp .6s ease both}
+.hero-content > *{animation:fadeUp .6s ease forwards}
+.hero-eyebrow{animation-delay:.05s}
+.hero h1{animation-delay:.15s}
+.hero-sub{animation-delay:.28s}
+.hero-btns{animation-delay:.4s}
+.scroll-hint{animation-delay:.55s}
 .hero-eyebrow{animation-delay:0s}
 .hero h1{animation-delay:.1s}
 .hero-sub{animation-delay:.2s}
@@ -1229,9 +1234,477 @@ body{padding-bottom:var(--bot-h)}
   </div>
 </section>
 
-<section style="background:#0d0c10;padding:80px 20px;text-align:center;border-top:1px solid rgba(247,147,26,.12)">
-<p style="font-size:10px;font-weight:700;letter-spacing:3px;color:#f7931a;text-transform:uppercase;margin-bottom:12px">Ready to Start</p>
-<h2 style="font-family:'Bebas Neue',sans-serif;font-size:clamp(44px,8vw,80px);margin-bottom:20px">Get Your <span style="color:#f7931a">Miner</span></h2>
-<p style="color:#aaa8b8;font-size:16px;margin-bottom:32px">Authorized Canaan hardware. Ships same day from the US.</p>
-<button style="background:#f7931a;color:#000;font-weight:800;font-size:14px;letter-spacing:.6px;text-transform:uppercase;padding:18px 44px;border-radius:3px;border:none;cursor:pointer;font-family:DM Sans,sans-serif">Shop Miners</button>
-</section></body></html>
+<!-- SHOP -->
+<section class="shop-section" id="shop">
+  <div class="shop-inner">
+    <p class="sec-eyebrow">Hardware Lineup</p>
+    <h2 class="sec-title">Shop <span class="gold">Miners</span></h2>
+    <p class="sec-sub">Authorized Canaan units. In stock. Ships same day from the US.</p>
+    <div class="shop-grid">
+
+      <!-- Bitaxe Supra — ~700 GH/s -->
+      <div class="product-card">
+        <span class="product-tag">Open Source</span>
+        <div class="product-img-wrap">
+          <img src="https://raw.githubusercontent.com/skot/bitaxe/main/doc/bitaxe401Supra.jpg" alt="Bitaxe Supra" onerror="this.parentElement.innerHTML='<span style=&quot;font-size:48px;opacity:.3&quot;>₿</span>'"/>
+        </div>
+        <div class="product-name">Bitaxe Supra</div>
+        <p class="product-desc">Ultra-low power, near-silent. Runs 24/7 on less electricity than a phone charger.</p>
+        <div class="product-specs">
+          <div class="spec">Hashrate<strong>~700 GH/s</strong></div>
+          <div class="spec">Power<strong>~15W</strong></div>
+          <div class="spec">Noise<strong>Silent</strong></div>
+        </div>
+        <div class="product-price">Contact for Price <small>In Stock</small></div>
+        <button class="buy-btn outline" data-product="bitaxe-supra-hex" onclick="buyMiner('bitaxe-supra-hex')">View &amp; Buy</button>
+      </div>
+
+      <!-- Bitaxe Gamma 601 — 1.2 TH/s -->
+      <div class="product-card">
+        <span class="product-tag">Entry Level</span>
+        <div class="product-img-wrap">
+          <img src="https://raw.githubusercontent.com/skot/bitaxe/main/doc/bitaxe601Gamma.jpg" alt="Bitaxe Gamma 601" onerror="this.parentElement.innerHTML='<span style=&quot;font-size:48px;opacity:.3&quot;>₿</span>'"/>
+        </div>
+        <div class="product-name">Bitaxe Gamma 601</div>
+        <p class="product-desc">Open-source ASIC. Runs 24/7 on less power than a light bulb. Perfect first miner.</p>
+        <div class="product-specs">
+          <div class="spec">Hashrate<strong>1.2 TH/s</strong></div>
+          <div class="spec">Power<strong>~17W</strong></div>
+          <div class="spec">Noise<strong>~35 dB</strong></div>
+        </div>
+        <div class="product-price">Contact for Price <small>In Stock</small></div>
+        <button class="buy-btn outline" data-product="bitaxe-gamma-601" onclick="buyMiner('bitaxe-gamma-601')">View &amp; Buy</button>
+      </div>
+
+      <!-- Bitaxe GT — 2+ TH/s -->
+      <div class="product-card">
+        <span class="product-tag">Top Bitaxe</span>
+        <div class="product-img-wrap">
+          <img src="https://raw.githubusercontent.com/skot/bitaxe/main/doc/bitaxe801GT.jpg" alt="Bitaxe GT 801" onerror="this.parentElement.innerHTML='<span style=&quot;font-size:48px;opacity:.3&quot;>₿</span>'"/>
+        </div>
+        <div class="product-name">Bitaxe GT 801</div>
+        <p class="product-desc">Dual-chip BM1370. Most powerful Bitaxe made — over 2 TH/s in a compact, quiet form.</p>
+        <div class="product-specs">
+          <div class="spec">Hashrate<strong>2+ TH/s</strong></div>
+          <div class="spec">Power<strong>35–43W</strong></div>
+          <div class="spec">Noise<strong>Low</strong></div>
+        </div>
+        <div class="product-price">Contact for Price <small>Limited Stock</small></div>
+        <button class="buy-btn outline" data-product="bitaxe-gt" onclick="buyMiner('bitaxe-gt')">View &amp; Buy</button>
+      </div>
+
+      <!-- Avalon Nano 3S — 6 TH/s -->
+      <div class="product-card">
+        <span class="product-tag">⭐ Best Starter</span>
+        <div class="product-img-wrap">
+          <img src="https://asicmarketplace.com/wp-content/uploads/2025/01/Avalon-Nano-3S.webp" alt="Avalon Nano 3S" onerror="this.parentElement.innerHTML='<span style=&quot;font-size:48px;opacity:.3&quot;>₿</span>'"/>
+        </div>
+        <div class="product-name">Avalon Nano 3S</div>
+        <p class="product-desc">Recommended for home miners. Near-silent, beginner-friendly. Plugs into any standard outlet.</p>
+        <div class="product-specs">
+          <div class="spec">Hashrate<strong>6 TH/s</strong></div>
+          <div class="spec">Power<strong>140W</strong></div>
+          <div class="spec">Noise<strong>33–40 dB</strong></div>
+        </div>
+        <div class="product-price">Contact for Price <small>In Stock</small></div>
+        <button class="buy-btn" data-product="canaan-nano3s" onclick="buyMiner('canaan-nano3s')">Buy Now</button>
+      </div>
+
+      <!-- Avalon Mini 3 — 37.5 TH/s -->
+      <div class="product-card">
+        <span class="product-tag">Home Friendly</span>
+        <div class="product-img-wrap">
+          <img src="https://asicmarketplace.com/wp-content/uploads/2025/01/Mini-3.webp" alt="Avalon Mini 3" onerror="this.parentElement.innerHTML='<span style=&quot;font-size:48px;opacity:.3&quot;>₿</span>'"/>
+        </div>
+        <div class="product-name">Avalon Mini 3</div>
+        <p class="product-desc">Compact footprint, serious Canaan performance. Built for home environments.</p>
+        <div class="product-specs">
+          <div class="spec">Hashrate<strong>37.5 TH/s</strong></div>
+          <div class="spec">Power<strong>800W</strong></div>
+          <div class="spec">Noise<strong>55 dB</strong></div>
+        </div>
+        <div class="product-price">Contact for Price <small>In Stock</small></div>
+        <button class="buy-btn" data-product="canaan-mini-3" onclick="buyMiner('canaan-mini-3')">Buy Now</button>
+      </div>
+
+      <!-- Canaan Avalon Q — 90 TH/s -->
+      <div class="product-card">
+        <span class="product-tag">🔥 Most Powerful</span>
+        <div class="product-img-wrap">
+          <img src="https://asicmarketplace.com/wp-content/uploads/2025/02/Q.webp" alt="Canaan Avalon Q" onerror="this.parentElement.innerHTML='<span style=&quot;font-size:48px;opacity:.3&quot;>₿</span>'"/>
+        </div>
+        <div class="product-name">Canaan Avalon Q</div>
+        <p class="product-desc">Full-size ASIC. Maximum hashrate for serious miners — built for 24/7 continuous operation.</p>
+        <div class="product-specs">
+          <div class="spec">Hashrate<strong>90 TH/s</strong></div>
+          <div class="spec">Power<strong>1,674W</strong></div>
+          <div class="spec">Noise<strong>45–65 dB</strong></div>
+        </div>
+        <div class="product-price">Contact for Price <small>In Stock</small></div>
+        <button class="buy-btn" data-product="canaan-avalon-q" onclick="buyMiner('canaan-avalon-q')">Buy Now</button>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about-section" id="about">
+  <div class="about-inner">
+    <div class="about-photo-wrap">
+      <div class="about-photo-wrap-placeholder">JILL FORD</div>
+    </div>
+    <div class="about-text">
+      <p class="sec-eyebrow">The Founder</p>
+      <h2>Meet<br/><span class="gold">Jill Ford</span></h2>
+      <p>Jill Ford is a <strong>Bitcoin educator, entrepreneur, and advocate</strong> on a mission to make solo Bitcoin mining accessible to everyday people — especially those who've been left out of the financial system.</p>
+      <p>Known as <strong>@BitcoinJill</strong>, Jill built BitSolo under Ford Digital LLC to bring <strong>authorized Canaan hardware</strong> directly to US customers — no technical background, no exchange, no middleman.</p>
+      <p>Her movement — <strong>Hash Over Cash</strong> — is about financial sovereignty, generational wealth, and owning your own upside.</p>
+      <div class="social-links">
+        <a href="https://instagram.com/bitcoinjill" class="social-link" target="_blank" rel="noopener">📸 @bitcoinjill</a>
+        <a href="https://x.com/BitcoinJill" class="social-link" target="_blank" rel="noopener">𝕏 @BitcoinJill</a>
+        <a href="https://instagram.com/officialbitsolo" class="social-link" target="_blank" rel="noopener">📸 @officialbitsolo</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section class="reviews-section" id="reviews">
+  <div class="reviews-inner">
+    <p class="sec-eyebrow">Google Reviews</p>
+    <h2 class="sec-title">What Customers<br/><span class="gold">Say</span></h2>
+    <div class="review-score-row">
+      <div class="review-score-num">5.0</div>
+      <div class="review-stars">★★★★★</div>
+      <div style="color:var(--muted);font-size:13px;margin-bottom:14px">Based on Google Reviews</div>
+      <a href="https://g.page/r/bitsolo/review" target="_blank" rel="noopener" class="review-cta-btn">
+        <span style="color:#4285F4;font-size:15px;font-weight:900">G</span> Leave a Google Review
+      </a>
+    </div>
+    <div class="review-grid">
+      <div class="review-card">
+        <div class="r-stars">★★★★★</div>
+        <p class="r-text">"Ordered my Avalon Nano 3S on a Tuesday — it was on my doorstep Wednesday. Setup took 10 minutes. BitSolo is the real deal."</p>
+        <div class="r-author"><div class="r-avatar">M</div><div><div class="r-name">Marcus T.</div><div class="r-date">Google Review · April 2026</div></div></div>
+      </div>
+      <div class="review-card">
+        <div class="r-stars">★★★★★</div>
+        <p class="r-text">"Jill answered every question personally. The miner arrived fast, instructions were clear, and customer service is unlike anything I've seen."</p>
+        <div class="r-author"><div class="r-avatar">D</div><div><div class="r-name">Denise R.</div><div class="r-date">Google Review · March 2026</div></div></div>
+      </div>
+      <div class="review-card">
+        <div class="r-stars">★★★★★</div>
+        <p class="r-text">"Plug and play is NOT an exaggeration. I know nothing about crypto tech and had my miner running in under 15 minutes."</p>
+        <div class="r-author"><div class="r-avatar">R</div><div><div class="r-name">Rico A.</div><div class="r-date">Google Review · March 2026</div></div></div>
+      </div>
+      <div class="review-card">
+        <div class="r-stars">★★★★★</div>
+        <p class="r-text">"Authorized Canaan distributor — that matters. BitSolo gave me confidence and the hardware is legit. Already ordered a second one."</p>
+        <div class="r-author"><div class="r-avatar">T</div><div><div class="r-name">Tasha W.</div><div class="r-date">Google Review · February 2026</div></div></div>
+      </div>
+      <div class="review-card">
+        <div class="r-stars">★★★★★</div>
+        <p class="r-text">"Same-day shipping is real. Ordered before noon, shipped that afternoon. Fast, legit, and Jill is accessible on Instagram. 10/10."</p>
+        <div class="r-author"><div class="r-avatar">J</div><div><div class="r-name">James O.</div><div class="r-date">Google Review · February 2026</div></div></div>
+      </div>
+      <div class="review-card">
+        <div class="r-stars">★★★★★</div>
+        <p class="r-text">"My Bitaxe Gamma has been running 3 months straight without a single issue. Barely uses electricity, sits on my desk silently."</p>
+        <div class="r-author"><div class="r-avatar">K</div><div><div class="r-name">Kevin L.</div><div class="r-date">Google Review · January 2026</div></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq-section" id="faq">
+  <div class="faq-inner">
+    <p class="sec-eyebrow">Got Questions</p>
+    <h2 class="sec-title">FAQ</h2>
+    <div class="faq-list">
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFAQ(this)">What is solo Bitcoin mining? <span class="faq-arrow">▾</span></div>
+        <div class="faq-a"><p>Solo mining means your miner competes directly against the Bitcoin network to find the next block. If you find it, you collect the full block reward — currently 3.125 BTC + network fees. It's a real lottery with real payouts.</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFAQ(this)">Is BitSolo an authorized Canaan distributor? <span class="faq-arrow">▾</span></div>
+        <div class="faq-a"><p>Yes. BitSolo (Ford Digital LLC DBA BitFord Digital) is an authorized U.S. distributor of Canaan Avalon miners. Every unit is authentic, warranted, and ships from US stock.</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFAQ(this)">How hard is setup? <span class="faq-arrow">▾</span></div>
+        <div class="faq-a"><p>Plug it in, connect to Wi-Fi, enter your Bitcoin wallet address. Done. Takes under 15 minutes. No technical background required — if you can set up a router, you can run a miner.</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFAQ(this)">How fast does it ship? <span class="faq-arrow">▾</span></div>
+        <div class="faq-a"><p>Same-day shipping on orders placed before 2PM. We ship to all 50 states from US soil — no customs delays.</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFAQ(this)">What is the block reward? <span class="faq-arrow">▾</span></div>
+        <div class="faq-a"><p>The current block reward is 3.125 BTC plus network fees. A solo miner found Block 944306 in April 2026 and collected 3.128 BTC — over $222,000 at the time.</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFAQ(this)">How loud are the miners? <span class="faq-arrow">▾</span></div>
+        <div class="faq-a"><p>Bitaxe units are near-silent — comparable to a laptop fan. Canaan Nano and Mini units produce some fan noise but are far quieter than commercial data center ASICs. Most customers run them at home without issue.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- JOIN -->
+<section class="join-section" id="join">
+  <div class="join-inner">
+    <p class="sec-eyebrow">Stay in the Loop</p>
+    <h2>The BitSolo<br/><span class="gold">Inner Circle</span></h2>
+    <p class="join-sub">Solo wins. Hardware drops. Jill's Bitcoin takes. Straight to your inbox.</p>
+    <form class="join-form" onsubmit="handleJoin(event)">
+      <div class="form-row">
+        <div class="field-wrap">
+          <label class="field-label" for="j-name">First Name <span class="req">*</span></label>
+          <input class="field-input" type="text" id="j-name" placeholder="e.g. Marcus" required/>
+        </div>
+        <div class="field-wrap">
+          <label class="field-label" for="j-email">Email <span class="req">*</span></label>
+          <input class="field-input" type="email" id="j-email" placeholder="your@email.com" required/>
+        </div>
+      </div>
+      <div class="field-wrap">
+        <label class="field-label" for="j-phone">Phone <span style="font-weight:400;color:var(--muted);text-transform:none;letter-spacing:0">— Optional · SMS alerts</span></label>
+        <input class="field-input" type="tel" id="j-phone" placeholder="(281) 000-0000"/>
+      </div>
+      <div class="sms-row" onclick="toggleSMS()" id="sms-row">
+        <span style="font-size:20px;flex-shrink:0">📲</span>
+        <div>
+          <div class="sms-text">Yes — text me solo wins &amp; drops</div>
+          <div class="sms-hint">Reply STOP anytime.</div>
+        </div>
+        <div class="sms-check on" id="sms-check">✓</div>
+      </div>
+      <button class="join-submit" type="submit">Join the Inner Circle — It's Free</button>
+      <div class="join-perks">
+        <span class="perk">Solo win alerts</span>
+        <span class="perk">Hardware drops</span>
+        <span class="perk">SMS updates</span>
+      </div>
+      <p class="sms-legal">By submitting you agree to receive emails from BitSolo. Adding a phone number opts you into SMS updates. Reply STOP to unsubscribe anytime.</p>
+      <div class="join-success" id="join-success"></div>
+    </form>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="foot-inner">
+    <div>
+      <div class="foot-logo">Bit<span>Solo</span></div>
+      <p style="color:var(--muted);font-size:13px;margin-bottom:8px">Canaan-powered. Authorized U.S. distributor.</p>
+      <div class="foot-badge">✓ Authorized Canaan Distributor</div>
+    </div>
+    <div class="foot-col">
+      <h5>Shop</h5>
+      <a href="#shop" onclick="scrollToSection('shop')">Bitaxe Supra</a>
+      <a href="#shop" onclick="scrollToSection('shop')">Bitaxe Gamma 601</a>
+      <a href="#shop" onclick="scrollToSection('shop')">Bitaxe GT 801</a>
+      <a href="#shop" onclick="scrollToSection('shop')">Avalon Nano 3S</a>
+      <a href="#shop" onclick="scrollToSection('shop')">Avalon Mini 3</a>
+      <a href="#shop" onclick="scrollToSection('shop')">Canaan Avalon Q</a>
+    </div>
+    <div class="foot-col">
+      <h5>Company</h5>
+      <a href="#about" onclick="scrollToSection('about')">About Jill</a>
+      <a href="#how" onclick="scrollToSection('how')">How It Works</a>
+      <a href="#reviews" onclick="scrollToSection('reviews')">Reviews</a>
+      <a href="#faq" onclick="scrollToSection('faq')">FAQ</a>
+      <a href="#join" onclick="scrollToSection('join')">Join Inner Circle</a>
+    </div>
+    <div class="foot-col">
+      <h5>Social</h5>
+      <a href="https://instagram.com/officialbitsolo" target="_blank" rel="noopener">📸 @officialbitsolo</a>
+      <a href="https://instagram.com/bitcoinjill" target="_blank" rel="noopener">📸 @bitcoinjill</a>
+      <a href="https://x.com/BitcoinJill" target="_blank" rel="noopener">𝕏 @BitcoinJill</a>
+      <a href="mailto:contact@bitsolo.co">✉️ contact@bitsolo.co</a>
+    </div>
+  </div>
+  <div class="legal">
+    © 2026 Ford Digital LLC DBA BitFord Digital · 13101 Preston Rd. Ste 110-5002, Dallas, TX 75240 · Authorized Canaan U.S. Distributor
+  </div>
+</footer>
+
+<!-- PURCHASE MODAL -->
+<div class="p-modal" id="purchase-modal">
+  <div class="p-modal-box">
+    <button class="p-modal-close" onclick="closeModal()">✕</button>
+    <span class="p-modal-icon">₿</span>
+    <h3>One More Step</h3>
+    <p>Get your order updates and solo win alerts sent directly to you.</p>
+    <form class="p-form" onsubmit="completePurchase(event)">
+      <input class="p-input" id="pm-name" type="text" placeholder="First Name" required/>
+      <input class="p-input" id="pm-email" type="email" placeholder="Email for order updates" required/>
+      <input class="p-input" id="pm-phone" type="tel" placeholder="Phone — Optional (SMS alerts)"/>
+      <button class="p-submit" type="submit">Continue to Purchase →</button>
+      <button class="p-skip" type="button" onclick="completePurchase(null)">Skip &amp; continue without signing up</button>
+    </form>
+  </div>
+</div>
+
+<!-- BOT BAR -->
+<div class="bot-bar" onclick="openBot()">
+  <div class="bot-icon">🤖</div>
+  <span class="bot-label">Ask the <span>BitSolo Bot</span></span>
+  <span class="bot-up">↑</span>
+</div>
+
+<!-- WHATSAPP -->
+<a href="https://wa.me/" class="wa" title="Chat on WhatsApp" target="_blank" rel="noopener">💬</a>
+
+<script>
+// ─── JOURNEY SCROLL REVEAL ───
+(function(){
+  var steps = document.querySelectorAll('.journey-step');
+  if(!steps.length) return;
+  // Make first step visible immediately
+  steps.forEach(function(s,i){
+    if(i===0) s.classList.add('visible');
+  });
+  // Use IntersectionObserver if available
+  if('IntersectionObserver' in window){
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if(e.isIntersecting) e.target.classList.add('visible');
+      });
+    },{threshold:0.1,rootMargin:'0px 0px -50px 0px'});
+    steps.forEach(function(s){io.observe(s)});
+  } else {
+    // Fallback: make all visible immediately
+    steps.forEach(function(s){s.classList.add('visible')});
+  }
+  // Safety fallback: reveal all after 1.5s
+  setTimeout(function(){
+    steps.forEach(function(s){s.classList.add('visible')});
+  },1500);
+})();
+
+// ─── NAV SCROLL ───
+window.addEventListener('scroll',function(){
+  var nav = document.getElementById('main-nav');
+  if(nav) nav.classList.toggle('scrolled', window.scrollY > 40);
+},{passive:true});
+
+// ─── SCROLL HELPERS ───
+function scrollToTop(){window.scrollTo({top:0,behavior:'smooth'})}
+function scrollToSection(id){
+  var el = document.getElementById(id);
+  if(el) el.scrollIntoView({behavior:'smooth',block:'start'});
+}
+
+// ─── FAQ TOGGLE ───
+function toggleFAQ(el){
+  var item = el.parentElement;
+  var isOpen = item.classList.contains('open');
+  document.querySelectorAll('.faq-item').forEach(function(i){i.classList.remove('open')});
+  if(!isOpen) item.classList.add('open');
+}
+
+// ─── SMS TOGGLE ───
+var smsOn = true;
+function toggleSMS(){
+  smsOn = !smsOn;
+  var c = document.getElementById('sms-check');
+  if(c){c.classList.toggle('on',smsOn);c.textContent=smsOn?'✓':'';}
+}
+
+// ─── SIGNUP API ───
+function submitSignup(name,email,phone,source,successEl,formEl){
+  fetch('/api/signup',{
+    method:'POST',
+    headers:{'Content-Type':'application/json'},
+    body:JSON.stringify({name:name,email:email,phone:phone,source:source})
+  }).then(function(r){return r.json();}).then(function(){
+    if(window.fbq) fbq('track','Lead',{content_name:source});
+    if(successEl){
+      successEl.style.display='block';
+      successEl.textContent='Welcome '+name+'! You\'re in the BitSolo Inner Circle.'+(phone?' Text alerts are ON.':'');
+    }
+    if(formEl) formEl.querySelectorAll('input').forEach(function(i){i.value='';});
+  }).catch(function(){
+    if(successEl){successEl.style.display='block';successEl.textContent='Something went wrong. Please try again.';}
+  });
+}
+
+// ─── JOIN FORM ───
+function handleJoin(e){
+  e.preventDefault();
+  submitSignup(
+    document.getElementById('j-name').value,
+    document.getElementById('j-email').value,
+    document.getElementById('j-phone').value,
+    'join-section',
+    document.getElementById('join-success'),
+    e.target
+  );
+}
+
+// ─── BUY MINER → Stripe checkout ───
+var _pendingProductId = null;
+
+function buyMiner(productId){
+  _pendingProductId = productId;
+  var modal = document.getElementById('purchase-modal');
+  if(modal) modal.classList.add('open');
+}
+
+function closeModal(){
+  var modal = document.getElementById('purchase-modal');
+  if(modal) modal.classList.remove('open');
+}
+
+function completePurchase(e){
+  if(e) e.preventDefault();
+
+  var name  = (document.getElementById('pm-name')  || {}).value || '';
+  var email = (document.getElementById('pm-email') || {}).value || '';
+  var phone = (document.getElementById('pm-phone') || {}).value || '';
+
+  if(email){
+    submitSignup(name,email,phone,'purchase-modal',null,null);
+    if(window.fbq) fbq('track','InitiateCheckout');
+  }
+
+  closeModal();
+
+  var productId = _pendingProductId;
+  if(!productId) return;
+
+  var btn = document.querySelector('[data-product="'+productId+'"]');
+  if(btn){btn.disabled=true;btn.textContent='Loading...';}
+
+  fetch('/api/checkout',{
+    method:'POST',
+    headers:{'Content-Type':'application/json'},
+    body:JSON.stringify({productId:productId,name:name,email:email,phone:phone})
+  }).then(function(r){return r.json();}).then(function(data){
+    if(data && data.url){
+      window.location.href = data.url;
+    } else {
+      if(btn){btn.disabled=false;btn.textContent=btn.classList.contains('outline')?'View & Buy':'Buy Now';}
+      alert('Unable to start checkout. Please try again or contact us at contact@bitsolo.co');
+    }
+  }).catch(function(){
+    if(btn){btn.disabled=false;btn.textContent=btn.classList.contains('outline')?'View & Buy':'Buy Now';}
+    alert('Unable to start checkout. Please try again or contact us at contact@bitsolo.co');
+  });
+}
+
+// Close modal on backdrop click
+document.getElementById('purchase-modal').addEventListener('click',function(e){
+  if(e.target===this) closeModal();
+});
+
+// ─── BOT ───
+function openBot(){
+  window.open('https://wa.me/','_blank','noopener');
+}
+</script>
+
+</body>
+</html>

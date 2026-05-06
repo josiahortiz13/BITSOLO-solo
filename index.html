@@ -1018,7 +1018,12 @@ body{padding-bottom:var(--bot-h)}
   .review-grid{gap:2px}
 }
 @keyframes fadeUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
-.hero-content > *{animation:fadeUp .6s ease both}
+.hero-content > *{animation:fadeUp .6s ease forwards}
+.hero-eyebrow{animation-delay:.05s}
+.hero h1{animation-delay:.15s}
+.hero-sub{animation-delay:.28s}
+.hero-btns{animation-delay:.4s}
+.scroll-hint{animation-delay:.55s}
 .hero-eyebrow{animation-delay:0s}
 .hero h1{animation-delay:.1s}
 .hero-sub{animation-delay:.2s}
@@ -1557,14 +1562,26 @@ body{padding-bottom:var(--bot-h)}
 (function(){
   var steps = document.querySelectorAll('.journey-step');
   if(!steps.length) return;
-  var io = new IntersectionObserver(function(entries){
-    entries.forEach(function(e){
-      if(e.isIntersecting) e.target.classList.add('visible');
-    });
-  },{threshold:0.15});
-  steps.forEach(function(s){io.observe(s)});
-  // First step always visible
-  if(steps[0]) steps[0].classList.add('visible');
+  // Make first step visible immediately
+  steps.forEach(function(s,i){
+    if(i===0) s.classList.add('visible');
+  });
+  // Use IntersectionObserver if available
+  if('IntersectionObserver' in window){
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if(e.isIntersecting) e.target.classList.add('visible');
+      });
+    },{threshold:0.1,rootMargin:'0px 0px -50px 0px'});
+    steps.forEach(function(s){io.observe(s)});
+  } else {
+    // Fallback: make all visible immediately
+    steps.forEach(function(s){s.classList.add('visible')});
+  }
+  // Safety fallback: reveal all after 1.5s
+  setTimeout(function(){
+    steps.forEach(function(s){s.classList.add('visible')});
+  },1500);
 })();
 
 // ─── NAV SCROLL ───
