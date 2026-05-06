@@ -1,0 +1,1237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>BitSolo — Own the Block.</title>
+<meta name="description" content="BitSolo — Authorized Canaan U.S. distributor. Plug-and-play Bitcoin miners shipped same day from the US."/>
+<meta property="og:title" content="BitSolo — Own the Block."/>
+<meta property="og:description" content="Authorized Canaan U.S. distributor. Plug-and-play Bitcoin miners. Same-day US shipping."/>
+<meta property="og:url" content="https://bitsolo.co"/>
+<meta property="og:type" content="website"/>
+<link rel="icon" type="image/svg+xml" href="/favicon.svg"/>
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+document,'script','https://connect.facebook.net/en_US/fbevents.js');
+fbq('init','YOUR_PIXEL_ID');
+fbq('track','PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=YOUR_PIXEL_ID&ev=PageView&noscript=1"/></noscript>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400&display=swap" rel="stylesheet"/>
+<style>
+:root{
+  --gold:#f7931a;
+  --gold-dim:rgba(247,147,26,0.1);
+  --gold-glow:rgba(247,147,26,0.2);
+  --gold-border:rgba(247,147,26,0.3);
+  --green:#08070a;
+  --green2:#0d0c10;
+  --green3:#111018;
+  --green4:#16141e;
+  --card:#0d0c10;
+  --card2:#111018;
+  --border:rgba(247,147,26,0.12);
+  --border2:rgba(247,147,26,0.2);
+  --text:#f2f0ee;
+  --muted:#88849a;
+  --muted2:#aaa8b8;
+  --nav-h:64px;
+  --bot-h:52px;
+}
+*{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html{scroll-behavior:smooth}
+body{
+  font-family:'DM Sans',sans-serif;
+  background:var(--green);
+  color:var(--text);
+  line-height:1.6;
+  overflow-x:hidden;
+  -webkit-font-smoothing:antialiased;
+}
+a{color:inherit;text-decoration:none}
+h1,h2,h3,h4{font-family:'Bebas Neue',sans-serif;letter-spacing:.5px}
+img{display:block;max-width:100%}
+
+/* ─── NAV ─── */
+.nav{
+  position:fixed;top:0;left:0;right:0;
+  height:var(--nav-h);
+  z-index:400;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:0 32px;
+  transition:background .3s,border-color .3s;
+}
+.nav.scrolled{
+  background:rgba(8,7,10,.94);
+  backdrop-filter:blur(20px);
+  -webkit-backdrop-filter:blur(20px);
+  border-bottom:1px solid var(--border);
+}
+.nav-logo{
+  font-family:'Bebas Neue',sans-serif;
+  font-size:26px;letter-spacing:3px;
+  cursor:pointer;user-select:none;
+}
+.nav-logo span{color:var(--gold)}
+.nav-links{display:flex;align-items:center;gap:28px}
+.nav-link{
+  font-size:12px;font-weight:700;letter-spacing:1.5px;
+  text-transform:uppercase;color:var(--muted2);
+  cursor:pointer;transition:color .18s;
+}
+.nav-link:hover{color:var(--text)}
+.nav-cta{
+  background:var(--gold);color:#000;
+  font-weight:800;font-size:12px;letter-spacing:.8px;
+  text-transform:uppercase;
+  padding:10px 22px;border-radius:3px;border:none;cursor:pointer;
+  font-family:'DM Sans',sans-serif;
+  transition:opacity .15s,transform .15s;
+}
+.nav-cta:hover{opacity:.88;transform:translateY(-1px)}
+@media(max-width:600px){
+  .nav{padding:0 20px}
+  .nav-links{gap:16px}
+  .nav-link{display:none}
+  .nav-link.show-mobile{display:block}
+}
+
+/* ─── HERO ─── */
+.hero{
+  position:relative;
+  height:100svh;min-height:600px;
+  display:flex;flex-direction:column;
+  align-items:center;justify-content:flex-end;
+  padding-bottom:80px;
+  text-align:center;
+  overflow:hidden;
+}
+.hero-bg{
+  position:absolute;inset:0;
+  background:
+    radial-gradient(ellipse 120% 80% at 50% 100%, rgba(8,7,10,1) 0%, transparent 55%),
+    radial-gradient(ellipse 80% 60% at 50% 40%, rgba(247,147,26,0.07) 0%, transparent 60%),
+    linear-gradient(180deg, #09080e 0%, #0f0c14 30%, #130f18 55%, #0d0b12 75%, #08070a 100%);
+  z-index:0;
+}
+.hero-grid{
+  position:absolute;inset:0;z-index:0;
+  background-image:
+    linear-gradient(rgba(247,147,26,0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(247,147,26,0.05) 1px, transparent 1px);
+  background-size:60px 60px;
+  mask-image:radial-gradient(ellipse 80% 70% at 50% 50%, black 20%, transparent 80%);
+}
+.hero-glow{
+  position:absolute;
+  width:600px;height:600px;
+  left:50%;top:30%;
+  transform:translate(-50%,-50%);
+  background:radial-gradient(circle, rgba(247,147,26,0.08) 0%, transparent 65%);
+  pointer-events:none;z-index:0;
+  animation:glowPulse 4s ease-in-out infinite;
+}
+@keyframes glowPulse{0%,100%{opacity:.7;transform:translate(-50%,-50%) scale(1)}50%{opacity:1;transform:translate(-50%,-50%) scale(1.08)}}
+.hero-eyebrow{
+  font-size:10.5px;font-weight:700;letter-spacing:4px;
+  color:var(--gold);text-transform:uppercase;
+  margin-bottom:18px;
+  position:relative;z-index:2;
+  display:flex;align-items:center;gap:14px;
+}
+.hero-eyebrow::before,.hero-eyebrow::after{
+  content:'';height:1px;width:40px;
+  background:var(--gold-border);
+}
+.hero h1{
+  font-size:clamp(60px,14vw,118px);
+  line-height:.88;letter-spacing:2px;
+  margin-bottom:24px;
+  position:relative;z-index:2;
+  text-shadow:0 4px 40px rgba(0,0,0,.6);
+}
+.hero h1 .gold{color:var(--gold)}
+.hero-sub{
+  font-size:clamp(14px,2.5vw,17px);
+  color:var(--muted2);
+  max-width:400px;margin:0 auto 36px;
+  line-height:1.65;
+  position:relative;z-index:2;
+}
+.hero-btns{
+  display:flex;gap:12px;justify-content:center;flex-wrap:wrap;
+  position:relative;z-index:2;
+  margin-bottom:52px;
+}
+.btn-solid{
+  background:var(--gold);color:#000;
+  font-weight:800;font-size:13px;letter-spacing:.6px;
+  text-transform:uppercase;
+  padding:15px 34px;border-radius:3px;border:none;cursor:pointer;
+  font-family:'DM Sans',sans-serif;
+  transition:opacity .15s,transform .18s,box-shadow .18s;
+}
+.btn-solid:hover{opacity:.9;transform:translateY(-2px);box-shadow:0 16px 40px rgba(247,147,26,.3)}
+.btn-solid:active{transform:translateY(0)}
+.btn-outline{
+  background:transparent;color:var(--text);
+  border:1px solid rgba(242,240,232,0.3);
+  font-weight:700;font-size:13px;letter-spacing:.6px;
+  text-transform:uppercase;
+  padding:15px 34px;border-radius:3px;cursor:pointer;
+  font-family:'DM Sans',sans-serif;
+  transition:border-color .18s,color .18s;
+}
+.btn-outline:hover{border-color:var(--gold-border);color:var(--gold)}
+.scroll-hint{
+  position:relative;z-index:2;
+  display:flex;flex-direction:column;align-items:center;gap:6px;
+  color:var(--muted);
+  font-size:9px;font-weight:700;letter-spacing:3px;text-transform:uppercase;
+  animation:bounce 2.2s ease-in-out infinite;
+}
+.scroll-hint svg{width:16px;height:16px;opacity:.6}
+@keyframes bounce{0%,100%{transform:translateY(0)}50%{transform:translateY(6px)}}
+
+/* ─── TICKER ─── */
+.ticker{
+  background:var(--gold);color:#000;
+  padding:10px 0;overflow:hidden;white-space:nowrap;
+}
+.ticker-inner{display:inline-flex;animation:tick 26s linear infinite}
+.ticker-item{padding:0 44px;font-weight:800;font-size:11.5px;letter-spacing:.8px;text-transform:uppercase}
+@keyframes tick{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+/* ─── SPLIT SECTION ─── */
+.split{
+  display:grid;grid-template-columns:1fr 1fr;
+  min-height:520px;
+}
+@media(max-width:768px){.split{grid-template-columns:1fr;min-height:auto}}
+.split-img{
+  position:relative;overflow:hidden;
+  min-height:340px;
+}
+.split-img img{
+  width:100%;height:100%;
+  object-fit:cover;object-position:center top;
+}
+.split-img-overlay{
+  position:absolute;inset:0;
+  background:linear-gradient(90deg, transparent 60%, var(--green) 100%);
+}
+@media(max-width:768px){
+  .split-img-overlay{
+    background:linear-gradient(0deg, var(--green) 0%, transparent 50%);
+  }
+}
+.split-body{
+  background:var(--green2);
+  padding:72px 56px;
+  display:flex;flex-direction:column;justify-content:center;
+}
+@media(max-width:768px){.split-body{padding:44px 24px}}
+.split-eyebrow{
+  font-size:10px;font-weight:700;letter-spacing:3.5px;
+  color:var(--gold);text-transform:uppercase;
+  margin-bottom:14px;
+}
+.split-body h2{
+  font-size:clamp(38px,5vw,62px);
+  line-height:.92;margin-bottom:20px;
+}
+.split-body h2 .gold{color:var(--gold)}
+.split-body p{
+  color:var(--muted2);font-size:15px;line-height:1.75;
+  margin-bottom:12px;max-width:420px;
+}
+.split-body p strong{color:var(--text)}
+.split-cta{
+  margin-top:28px;display:inline-block;
+}
+
+/* ─── STEPS ─── */
+.steps-section{
+  background:var(--green2);
+  padding:88px 32px;
+}
+.steps-inner{max-width:1100px;margin:0 auto}
+.sec-eyebrow{
+  text-align:center;font-size:10px;font-weight:700;letter-spacing:3.5px;
+  color:var(--gold);text-transform:uppercase;margin-bottom:12px;
+}
+.sec-title{
+  text-align:center;
+  font-size:clamp(36px,5.5vw,64px);
+  line-height:.92;margin-bottom:16px;
+}
+.sec-title .gold{color:var(--gold)}
+.sec-sub{
+  text-align:center;color:var(--muted2);
+  font-size:15px;max-width:460px;
+  margin:0 auto 56px;line-height:1.65;
+}
+.steps-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:2px;
+}
+.step{
+  background:var(--green3);
+  padding:36px 28px;
+  border-top:2px solid var(--border);
+  transition:border-color .2s,background .2s;
+  position:relative;
+}
+.step::before{
+  content:'';position:absolute;top:0;left:0;right:0;
+  height:2px;background:var(--gold);
+  transform:scaleX(0);transform-origin:left;
+  transition:transform .3s ease;
+}
+.step:hover::before{transform:scaleX(1)}
+.step:hover{background:var(--green4)}
+.step-num{
+  font-family:'Bebas Neue',sans-serif;
+  font-size:52px;color:var(--gold);
+  line-height:1;margin-bottom:14px;opacity:.25;
+}
+.step h3{font-size:22px;margin-bottom:8px}
+.step p{color:var(--muted);font-size:13.5px;line-height:1.65}
+
+/* ─── JOURNEY ANIMATION ─── */
+.journey{
+  background:var(--green);
+  padding:0;
+  overflow:hidden;
+}
+.journey-step{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  min-height:100vh;
+  position:relative;
+  opacity:0;
+  transform:translateY(50px);
+  transition:opacity .8s ease, transform .8s ease;
+}
+.journey-step.visible{opacity:1;transform:translateY(0)}
+@media(max-width:768px){
+  .journey-step{grid-template-columns:1fr;min-height:auto}
+  .journey-step:nth-child(even) .j-visual{order:-1}
+}
+.j-visual{
+  position:relative;
+  background:var(--green3);
+  display:flex;align-items:center;justify-content:center;
+  min-height:50vh;
+  overflow:hidden;
+}
+@media(max-width:768px){.j-visual{min-height:55vw}}
+.j-visual-bg{
+  position:absolute;inset:0;
+  background:radial-gradient(ellipse 70% 60% at 50% 50%, rgba(247,147,26,0.07), transparent 70%);
+}
+.j-scene{
+  position:relative;z-index:1;
+  display:flex;align-items:center;justify-content:center;
+  width:100%;height:100%;
+  padding:40px;
+}
+/* Scene 1 — Delivery */
+.scene-delivery{position:relative;width:220px;height:220px}
+.delivery-truck{
+  font-size:80px;
+  position:absolute;
+  top:30px;left:50%;transform:translateX(-50%);
+  animation:truckDrive 2.8s ease-in-out infinite;
+}
+@keyframes truckDrive{
+  0%,100%{transform:translateX(-50%) translateX(-10px)}
+  50%{transform:translateX(-50%) translateX(10px)}
+}
+.delivery-road{
+  position:absolute;bottom:30px;left:0;right:0;
+  height:3px;background:var(--border2);border-radius:2px;
+}
+.delivery-sparks{
+  position:absolute;bottom:33px;left:50%;
+  display:flex;gap:4px;
+  animation:spark 1.4s ease-in-out infinite;
+}
+@keyframes spark{0%,100%{opacity:0}50%{opacity:1}}
+.delivery-spark{width:4px;height:4px;background:var(--gold);border-radius:50%}
+/* Scene 2 — Unbox */
+.scene-unbox{position:relative;width:200px;height:200px}
+.box-body{
+  position:absolute;bottom:20px;left:50%;transform:translateX(-50%);
+  width:120px;height:90px;
+  background:linear-gradient(135deg,#2a1a00,#1a1000);
+  border:2px solid var(--gold-border);
+  border-radius:4px;
+  display:flex;align-items:center;justify-content:center;
+}
+.box-stripe{
+  position:absolute;top:50%;left:0;right:0;
+  height:2px;background:var(--gold);opacity:.4;
+  transform:translateY(-50%);
+}
+.box-lid{
+  position:absolute;bottom:108px;left:50%;transform:translateX(-50%);
+  width:128px;height:24px;
+  background:linear-gradient(135deg,#3a2200,#2a1800);
+  border:2px solid var(--gold-border);
+  border-radius:4px 4px 0 0;
+  transform-origin:bottom center;
+  animation:openLid 2s ease-in-out infinite;
+  transform:translateX(-50%);
+}
+@keyframes openLid{
+  0%,30%,100%{transform:translateX(-50%) rotateX(0deg)}
+  50%,80%{transform:translateX(-50%) rotateX(-55deg)}
+}
+.box-shine{
+  position:absolute;top:30px;left:50%;transform:translateX(-50%);
+  font-size:36px;
+  animation:shine 2s ease-in-out infinite;
+}
+@keyframes shine{0%,30%{opacity:0;transform:translateX(-50%) translateY(10px)}55%,80%{opacity:1;transform:translateX(-50%) translateY(0)}100%{opacity:0}}
+/* Scene 3 — Plug In */
+.scene-plug{position:relative;width:220px;height:220px;perspective:600px}
+.outlet{
+  position:absolute;right:30px;top:50%;transform:translateY(-50%);
+  width:60px;height:80px;
+  background:#1a1820;border:2px solid var(--border2);
+  border-radius:8px;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;
+}
+.outlet-hole{width:8px;height:14px;background:#0a0910;border-radius:3px}
+.plug-cable{
+  position:absolute;left:20px;top:50%;
+  width:80px;height:3px;
+  background:linear-gradient(90deg,var(--gold),rgba(247,147,26,.4));
+  border-radius:2px;
+  transform:translateY(-50%);
+  transform-origin:left center;
+  animation:plugIn 2.2s ease-in-out infinite;
+}
+@keyframes plugIn{
+  0%,100%{width:60px;opacity:.5}
+  50%,70%{width:82px;opacity:1}
+}
+.plug-head{
+  position:absolute;left:76px;top:50%;transform:translateY(-50%);
+  width:14px;height:20px;
+  background:var(--gold);border-radius:3px;
+  animation:plugIn 2.2s ease-in-out infinite;
+}
+.plug-zap{
+  position:absolute;right:10px;top:38%;
+  font-size:22px;
+  animation:zap 2.2s ease-in-out infinite;
+  opacity:0;
+}
+@keyframes zap{0%,40%{opacity:0}55%,75%{opacity:1}90%,100%{opacity:0}}
+.miner-box{
+  position:absolute;left:16px;top:50%;transform:translateY(-50%);
+  width:56px;height:44px;
+  background:linear-gradient(135deg,#1e1c28,#14121a);
+  border:1px solid var(--border2);border-radius:6px;
+  display:flex;align-items:center;justify-content:center;
+}
+.miner-led{width:8px;height:8px;background:#333;border-radius:50%;transition:background .3s}
+/* Scene 4 — Computing */
+.scene-compute{position:relative;width:240px;height:220px}
+.miner-device{
+  position:absolute;left:50%;top:50%;
+  transform:translate(-50%,-50%);
+  width:120px;height:70px;
+  background:linear-gradient(135deg,#1e1c28,#14121a);
+  border:1px solid rgba(247,147,26,.35);
+  border-radius:8px;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;
+  box-shadow:0 0 30px rgba(247,147,26,.15);
+}
+.miner-leds{display:flex;gap:5px}
+.miner-led-dot{
+  width:7px;height:7px;border-radius:50%;
+  background:var(--gold);
+  animation:blink 1s ease-in-out infinite;
+}
+.miner-led-dot:nth-child(2){animation-delay:.33s}
+.miner-led-dot:nth-child(3){animation-delay:.66s}
+@keyframes blink{0%,100%{opacity:.2}50%{opacity:1}}
+.miner-bar{
+  width:80px;height:4px;background:#1a1824;border-radius:2px;overflow:hidden;
+}
+.miner-bar-fill{
+  height:100%;background:var(--gold);border-radius:2px;
+  animation:compute 1.8s ease-in-out infinite;
+}
+@keyframes compute{0%{width:0%}70%{width:100%}100%{width:100%}}
+.hash-stream{
+  position:absolute;
+  font-family:monospace;font-size:9px;color:rgba(247,147,26,.25);
+  letter-spacing:1px;line-height:1.8;
+  top:10px;left:10px;right:10px;
+  overflow:hidden;height:40px;
+}
+.hash-line{animation:hashScroll 2s linear infinite}
+.hash-line:nth-child(2){animation-delay:.5s}
+.hash-line:nth-child(3){animation-delay:1s}
+@keyframes hashScroll{from{opacity:0}20%{opacity:1}80%{opacity:1}to{opacity:0}}
+/* Scene 5 — Win */
+.scene-win{
+  position:relative;width:240px;height:220px;
+  display:flex;align-items:center;justify-content:center;
+}
+.win-burst{
+  position:absolute;inset:0;
+  background:radial-gradient(circle at 50% 50%, rgba(247,147,26,.2) 0%, transparent 65%);
+  animation:burst 1.5s ease-in-out infinite;
+}
+@keyframes burst{0%,100%{transform:scale(.9);opacity:.6}50%{transform:scale(1.1);opacity:1}}
+.win-symbol{
+  font-family:'Bebas Neue',sans-serif;
+  font-size:80px;color:var(--gold);
+  position:relative;z-index:1;
+  animation:winPop 1.5s ease-in-out infinite;
+  text-shadow:0 0 40px rgba(247,147,26,.6);
+}
+@keyframes winPop{0%,100%{transform:scale(1)}50%{transform:scale(1.06)}}
+.win-coins{
+  position:absolute;inset:0;pointer-events:none;
+}
+.coin{
+  position:absolute;font-size:16px;
+  animation:coinFall 2s ease-in infinite;
+  opacity:0;
+}
+.coin:nth-child(1){left:15%;animation-delay:0s}
+.coin:nth-child(2){left:35%;animation-delay:.3s}
+.coin:nth-child(3){left:55%;animation-delay:.6s}
+.coin:nth-child(4){left:75%;animation-delay:.9s}
+.coin:nth-child(5){left:25%;animation-delay:1.2s}
+.coin:nth-child(6){left:65%;animation-delay:1.5s}
+@keyframes coinFall{
+  0%{opacity:0;top:-10px;transform:rotate(0deg)}
+  20%{opacity:1}
+  100%{opacity:0;top:110%;transform:rotate(360deg)}
+}
+/* Journey text panel */
+.j-body{
+  padding:72px 60px;
+  display:flex;flex-direction:column;justify-content:center;
+  background:var(--green2);
+  min-height:50vh;
+}
+@media(max-width:768px){.j-body{padding:40px 24px;min-height:auto}}
+.j-step-num{
+  font-family:'Bebas Neue',sans-serif;
+  font-size:100px;color:var(--gold);
+  line-height:1;margin-bottom:0;opacity:.12;
+  letter-spacing:-2px;
+}
+.j-eyebrow{
+  font-size:10.5px;font-weight:700;letter-spacing:3.5px;
+  color:var(--gold);text-transform:uppercase;margin-bottom:16px;
+  margin-top:-14px;
+}
+.j-body h3{
+  font-size:clamp(44px,5.5vw,72px);
+  line-height:.88;margin-bottom:22px;
+}
+.j-body h3 .gold{color:var(--gold)}
+.j-body p{color:var(--muted2);font-size:16px;line-height:1.8;max-width:440px}
+/* connector line between steps */
+.journey-connector{
+  height:2px;
+  background:linear-gradient(90deg, transparent, var(--gold-border), transparent);
+  margin:0;
+}
+/* scale up all scenes for full-screen */
+.j-scene{transform:scale(1.3)}
+@media(max-width:768px){.j-scene{transform:scale(1)}}
+
+/* ─── WIN BLOCK ─── */
+.win-section{
+  background:var(--green);
+  padding:88px 32px;
+  position:relative;overflow:hidden;
+}
+.win-section::before{
+  content:'';position:absolute;
+  top:0;left:50%;transform:translateX(-50%);
+  width:800px;height:800px;
+  background:radial-gradient(circle, rgba(247,147,26,0.07) 0%, transparent 65%);
+  pointer-events:none;
+}
+.win-inner{
+  max-width:800px;margin:0 auto;text-align:center;
+  position:relative;z-index:1;
+}
+.win-badge{
+  display:inline-flex;align-items:center;gap:8px;
+  border:1px solid var(--gold-border);
+  padding:7px 16px;border-radius:2px;
+  font-size:10px;font-weight:700;letter-spacing:2.5px;
+  color:var(--gold);text-transform:uppercase;
+  margin-bottom:20px;
+  background:var(--gold-dim);
+}
+.win-dot{
+  width:7px;height:7px;background:var(--gold);
+  border-radius:50%;flex-shrink:0;
+  animation:pulse 1.8s ease-in-out infinite;
+}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.4;transform:scale(.65)}}
+.win-amount{
+  font-family:'Bebas Neue',sans-serif;
+  font-size:clamp(72px,14vw,128px);
+  color:var(--gold);line-height:.88;
+  margin-bottom:16px;letter-spacing:2px;
+}
+.win-detail{
+  color:var(--muted2);font-size:15px;
+  max-width:480px;margin:0 auto 32px;line-height:1.7;
+}
+.win-detail strong{color:var(--text)}
+.win-divider{
+  width:1px;height:60px;background:var(--border2);
+  margin:0 auto;
+}
+
+/* ─── SHOP ─── */
+.shop-section{
+  background:var(--green2);
+  padding:88px 32px;
+}
+@media(max-width:600px){.shop-section{padding:60px 16px}}
+.shop-inner{max-width:1120px;margin:0 auto}
+.shop-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fill,minmax(300px,1fr));
+  gap:2px;
+  margin-top:52px;
+}
+.product-card{
+  background:var(--green3);
+  padding:28px 24px;
+  display:flex;flex-direction:column;
+  transition:background .2s;
+  position:relative;
+  border-top:1px solid var(--border);
+}
+.product-card::before{
+  content:'';position:absolute;top:0;left:0;right:0;
+  height:2px;background:var(--gold);
+  transform:scaleX(0);transform-origin:left;
+  transition:transform .3s ease;
+}
+.product-card:hover::before{transform:scaleX(1)}
+.product-card:hover{background:var(--green4)}
+.product-tag{
+  display:inline-block;
+  font-size:9px;font-weight:800;letter-spacing:2.5px;
+  text-transform:uppercase;color:var(--gold);
+  margin-bottom:16px;width:fit-content;
+}
+.product-img-wrap{
+  background:rgba(0,0,0,.5);
+  border:1px solid var(--border);
+  display:flex;align-items:center;justify-content:center;
+  height:180px;margin-bottom:20px;overflow:hidden;
+  position:relative;
+}
+.product-img-wrap img{
+  width:100%;height:100%;
+  object-fit:contain;padding:18px;
+}
+.product-name{
+  font-family:'Bebas Neue',sans-serif;
+  font-size:28px;letter-spacing:.5px;margin-bottom:6px;
+}
+.product-desc{
+  color:var(--muted);font-size:13.5px;line-height:1.65;
+  margin-bottom:20px;flex:1;
+}
+.product-specs{
+  display:flex;gap:20px;flex-wrap:wrap;
+  margin-bottom:20px;padding-bottom:20px;
+  border-bottom:1px solid var(--border);
+}
+.spec{font-size:10px;text-transform:uppercase;letter-spacing:.5px;color:var(--muted);font-weight:600}
+.spec strong{
+  display:block;color:var(--text);
+  font-size:13px;text-transform:none;letter-spacing:0;
+  font-weight:700;margin-top:3px;
+}
+.product-price{
+  font-family:'Bebas Neue',sans-serif;
+  font-size:30px;color:var(--gold);
+  margin-bottom:16px;line-height:1;
+}
+.product-price small{
+  font-size:12px;color:var(--muted);
+  font-family:'DM Sans',sans-serif;
+  font-weight:400;margin-left:6px;
+}
+.buy-btn{
+  display:block;text-align:center;
+  background:var(--gold);color:#000;
+  font-weight:800;font-size:12.5px;letter-spacing:.6px;
+  text-transform:uppercase;
+  padding:14px;border-radius:2px;border:none;cursor:pointer;
+  font-family:'DM Sans',sans-serif;
+  transition:opacity .15s,transform .15s;
+}
+.buy-btn:hover{opacity:.88;transform:translateY(-1px)}
+.buy-btn:active{transform:translateY(0)}
+.buy-btn:disabled{opacity:.45;cursor:not-allowed;transform:none}
+.buy-btn.outline{
+  background:transparent;
+  border:1px solid var(--gold-border);
+  color:var(--gold);
+}
+.buy-btn.outline:hover{background:var(--gold-dim)}
+
+/* ─── ABOUT ─── */
+.about-section{
+  background:var(--green);
+}
+.about-inner{
+  max-width:1120px;margin:0 auto;
+  display:grid;grid-template-columns:1fr 1fr;
+  min-height:600px;
+}
+@media(max-width:768px){
+  .about-inner{grid-template-columns:1fr}
+  .about-photo-wrap{min-height:360px}
+}
+.about-photo-wrap{
+  position:relative;overflow:hidden;
+}
+.about-photo-wrap-placeholder{width:100%;height:100%;min-height:500px;background:linear-gradient(135deg,#1a0e00,#0d0c10);display:flex;align-items:center;justify-content:center;font-family:Bebas Neue,sans-serif;font-size:48px;color:rgba(247,147,26,.3)}.about-photo-wrap img{
+  width:100%;height:100%;
+  object-fit:cover;object-position:center top;
+  display:block;
+}
+.about-photo-wrap::after{
+  content:'';position:absolute;inset:0;
+  background:linear-gradient(90deg,transparent 50%,var(--green) 100%);
+}
+@media(max-width:768px){
+  .about-photo-wrap::after{
+    background:linear-gradient(0deg,var(--green) 0%,transparent 55%);
+  }
+}
+.about-text{
+  padding:72px 56px;
+  display:flex;flex-direction:column;justify-content:center;
+  background:var(--green);
+}
+@media(max-width:768px){.about-text{padding:44px 24px}}
+.about-text .sec-eyebrow{text-align:left}
+.about-text h2{
+  font-size:clamp(40px,5.5vw,66px);
+  line-height:.9;margin-bottom:22px;text-align:left;
+}
+.about-text h2 .gold{color:var(--gold)}
+.about-text p{
+  color:var(--muted2);font-size:15px;line-height:1.8;
+  margin-bottom:14px;
+}
+.about-text p strong{color:var(--text)}
+.social-links{display:flex;gap:8px;flex-wrap:wrap;margin-top:24px}
+.social-link{
+  background:var(--green3);
+  border:1px solid var(--border2);
+  padding:9px 16px;border-radius:2px;
+  font-size:12.5px;font-weight:600;
+  transition:border-color .18s,color .18s;
+}
+.social-link:hover{border-color:var(--gold-border);color:var(--gold)}
+
+/* ─── REVIEWS ─── */
+.reviews-section{
+  background:var(--green2);
+  padding:88px 32px;
+}
+@media(max-width:600px){.reviews-section{padding:60px 16px}}
+.reviews-inner{max-width:1120px;margin:0 auto}
+.review-score-row{
+  text-align:center;margin-bottom:52px;
+}
+.review-score-num{
+  font-family:'Bebas Neue',sans-serif;
+  font-size:96px;color:var(--gold);line-height:1;
+}
+.review-stars{color:var(--gold);font-size:20px;letter-spacing:4px;margin:8px 0}
+.review-cta-btn{
+  display:inline-flex;align-items:center;gap:8px;
+  background:#fff;border-radius:3px;
+  padding:9px 18px;font-size:12px;font-weight:700;
+  color:#111;margin-top:16px;cursor:pointer;
+  transition:opacity .15s;
+}
+.review-cta-btn:hover{opacity:.88}
+.review-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(290px,1fr));
+  gap:2px;
+}
+.review-card{
+  background:var(--green3);
+  padding:28px;border-top:1px solid var(--border);
+  transition:background .2s;
+}
+.review-card:hover{background:var(--green4)}
+.r-stars{color:var(--gold);font-size:13px;margin-bottom:14px;letter-spacing:2px}
+.r-text{
+  color:#c8c8b8;font-size:14px;line-height:1.75;
+  margin-bottom:20px;font-style:italic;
+}
+.r-author{display:flex;align-items:center;gap:10px}
+.r-avatar{
+  width:40px;height:40px;border-radius:50%;
+  background:var(--gold-dim);border:1px solid var(--gold-border);
+  display:flex;align-items:center;justify-content:center;
+  font-weight:800;font-size:15px;color:var(--gold);flex-shrink:0;
+}
+.r-name{font-weight:700;font-size:13px}
+.r-date{font-size:11px;color:var(--muted)}
+
+/* ─── FAQ ─── */
+.faq-section{
+  background:var(--green);
+  padding:88px 32px;
+}
+@media(max-width:600px){.faq-section{padding:60px 16px}}
+.faq-inner{max-width:720px;margin:0 auto}
+.faq-list{display:flex;flex-direction:column;gap:2px;margin-top:48px}
+.faq-item{
+  background:var(--green2);
+  border-top:1px solid var(--border);
+  overflow:hidden;transition:border-color .2s;
+}
+.faq-item.open{border-color:var(--gold-border)}
+.faq-q{
+  padding:22px 24px;font-size:15px;font-weight:700;
+  cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:14px;
+}
+.faq-arrow{color:var(--gold);font-size:18px;transition:transform .28s;flex-shrink:0}
+.faq-item.open .faq-arrow{transform:rotate(180deg)}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .32s ease}
+.faq-item.open .faq-a{max-height:300px}
+.faq-a p{padding:0 24px 22px;color:var(--muted2);font-size:14px;line-height:1.75}
+
+/* ─── JOIN ─── */
+.join-section{
+  background:var(--green2);
+  padding:88px 32px;
+}
+@media(max-width:600px){.join-section{padding:60px 16px}}
+.join-inner{max-width:540px;margin:0 auto;text-align:center}
+.join-inner h2{font-size:clamp(42px,7vw,68px);margin-bottom:16px;line-height:.92}
+.join-inner h2 .gold{color:var(--gold)}
+.join-sub{color:var(--muted2);font-size:15px;margin-bottom:36px;line-height:1.65}
+.join-form{display:flex;flex-direction:column;gap:12px}
+.form-row{display:flex;gap:10px;flex-wrap:wrap}
+.field-wrap{display:flex;flex-direction:column;gap:7px;flex:1;min-width:160px;text-align:left}
+.field-label{font-size:11px;font-weight:700;color:var(--muted2);letter-spacing:.3px;text-transform:uppercase}
+.req{color:var(--gold)}
+.field-input{
+  width:100%;padding:14px 18px;
+  border:1px solid var(--border2);border-radius:2px;
+  background:#0d0c10;color:var(--text);
+  font-size:14px;font-family:'DM Sans',sans-serif;
+  transition:border-color .18s;
+}
+.field-input:focus{outline:none;border-color:var(--gold-border)}
+.field-input::placeholder{color:#55527a}
+.sms-row{
+  display:flex;align-items:center;gap:12px;
+  background:var(--gold-dim);border:1px solid var(--gold-border);
+  border-radius:2px;padding:14px 16px;cursor:pointer;text-align:left;
+}
+.sms-text{font-size:13px;font-weight:700;color:var(--text)}
+.sms-hint{font-size:11px;color:var(--muted);margin-top:2px}
+.sms-check{
+  width:20px;height:20px;border-radius:2px;
+  border:2px solid var(--gold);
+  display:flex;align-items:center;justify-content:center;
+  flex-shrink:0;margin-left:auto;
+  font-size:11px;font-weight:900;color:#000;
+  transition:background .15s;
+}
+.sms-check.on{background:var(--gold)}
+.join-submit{
+  width:100%;padding:16px;
+  background:var(--gold);color:#000;
+  font-weight:800;font-size:13px;letter-spacing:.6px;text-transform:uppercase;
+  border:none;border-radius:2px;cursor:pointer;
+  font-family:'DM Sans',sans-serif;
+  transition:opacity .15s,transform .15s;
+}
+.join-submit:hover{opacity:.88;transform:translateY(-1px)}
+.join-perks{
+  display:flex;gap:14px;justify-content:center;flex-wrap:wrap;
+  margin-top:14px;
+}
+.perk{font-size:11.5px;color:var(--muted);display:flex;align-items:center;gap:5px}
+.perk::before{content:'✓';color:var(--gold);font-weight:700}
+.sms-legal{font-size:10.5px;color:#44425e;line-height:1.6;margin-top:6px}
+.join-success{
+  display:none;
+  background:var(--gold-dim);border:1px solid var(--gold-border);
+  border-radius:2px;padding:16px;
+  color:var(--gold);font-weight:700;font-size:14px;
+}
+
+/* ─── FOOTER ─── */
+footer{
+  background:#060509;
+  padding:56px 32px 36px;
+  border-top:1px solid var(--border);
+}
+@media(max-width:600px){footer{padding:44px 20px 32px}}
+.foot-inner{
+  max-width:1120px;margin:0 auto;
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(155px,1fr));
+  gap:36px;margin-bottom:40px;
+}
+.foot-logo{font-family:'Bebas Neue',sans-serif;font-size:26px;letter-spacing:3px;margin-bottom:10px}
+.foot-logo span{color:var(--gold)}
+.foot-badge{
+  display:inline-block;
+  background:var(--green2);border:1px solid var(--gold-border);
+  padding:6px 12px;border-radius:2px;
+  font-size:9.5px;color:var(--gold);font-weight:700;letter-spacing:.5px;
+  text-transform:uppercase;margin-top:8px;
+}
+.foot-col h5{
+  color:var(--gold);font-size:9px;letter-spacing:3px;
+  text-transform:uppercase;margin-bottom:16px;font-weight:700;
+}
+.foot-col a,.foot-col p{
+  display:block;color:var(--muted);font-size:13px;
+  margin-bottom:9px;transition:color .18s;
+}
+.foot-col a:hover{color:var(--text)}
+.legal{
+  text-align:center;color:#3a384a;font-size:10.5px;
+  padding-top:22px;border-top:1px solid var(--border);
+  line-height:1.9;max-width:1120px;margin:0 auto;
+}
+
+/* ─── BOT BAR ─── */
+.bot-bar{
+  position:fixed;bottom:0;left:0;right:0;
+  height:var(--bot-h);
+  background:rgba(8,7,12,.96);
+  backdrop-filter:blur(16px);
+  -webkit-backdrop-filter:blur(16px);
+  border-top:1px solid var(--border2);
+  z-index:398;
+  display:flex;align-items:center;justify-content:center;
+  gap:10px;cursor:pointer;
+  transition:background .18s;
+}
+.bot-bar:hover{background:rgba(12,11,16,.98)}
+.bot-icon{
+  width:28px;height:28px;
+  background:var(--gold-dim);border:1px solid var(--gold-border);
+  border-radius:50%;display:flex;align-items:center;justify-content:center;
+  font-size:14px;flex-shrink:0;
+}
+.bot-label{font-size:12.5px;font-weight:700;color:var(--text);letter-spacing:.3px}
+.bot-label span{color:var(--gold)}
+.bot-up{color:var(--gold);font-size:13px;margin-left:2px}
+
+/* ─── WHATSAPP ─── */
+.wa{
+  position:fixed;
+  bottom:calc(var(--bot-h) + 14px);right:18px;
+  width:50px;height:50px;
+  background:#25D366;border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  box-shadow:0 8px 22px rgba(37,211,102,.32);
+  z-index:397;font-size:24px;
+  transition:transform .18s,box-shadow .18s;
+  text-decoration:none;
+}
+.wa:hover{transform:scale(1.1);box-shadow:0 12px 30px rgba(37,211,102,.44)}
+
+/* ─── PURCHASE MODAL ─── */
+.p-modal{
+  display:none;position:fixed;inset:0;
+  background:rgba(0,0,0,.88);z-index:600;
+  align-items:center;justify-content:center;padding:20px;
+}
+.p-modal.open{display:flex}
+.p-modal-box{
+  background:#0d0c14;
+  border:1px solid var(--gold-border);
+  border-radius:4px;padding:40px 30px;
+  max-width:420px;width:100%;
+  text-align:center;position:relative;
+}
+.p-modal-close{
+  position:absolute;top:14px;right:18px;
+  background:none;border:none;color:#55527a;
+  font-size:22px;cursor:pointer;transition:color .15s;
+}
+.p-modal-close:hover{color:var(--text)}
+.p-modal-icon{font-size:36px;margin-bottom:14px;display:block}
+.p-modal-box h3{font-size:30px;margin-bottom:10px}
+.p-modal-box p{color:var(--muted2);font-size:14px;margin-bottom:24px;line-height:1.6}
+.p-form{display:flex;flex-direction:column;gap:10px}
+.p-input{
+  padding:14px 18px;border-radius:2px;
+  border:1px solid var(--border2);background:#09080e;
+  color:var(--text);font-size:14px;font-family:'DM Sans',sans-serif;
+  transition:border-color .18s;
+}
+.p-input:focus{outline:none;border-color:var(--gold-border)}
+.p-input::placeholder{color:#44425e}
+.p-submit{
+  padding:15px;background:var(--gold);color:#000;
+  font-weight:800;font-size:13.5px;letter-spacing:.4px;
+  border:none;border-radius:2px;cursor:pointer;
+  font-family:'DM Sans',sans-serif;transition:opacity .15s;
+}
+.p-submit:hover{opacity:.88}
+.p-skip{
+  background:none;border:none;color:#55527a;
+  font-size:13px;cursor:pointer;padding:6px;transition:color .15s;
+}
+.p-skip:hover{color:var(--muted2)}
+
+/* ─── MOBILE SCROLL PADDING ─── */
+body{padding-bottom:var(--bot-h)}
+@media(max-width:768px){
+  .steps-grid{gap:2px}
+  .shop-grid{gap:2px}
+  .review-grid{gap:2px}
+}
+@keyframes fadeUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
+.hero-content > *{animation:fadeUp .6s ease both}
+.hero-eyebrow{animation-delay:0s}
+.hero h1{animation-delay:.1s}
+.hero-sub{animation-delay:.2s}
+.hero-btns{animation-delay:.3s}
+.scroll-hint{animation-delay:.45s}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav" id="main-nav">
+  <div class="nav-logo" onclick="scrollToTop()">Bit<span>Solo</span></div>
+  <div class="nav-links">
+    <span class="nav-link show-mobile" onclick="scrollToSection('shop')">Shop</span>
+    <span class="nav-link" onclick="scrollToSection('about')">About</span>
+    <span class="nav-link" onclick="scrollToSection('faq')">FAQ</span>
+    <button class="nav-cta" onclick="scrollToSection('shop')">Shop Miners</button>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-grid"></div>
+  <div class="hero-glow"></div>
+  <div class="hero-content" style="position:relative;z-index:2;display:flex;flex-direction:column;align-items:center;width:100%;padding:0 20px">
+    <p class="hero-eyebrow">Bitcoin Mining Hardware</p>
+    <h1>Own the<br/>Block.<br/><span class="gold">Own the</span><br/><span class="gold">Upside.</span></h1>
+    <p class="hero-sub">Authorized Canaan hardware. Ships same day from the US. No technical background needed.</p>
+    <div class="hero-btns">
+      <button class="btn-solid" onclick="scrollToSection('shop')">Shop Miners</button>
+      <button class="btn-outline" onclick="scrollToSection('how')">Learn More</button>
+    </div>
+    <div class="scroll-hint" onclick="scrollToSection('ticker')">
+      <span>Scroll</span>
+      <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M8 2v10M3 8l5 5 5-5"/></svg>
+    </div>
+  </div>
+</section>
+
+<!-- TICKER -->
+<div class="ticker" id="ticker">
+  <div class="ticker-inner">
+    <span class="ticker-item">⚡ Authorized Canaan U.S. Distributor</span>
+    <span class="ticker-item">₿ Same-Day US Shipping</span>
+    <span class="ticker-item">🔌 Plug &amp; Mine in 15 Minutes</span>
+    <span class="ticker-item">🏆 Real Solo Win — $222,012 · April 2026</span>
+    <span class="ticker-item">⚡ Authorized Canaan U.S. Distributor</span>
+    <span class="ticker-item">₿ Same-Day US Shipping</span>
+    <span class="ticker-item">🔌 Plug &amp; Mine in 15 Minutes</span>
+    <span class="ticker-item">🏆 Real Solo Win — $222,012 · April 2026</span>
+  </div>
+</div>
+
+<!-- JOURNEY ANIMATION -->
+<section class="journey" id="how">
+
+  <!-- Step 1: Delivered -->
+  <div class="journey-step">
+    <div class="j-visual">
+      <div class="j-visual-bg"></div>
+      <div class="j-scene">
+        <div class="scene-delivery">
+          <div class="delivery-truck">🚚</div>
+          <div class="delivery-road"></div>
+          <div class="delivery-sparks">
+            <div class="delivery-spark"></div>
+            <div class="delivery-spark"></div>
+            <div class="delivery-spark"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="j-body">
+      <div class="j-step-num">01</div>
+      <p class="j-eyebrow">Same-Day Shipping</p>
+      <h3>Delivered<br/>to Your <span class="gold">Door</span></h3>
+      <p>Order before 2PM and it ships the same day — from US soil. No customs, no overseas delays. Arrives in days.</p>
+    </div>
+  </div>
+
+  <div class="journey-connector"></div>
+
+  <!-- Step 2: Unbox -->
+  <div class="journey-step">
+    <div class="j-body" style="order:1">
+      <div class="j-step-num">02</div>
+      <p class="j-eyebrow">Unboxing Day</p>
+      <h3>Open the<br/><span class="gold">Box</span></h3>
+      <p>Your authorized Canaan miner arrives ready to run. Pull it out, set it on your desk. That's your Bitcoin mining machine.</p>
+    </div>
+    <div class="j-visual" style="order:2">
+      <div class="j-visual-bg"></div>
+      <div class="j-scene">
+        <div class="scene-unbox">
+          <div class="box-lid"></div>
+          <div class="box-body"><div class="box-stripe"></div></div>
+          <div class="box-shine">✨</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="journey-connector"></div>
+
+  <!-- Step 3: Plug In -->
+  <div class="journey-step">
+    <div class="j-visual">
+      <div class="j-visual-bg"></div>
+      <div class="j-scene">
+        <div class="scene-plug">
+          <div class="miner-box"><div class="miner-led"></div></div>
+          <div class="plug-cable"></div>
+          <div class="plug-head"></div>
+          <div class="outlet">
+            <div class="outlet-hole"></div>
+            <div class="outlet-hole"></div>
+          </div>
+          <div class="plug-zap">⚡</div>
+        </div>
+      </div>
+    </div>
+    <div class="j-body">
+      <div class="j-step-num">03</div>
+      <p class="j-eyebrow">15 Minutes to Live</p>
+      <h3>Plug It<br/>Into the <span class="gold">Wall</span></h3>
+      <p>Wall outlet. Wi-Fi. Your Bitcoin wallet address. That's it. No technical background required — it's truly plug and mine.</p>
+    </div>
+  </div>
+
+  <div class="journey-connector"></div>
+
+  <!-- Step 4: Computing -->
+  <div class="journey-step">
+    <div class="j-body" style="order:1">
+      <div class="j-step-num">04</div>
+      <p class="j-eyebrow">24/7 Non-Stop</p>
+      <h3>Miner Starts<br/><span class="gold">Computing</span></h3>
+      <p>Your miner starts hashing instantly — running billions of calculations per second, competing for the Bitcoin block reward every 10 minutes, around the clock.</p>
+    </div>
+    <div class="j-visual" style="order:2">
+      <div class="j-visual-bg"></div>
+      <div class="j-scene">
+        <div class="scene-compute">
+          <div class="hash-stream">
+            <div class="hash-line">a3f9c2e1d4b7...</div>
+            <div class="hash-line">00000000b8d4...</div>
+            <div class="hash-line">f1e2a4c9b3d7...</div>
+          </div>
+          <div class="miner-device">
+            <div class="miner-leds">
+              <div class="miner-led-dot"></div>
+              <div class="miner-led-dot"></div>
+              <div class="miner-led-dot"></div>
+            </div>
+            <div class="miner-bar"><div class="miner-bar-fill"></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="journey-connector"></div>
+
+  <!-- Step 5: Win -->
+  <div class="journey-step">
+    <div class="j-visual">
+      <div class="j-visual-bg"></div>
+      <div class="j-scene">
+        <div class="scene-win">
+          <div class="win-burst"></div>
+          <div class="win-symbol">₿</div>
+          <div class="win-coins">
+            <span class="coin">🟡</span>
+            <span class="coin">🟡</span>
+            <span class="coin">🟡</span>
+            <span class="coin">🟡</span>
+            <span class="coin">🟡</span>
+            <span class="coin">🟡</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="j-body">
+      <div class="j-step-num">05</div>
+      <p class="j-eyebrow">Block Found</p>
+      <h3>Win the<br/><span class="gold">Jackpot</span></h3>
+      <p>When your miner finds a block, you collect the full reward — <strong style="color:var(--text)">3.125 BTC + network fees</strong>. A solo miner won $222,012 in April 2026. Every block is a real shot.</p>
+      <div style="margin-top:24px">
+        <button class="btn-solid" onclick="scrollToSection('shop')">Get Your Miner →</button>
+      </div>
+    </div>
+  </div>
+
+</section>
+
+
+<!-- SOLO WIN PROOF -->
+<section class="win-section" id="win">
+  <div class="win-inner">
+    <div class="win-badge"><span class="win-dot"></span>Verified Solo Win — April 9, 2026</div>
+    <div class="win-amount">$222,012</div>
+    <p class="win-detail">
+      A solo miner found Block <strong>944306</strong> and collected <strong>3.125 BTC + network fees</strong>.
+      Every miner on the network has a real shot at the full block reward.
+    </p>
+    <div class="win-divider"></div>
+  </div>
+</section>
+
+<section style="background:#0d0c10;padding:80px 20px;text-align:center;border-top:1px solid rgba(247,147,26,.12)">
+<p style="font-size:10px;font-weight:700;letter-spacing:3px;color:#f7931a;text-transform:uppercase;margin-bottom:12px">Ready to Start</p>
+<h2 style="font-family:'Bebas Neue',sans-serif;font-size:clamp(44px,8vw,80px);margin-bottom:20px">Get Your <span style="color:#f7931a">Miner</span></h2>
+<p style="color:#aaa8b8;font-size:16px;margin-bottom:32px">Authorized Canaan hardware. Ships same day from the US.</p>
+<button style="background:#f7931a;color:#000;font-weight:800;font-size:14px;letter-spacing:.6px;text-transform:uppercase;padding:18px 44px;border-radius:3px;border:none;cursor:pointer;font-family:DM Sans,sans-serif">Shop Miners</button>
+</section></body></html>
