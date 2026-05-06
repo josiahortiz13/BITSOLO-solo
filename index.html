@@ -303,6 +303,253 @@ img{display:block;max-width:100%}
 .step h3{font-size:22px;margin-bottom:8px}
 .step p{color:var(--muted);font-size:13.5px;line-height:1.65}
 
+/* ─── JOURNEY ANIMATION ─── */
+.journey{
+  background:var(--green);
+  padding:0;
+  overflow:hidden;
+}
+.journey-step{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  min-height:520px;
+  position:relative;
+  opacity:0;
+  transform:translateY(40px);
+  transition:opacity .7s ease, transform .7s ease;
+}
+.journey-step.visible{opacity:1;transform:translateY(0)}
+@media(max-width:768px){
+  .journey-step{grid-template-columns:1fr;min-height:auto}
+  .journey-step:nth-child(even) .j-visual{order:-1}
+}
+.j-visual{
+  position:relative;
+  background:var(--green3);
+  display:flex;align-items:center;justify-content:center;
+  min-height:380px;
+  overflow:hidden;
+}
+@media(max-width:768px){.j-visual{min-height:260px}}
+.j-visual-bg{
+  position:absolute;inset:0;
+  background:radial-gradient(ellipse 70% 60% at 50% 50%, rgba(247,147,26,0.07), transparent 70%);
+}
+.j-scene{
+  position:relative;z-index:1;
+  display:flex;align-items:center;justify-content:center;
+  width:100%;height:100%;
+  padding:40px;
+}
+/* Scene 1 — Delivery */
+.scene-delivery{position:relative;width:220px;height:220px}
+.delivery-truck{
+  font-size:80px;
+  position:absolute;
+  top:30px;left:50%;transform:translateX(-50%);
+  animation:truckDrive 2.8s ease-in-out infinite;
+}
+@keyframes truckDrive{
+  0%,100%{transform:translateX(-50%) translateX(-10px)}
+  50%{transform:translateX(-50%) translateX(10px)}
+}
+.delivery-road{
+  position:absolute;bottom:30px;left:0;right:0;
+  height:3px;background:var(--border2);border-radius:2px;
+}
+.delivery-sparks{
+  position:absolute;bottom:33px;left:50%;
+  display:flex;gap:4px;
+  animation:spark 1.4s ease-in-out infinite;
+}
+@keyframes spark{0%,100%{opacity:0}50%{opacity:1}}
+.delivery-spark{width:4px;height:4px;background:var(--gold);border-radius:50%}
+/* Scene 2 — Unbox */
+.scene-unbox{position:relative;width:200px;height:200px}
+.box-body{
+  position:absolute;bottom:20px;left:50%;transform:translateX(-50%);
+  width:120px;height:90px;
+  background:linear-gradient(135deg,#2a1a00,#1a1000);
+  border:2px solid var(--gold-border);
+  border-radius:4px;
+  display:flex;align-items:center;justify-content:center;
+}
+.box-stripe{
+  position:absolute;top:50%;left:0;right:0;
+  height:2px;background:var(--gold);opacity:.4;
+  transform:translateY(-50%);
+}
+.box-lid{
+  position:absolute;bottom:108px;left:50%;transform:translateX(-50%);
+  width:128px;height:24px;
+  background:linear-gradient(135deg,#3a2200,#2a1800);
+  border:2px solid var(--gold-border);
+  border-radius:4px 4px 0 0;
+  transform-origin:bottom center;
+  animation:openLid 2s ease-in-out infinite;
+  transform:translateX(-50%);
+}
+@keyframes openLid{
+  0%,30%,100%{transform:translateX(-50%) rotateX(0deg)}
+  50%,80%{transform:translateX(-50%) rotateX(-55deg)}
+}
+.box-shine{
+  position:absolute;top:30px;left:50%;transform:translateX(-50%);
+  font-size:36px;
+  animation:shine 2s ease-in-out infinite;
+}
+@keyframes shine{0%,30%{opacity:0;transform:translateX(-50%) translateY(10px)}55%,80%{opacity:1;transform:translateX(-50%) translateY(0)}100%{opacity:0}}
+/* Scene 3 — Plug In */
+.scene-plug{position:relative;width:220px;height:220px;perspective:600px}
+.outlet{
+  position:absolute;right:30px;top:50%;transform:translateY(-50%);
+  width:60px;height:80px;
+  background:#1a1820;border:2px solid var(--border2);
+  border-radius:8px;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;
+}
+.outlet-hole{width:8px;height:14px;background:#0a0910;border-radius:3px}
+.plug-cable{
+  position:absolute;left:20px;top:50%;
+  width:80px;height:3px;
+  background:linear-gradient(90deg,var(--gold),rgba(247,147,26,.4));
+  border-radius:2px;
+  transform:translateY(-50%);
+  transform-origin:left center;
+  animation:plugIn 2.2s ease-in-out infinite;
+}
+@keyframes plugIn{
+  0%,100%{width:60px;opacity:.5}
+  50%,70%{width:82px;opacity:1}
+}
+.plug-head{
+  position:absolute;left:76px;top:50%;transform:translateY(-50%);
+  width:14px;height:20px;
+  background:var(--gold);border-radius:3px;
+  animation:plugIn 2.2s ease-in-out infinite;
+}
+.plug-zap{
+  position:absolute;right:10px;top:38%;
+  font-size:22px;
+  animation:zap 2.2s ease-in-out infinite;
+  opacity:0;
+}
+@keyframes zap{0%,40%{opacity:0}55%,75%{opacity:1}90%,100%{opacity:0}}
+.miner-box{
+  position:absolute;left:16px;top:50%;transform:translateY(-50%);
+  width:56px;height:44px;
+  background:linear-gradient(135deg,#1e1c28,#14121a);
+  border:1px solid var(--border2);border-radius:6px;
+  display:flex;align-items:center;justify-content:center;
+}
+.miner-led{width:8px;height:8px;background:#333;border-radius:50%;transition:background .3s}
+/* Scene 4 — Computing */
+.scene-compute{position:relative;width:240px;height:220px}
+.miner-device{
+  position:absolute;left:50%;top:50%;
+  transform:translate(-50%,-50%);
+  width:120px;height:70px;
+  background:linear-gradient(135deg,#1e1c28,#14121a);
+  border:1px solid rgba(247,147,26,.35);
+  border-radius:8px;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;
+  box-shadow:0 0 30px rgba(247,147,26,.15);
+}
+.miner-leds{display:flex;gap:5px}
+.miner-led-dot{
+  width:7px;height:7px;border-radius:50%;
+  background:var(--gold);
+  animation:blink 1s ease-in-out infinite;
+}
+.miner-led-dot:nth-child(2){animation-delay:.33s}
+.miner-led-dot:nth-child(3){animation-delay:.66s}
+@keyframes blink{0%,100%{opacity:.2}50%{opacity:1}}
+.miner-bar{
+  width:80px;height:4px;background:#1a1824;border-radius:2px;overflow:hidden;
+}
+.miner-bar-fill{
+  height:100%;background:var(--gold);border-radius:2px;
+  animation:compute 1.8s ease-in-out infinite;
+}
+@keyframes compute{0%{width:0%}70%{width:100%}100%{width:100%}}
+.hash-stream{
+  position:absolute;
+  font-family:monospace;font-size:9px;color:rgba(247,147,26,.25);
+  letter-spacing:1px;line-height:1.8;
+  top:10px;left:10px;right:10px;
+  overflow:hidden;height:40px;
+}
+.hash-line{animation:hashScroll 2s linear infinite}
+.hash-line:nth-child(2){animation-delay:.5s}
+.hash-line:nth-child(3){animation-delay:1s}
+@keyframes hashScroll{from{opacity:0}20%{opacity:1}80%{opacity:1}to{opacity:0}}
+/* Scene 5 — Win */
+.scene-win{
+  position:relative;width:240px;height:220px;
+  display:flex;align-items:center;justify-content:center;
+}
+.win-burst{
+  position:absolute;inset:0;
+  background:radial-gradient(circle at 50% 50%, rgba(247,147,26,.2) 0%, transparent 65%);
+  animation:burst 1.5s ease-in-out infinite;
+}
+@keyframes burst{0%,100%{transform:scale(.9);opacity:.6}50%{transform:scale(1.1);opacity:1}}
+.win-symbol{
+  font-family:'Bebas Neue',sans-serif;
+  font-size:80px;color:var(--gold);
+  position:relative;z-index:1;
+  animation:winPop 1.5s ease-in-out infinite;
+  text-shadow:0 0 40px rgba(247,147,26,.6);
+}
+@keyframes winPop{0%,100%{transform:scale(1)}50%{transform:scale(1.06)}}
+.win-coins{
+  position:absolute;inset:0;pointer-events:none;
+}
+.coin{
+  position:absolute;font-size:16px;
+  animation:coinFall 2s ease-in infinite;
+  opacity:0;
+}
+.coin:nth-child(1){left:15%;animation-delay:0s}
+.coin:nth-child(2){left:35%;animation-delay:.3s}
+.coin:nth-child(3){left:55%;animation-delay:.6s}
+.coin:nth-child(4){left:75%;animation-delay:.9s}
+.coin:nth-child(5){left:25%;animation-delay:1.2s}
+.coin:nth-child(6){left:65%;animation-delay:1.5s}
+@keyframes coinFall{
+  0%{opacity:0;top:-10px;transform:rotate(0deg)}
+  20%{opacity:1}
+  100%{opacity:0;top:110%;transform:rotate(360deg)}
+}
+/* Journey text panel */
+.j-body{
+  padding:64px 52px;
+  display:flex;flex-direction:column;justify-content:center;
+  background:var(--green2);
+}
+@media(max-width:768px){.j-body{padding:36px 24px}}
+.j-step-num{
+  font-family:'Bebas Neue',sans-serif;
+  font-size:72px;color:var(--gold);
+  line-height:1;margin-bottom:6px;opacity:.18;
+}
+.j-eyebrow{
+  font-size:10px;font-weight:700;letter-spacing:3px;
+  color:var(--gold);text-transform:uppercase;margin-bottom:14px;
+}
+.j-body h3{
+  font-size:clamp(36px,4.5vw,54px);
+  line-height:.92;margin-bottom:18px;
+}
+.j-body h3 .gold{color:var(--gold)}
+.j-body p{color:var(--muted2);font-size:15px;line-height:1.8;max-width:400px}
+/* connector line between steps */
+.journey-connector{
+  height:2px;
+  background:linear-gradient(90deg, transparent, var(--gold-border), transparent);
+  margin:0;
+}
+
 /* ─── WIN BLOCK ─── */
 .win-section{
   background:var(--green);
@@ -820,36 +1067,148 @@ body{padding-bottom:var(--bot-h)}
   </div>
 </div>
 
-<!-- HOW IT WORKS -->
-<section class="steps-section" id="how">
-  <div class="steps-inner">
-    <p class="sec-eyebrow">The Process</p>
-    <h2 class="sec-title">Four Steps to<br/><span class="gold">Start Mining</span></h2>
-    <p class="sec-sub">No technical background needed. Plug it in and mine.</p>
-    <div class="steps-grid">
-      <div class="step">
-        <div class="step-num">01</div>
-        <h3>Order Online</h3>
-        <p>Pick your miner and checkout securely. Ships same day if ordered before 2PM.</p>
+<!-- JOURNEY ANIMATION -->
+<section class="journey" id="how">
+
+  <!-- Step 1: Delivered -->
+  <div class="journey-step">
+    <div class="j-visual">
+      <div class="j-visual-bg"></div>
+      <div class="j-scene">
+        <div class="scene-delivery">
+          <div class="delivery-truck">🚚</div>
+          <div class="delivery-road"></div>
+          <div class="delivery-sparks">
+            <div class="delivery-spark"></div>
+            <div class="delivery-spark"></div>
+            <div class="delivery-spark"></div>
+          </div>
+        </div>
       </div>
-      <div class="step">
-        <div class="step-num">02</div>
-        <h3>Arrives Fast</h3>
-        <p>Ships from US soil. No customs, no overseas delays. Arrives in days.</p>
-      </div>
-      <div class="step">
-        <div class="step-num">03</div>
-        <h3>Plug It In</h3>
-        <p>Wall outlet. Wi-Fi. Your Bitcoin wallet address. Done in under 15 minutes.</p>
-      </div>
-      <div class="step">
-        <div class="step-num">04</div>
-        <h3>Mine Bitcoin</h3>
-        <p>Your miner runs 24/7, competing for the full block reward every 10 minutes.</p>
+    </div>
+    <div class="j-body">
+      <div class="j-step-num">01</div>
+      <p class="j-eyebrow">Same-Day Shipping</p>
+      <h3>Delivered<br/>to Your <span class="gold">Door</span></h3>
+      <p>Order before 2PM and it ships the same day — from US soil. No customs, no overseas delays. Arrives in days.</p>
+    </div>
+  </div>
+
+  <div class="journey-connector"></div>
+
+  <!-- Step 2: Unbox -->
+  <div class="journey-step">
+    <div class="j-body" style="order:1">
+      <div class="j-step-num">02</div>
+      <p class="j-eyebrow">Unboxing Day</p>
+      <h3>Open the<br/><span class="gold">Box</span></h3>
+      <p>Your authorized Canaan miner arrives ready to run. Pull it out, set it on your desk. That's your Bitcoin mining machine.</p>
+    </div>
+    <div class="j-visual" style="order:2">
+      <div class="j-visual-bg"></div>
+      <div class="j-scene">
+        <div class="scene-unbox">
+          <div class="box-lid"></div>
+          <div class="box-body"><div class="box-stripe"></div></div>
+          <div class="box-shine">✨</div>
+        </div>
       </div>
     </div>
   </div>
+
+  <div class="journey-connector"></div>
+
+  <!-- Step 3: Plug In -->
+  <div class="journey-step">
+    <div class="j-visual">
+      <div class="j-visual-bg"></div>
+      <div class="j-scene">
+        <div class="scene-plug">
+          <div class="miner-box"><div class="miner-led"></div></div>
+          <div class="plug-cable"></div>
+          <div class="plug-head"></div>
+          <div class="outlet">
+            <div class="outlet-hole"></div>
+            <div class="outlet-hole"></div>
+          </div>
+          <div class="plug-zap">⚡</div>
+        </div>
+      </div>
+    </div>
+    <div class="j-body">
+      <div class="j-step-num">03</div>
+      <p class="j-eyebrow">15 Minutes to Live</p>
+      <h3>Plug It<br/>Into the <span class="gold">Wall</span></h3>
+      <p>Wall outlet. Wi-Fi. Your Bitcoin wallet address. That's it. No technical background required — it's truly plug and mine.</p>
+    </div>
+  </div>
+
+  <div class="journey-connector"></div>
+
+  <!-- Step 4: Computing -->
+  <div class="journey-step">
+    <div class="j-body" style="order:1">
+      <div class="j-step-num">04</div>
+      <p class="j-eyebrow">24/7 Non-Stop</p>
+      <h3>Miner Starts<br/><span class="gold">Computing</span></h3>
+      <p>Your miner starts hashing instantly — running billions of calculations per second, competing for the Bitcoin block reward every 10 minutes, around the clock.</p>
+    </div>
+    <div class="j-visual" style="order:2">
+      <div class="j-visual-bg"></div>
+      <div class="j-scene">
+        <div class="scene-compute">
+          <div class="hash-stream">
+            <div class="hash-line">a3f9c2e1d4b7...</div>
+            <div class="hash-line">00000000b8d4...</div>
+            <div class="hash-line">f1e2a4c9b3d7...</div>
+          </div>
+          <div class="miner-device">
+            <div class="miner-leds">
+              <div class="miner-led-dot"></div>
+              <div class="miner-led-dot"></div>
+              <div class="miner-led-dot"></div>
+            </div>
+            <div class="miner-bar"><div class="miner-bar-fill"></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="journey-connector"></div>
+
+  <!-- Step 5: Win -->
+  <div class="journey-step">
+    <div class="j-visual">
+      <div class="j-visual-bg"></div>
+      <div class="j-scene">
+        <div class="scene-win">
+          <div class="win-burst"></div>
+          <div class="win-symbol">₿</div>
+          <div class="win-coins">
+            <span class="coin">🟡</span>
+            <span class="coin">🟡</span>
+            <span class="coin">🟡</span>
+            <span class="coin">🟡</span>
+            <span class="coin">🟡</span>
+            <span class="coin">🟡</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="j-body">
+      <div class="j-step-num">05</div>
+      <p class="j-eyebrow">Block Found</p>
+      <h3>Win the<br/><span class="gold">Jackpot</span></h3>
+      <p>When your miner finds a block, you collect the full reward — <strong style="color:var(--text)">3.125 BTC + network fees</strong>. A solo miner won $222,012 in April 2026. Every block is a real shot.</p>
+      <div style="margin-top:24px">
+        <button class="btn-solid" onclick="scrollToSection('shop')">Get Your Miner →</button>
+      </div>
+    </div>
+  </div>
+
 </section>
+
 
 <!-- SOLO WIN PROOF -->
 <section class="win-section" id="win">
@@ -1188,6 +1547,20 @@ body{padding-bottom:var(--bot-h)}
 <a href="https://wa.me/" class="wa" title="Chat on WhatsApp" target="_blank" rel="noopener">💬</a>
 
 <script>
+// ─── JOURNEY SCROLL REVEAL ───
+(function(){
+  var steps = document.querySelectorAll('.journey-step');
+  if(!steps.length) return;
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(e.isIntersecting) e.target.classList.add('visible');
+    });
+  },{threshold:0.15});
+  steps.forEach(function(s){io.observe(s)});
+  // First step always visible
+  if(steps[0]) steps[0].classList.add('visible');
+})();
+
 // ─── NAV SCROLL ───
 window.addEventListener('scroll',function(){
   var nav = document.getElementById('main-nav');
