@@ -3,1044 +3,430 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>BitSolo — Own the Block.</title>
-<meta name="description" content="BitSolo — Authorized Canaan U.S. distributor. Plug-and-play Bitcoin miners shipped same day from the US."/>
-<meta property="og:title" content="BitSolo — Own the Block."/>
-<meta property="og:description" content="Authorized Canaan U.S. distributor. Plug-and-play Bitcoin miners. Same-day US shipping."/>
-<meta property="og:url" content="https://bitsolo.co"/>
-<meta property="og:type" content="website"/>
-<link rel="icon" type="image/svg+xml" href="/favicon.svg"/>
+<title>DIGITAL APE — Bitcoin Mining. Flare Power. Real Hardware.</title>
+<meta name="description" content="Authorized Canaan Bitcoin mining hardware. Flare gas to Bitcoin. Same-day US shipping."/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet"/>
 <script>
 !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
 n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
 n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
 t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
 document,'script','https://connect.facebook.net/en_US/fbevents.js');
-fbq('init','YOUR_PIXEL_ID');
-fbq('track','PageView');
+fbq('init','YOUR_PIXEL_ID');fbq('track','PageView');
 </script>
-<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=YOUR_PIXEL_ID&ev=PageView&noscript=1"/></noscript>
-<link rel="preconnect" href="https://fonts.googleapis.com"/>
-<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400&display=swap" rel="stylesheet"/>
 <style>
 :root{
+  --red:#dc2626;
+  --red-dim:rgba(220,38,38,0.1);
+  --red-border:rgba(220,38,38,0.25);
   --gold:#f7931a;
   --gold-dim:rgba(247,147,26,0.1);
-  --gold-glow:rgba(247,147,26,0.2);
-  --gold-border:rgba(247,147,26,0.3);
-  --green:#08070a;
-  --green2:#0d0c10;
-  --green3:#111018;
-  --green4:#16141e;
-  --card:#0d0c10;
-  --card2:#111018;
-  --border:rgba(247,147,26,0.12);
-  --border2:rgba(247,147,26,0.2);
-  --text:#f2f0ee;
-  --muted:#88849a;
-  --muted2:#aaa8b8;
+  --gold-border:rgba(247,147,26,0.25);
+  --bg:#0a0a0a;
+  --bg2:#111111;
+  --bg3:#161616;
+  --bg4:#1c1c1c;
+  --border:rgba(255,255,255,0.07);
+  --border2:rgba(255,255,255,0.12);
+  --text:#f0ede8;
+  --muted:#777;
+  --muted2:#aaa;
   --nav-h:64px;
   --bot-h:52px;
 }
 *{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
 html{scroll-behavior:smooth}
-body{
-  font-family:'DM Sans',sans-serif;
-  background:var(--green);
-  color:var(--text);
-  line-height:1.6;
-  overflow-x:hidden;
-  -webkit-font-smoothing:antialiased;
-}
+body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);overflow-x:hidden;-webkit-font-smoothing:antialiased}
 a{color:inherit;text-decoration:none}
 h1,h2,h3,h4{font-family:'Bebas Neue',sans-serif;letter-spacing:.5px}
 img{display:block;max-width:100%}
+section{position:relative}
 
-/* ─── NAV ─── */
+/* NAV */
 .nav{
-  position:fixed;top:0;left:0;right:0;
-  height:var(--nav-h);
-  z-index:400;
-  display:flex;align-items:center;justify-content:space-between;
-  padding:0 32px;
-  transition:background .3s,border-color .3s;
+  position:fixed;top:0;left:0;right:0;height:var(--nav-h);
+  z-index:500;display:flex;align-items:center;justify-content:space-between;
+  padding:0 40px;transition:background .3s,border-color .3s;
 }
-.nav.scrolled{
-  background:rgba(8,7,10,.94);
-  backdrop-filter:blur(20px);
-  -webkit-backdrop-filter:blur(20px);
-  border-bottom:1px solid var(--border);
-}
-.nav-logo{
-  font-family:'Bebas Neue',sans-serif;
-  font-size:26px;letter-spacing:3px;
-  cursor:pointer;user-select:none;
-}
-.nav-logo span{color:var(--gold)}
-.nav-links{display:flex;align-items:center;gap:28px}
-.nav-link{
-  font-size:12px;font-weight:700;letter-spacing:1.5px;
-  text-transform:uppercase;color:var(--muted2);
-  cursor:pointer;transition:color .18s;
-}
+.nav.scrolled{background:rgba(10,10,10,.95);backdrop-filter:blur(20px);border-bottom:1px solid var(--border)}
+.nav-logo{font-family:'Bebas Neue',sans-serif;font-size:26px;letter-spacing:3px;cursor:pointer}
+.nav-logo .r{color:var(--red)}
+.nav-logo .g{color:var(--gold)}
+.nav-links{display:flex;align-items:center;gap:32px}
+.nav-link{font-size:11.5px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted2);cursor:pointer;transition:color .18s}
 .nav-link:hover{color:var(--text)}
-.nav-cta{
-  background:var(--gold);color:#000;
-  font-weight:800;font-size:12px;letter-spacing:.8px;
-  text-transform:uppercase;
-  padding:10px 22px;border-radius:3px;border:none;cursor:pointer;
-  font-family:'DM Sans',sans-serif;
-  transition:opacity .15s,transform .15s;
-}
+.nav-cta{background:var(--gold);color:#000;font-weight:800;font-size:11.5px;letter-spacing:.8px;text-transform:uppercase;padding:10px 24px;border:none;cursor:pointer;font-family:'DM Sans',sans-serif;transition:opacity .15s,transform .15s}
 .nav-cta:hover{opacity:.88;transform:translateY(-1px)}
-@media(max-width:600px){
+@media(max-width:768px){
   .nav{padding:0 20px}
-  .nav-links{gap:16px}
   .nav-link{display:none}
-  .nav-link.show-mobile{display:block}
+  .nav-link.mobile{display:block}
 }
 
-/* ─── HERO ─── */
+/* HERO */
 .hero{
-  position:relative;
-  height:100svh;min-height:600px;
-  display:flex;flex-direction:column;
-  align-items:center;justify-content:flex-end;
-  padding-bottom:80px;
-  text-align:center;
-  overflow:hidden;
+  height:100svh;min-height:620px;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  text-align:center;padding:0 24px;overflow:hidden;
 }
 .hero-bg{
-  position:absolute;inset:0;
+  position:absolute;inset:0;z-index:0;
   background:
-    radial-gradient(ellipse 120% 80% at 50% 100%, rgba(8,7,10,1) 0%, transparent 55%),
-    radial-gradient(ellipse 80% 60% at 50% 40%, rgba(247,147,26,0.07) 0%, transparent 60%),
-    linear-gradient(180deg, #09080e 0%, #0f0c14 30%, #130f18 55%, #0d0b12 75%, #08070a 100%);
-  z-index:0;
+    radial-gradient(ellipse 90% 60% at 50% 0%, rgba(220,38,38,0.12) 0%, transparent 55%),
+    radial-gradient(ellipse 70% 50% at 20% 80%, rgba(247,147,26,0.07) 0%, transparent 55%),
+    radial-gradient(ellipse 70% 50% at 80% 80%, rgba(220,38,38,0.06) 0%, transparent 55%),
+    #0a0a0a;
 }
 .hero-grid{
   position:absolute;inset:0;z-index:0;
-  background-image:
-    linear-gradient(rgba(247,147,26,0.05) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(247,147,26,0.05) 1px, transparent 1px);
-  background-size:60px 60px;
-  mask-image:radial-gradient(ellipse 80% 70% at 50% 50%, black 20%, transparent 80%);
+  background-image:linear-gradient(rgba(255,255,255,0.025) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.025) 1px,transparent 1px);
+  background-size:80px 80px;
+  mask-image:radial-gradient(ellipse 80% 70% at 50% 50%,black 20%,transparent 75%);
 }
-.hero-glow{
-  position:absolute;
-  width:600px;height:600px;
-  left:50%;top:30%;
-  transform:translate(-50%,-50%);
-  background:radial-gradient(circle, rgba(247,147,26,0.08) 0%, transparent 65%);
-  pointer-events:none;z-index:0;
-  animation:glowPulse 4s ease-in-out infinite;
-}
-@keyframes glowPulse{0%,100%{opacity:.7;transform:translate(-50%,-50%) scale(1)}50%{opacity:1;transform:translate(-50%,-50%) scale(1.08)}}
-.hero-eyebrow{
-  font-size:10.5px;font-weight:700;letter-spacing:4px;
-  color:var(--gold);text-transform:uppercase;
-  margin-bottom:18px;
-  position:relative;z-index:2;
-  display:flex;align-items:center;gap:14px;
-}
-.hero-eyebrow::before,.hero-eyebrow::after{
-  content:'';height:1px;width:40px;
-  background:var(--gold-border);
-}
-.hero h1{
-  font-size:clamp(60px,14vw,118px);
-  line-height:.88;letter-spacing:2px;
-  margin-bottom:24px;
-  position:relative;z-index:2;
-  text-shadow:0 4px 40px rgba(0,0,0,.6);
-}
-.hero h1 .gold{color:var(--gold)}
-.hero-sub{
-  font-size:clamp(14px,2.5vw,17px);
-  color:var(--muted2);
-  max-width:400px;margin:0 auto 36px;
-  line-height:1.65;
-  position:relative;z-index:2;
-}
-.hero-btns{
-  display:flex;gap:12px;justify-content:center;flex-wrap:wrap;
-  position:relative;z-index:2;
-  margin-bottom:52px;
-}
-.btn-solid{
-  background:var(--gold);color:#000;
-  font-weight:800;font-size:13px;letter-spacing:.6px;
-  text-transform:uppercase;
-  padding:15px 34px;border-radius:3px;border:none;cursor:pointer;
-  font-family:'DM Sans',sans-serif;
-  transition:opacity .15s,transform .18s,box-shadow .18s;
-}
-.btn-solid:hover{opacity:.9;transform:translateY(-2px);box-shadow:0 16px 40px rgba(247,147,26,.3)}
-.btn-solid:active{transform:translateY(0)}
-.btn-outline{
-  background:transparent;color:var(--text);
-  border:1px solid rgba(242,240,232,0.3);
-  font-weight:700;font-size:13px;letter-spacing:.6px;
-  text-transform:uppercase;
-  padding:15px 34px;border-radius:3px;cursor:pointer;
-  font-family:'DM Sans',sans-serif;
-  transition:border-color .18s,color .18s;
-}
-.btn-outline:hover{border-color:var(--gold-border);color:var(--gold)}
-.scroll-hint{
-  position:relative;z-index:2;
-  display:flex;flex-direction:column;align-items:center;gap:6px;
-  color:var(--muted);
-  font-size:9px;font-weight:700;letter-spacing:3px;text-transform:uppercase;
-  animation:bounce 2.2s ease-in-out infinite;
-}
-.scroll-hint svg{width:16px;height:16px;opacity:.6}
-@keyframes bounce{0%,100%{transform:translateY(0)}50%{transform:translateY(6px)}}
+.hero-glow{position:absolute;width:700px;height:700px;left:50%;top:40%;transform:translate(-50%,-50%);background:radial-gradient(circle,rgba(220,38,38,0.08) 0%,transparent 60%);pointer-events:none;animation:glowP 5s ease-in-out infinite}
+@keyframes glowP{0%,100%{opacity:.7;transform:translate(-50%,-50%) scale(1)}50%{opacity:1;transform:translate(-50%,-50%) scale(1.1)}}
+.hero-inner{position:relative;z-index:2;display:flex;flex-direction:column;align-items:center}
+.hero-eyebrow{font-size:10px;font-weight:700;letter-spacing:4px;color:var(--gold);text-transform:uppercase;margin-bottom:20px;display:flex;align-items:center;gap:14px;opacity:0;animation:fadeUp .6s .1s ease forwards}
+.hero-eyebrow::before,.hero-eyebrow::after{content:'';height:1px;width:44px;background:var(--gold-border)}
+.hero h1{font-size:clamp(72px,16vw,160px);line-height:.85;letter-spacing:3px;margin-bottom:8px;opacity:0;animation:fadeUp .6s .2s ease forwards}
+.hero h1 .r{color:var(--red)}
+.hero h1 .g{color:var(--gold)}
+.hero-tagline{font-family:'Bebas Neue',sans-serif;font-size:clamp(18px,3.5vw,34px);letter-spacing:2px;color:var(--muted2);margin-bottom:28px;opacity:0;animation:fadeUp .6s .3s ease forwards}
+.hero-sub{font-size:15px;color:var(--muted);max-width:480px;line-height:1.7;margin-bottom:40px;opacity:0;animation:fadeUp .6s .4s ease forwards}
+.hero-btns{display:flex;gap:12px;flex-wrap:wrap;justify-content:center;opacity:0;animation:fadeUp .6s .5s ease forwards}
+.btn-red{background:var(--red);color:#fff;font-weight:800;font-size:12px;letter-spacing:.8px;text-transform:uppercase;padding:15px 36px;border:none;cursor:pointer;font-family:'DM Sans',sans-serif;transition:opacity .15s,transform .18s}
+.btn-red:hover{opacity:.88;transform:translateY(-2px)}
+.btn-gold{background:var(--gold);color:#000;font-weight:800;font-size:12px;letter-spacing:.8px;text-transform:uppercase;padding:15px 36px;border:none;cursor:pointer;font-family:'DM Sans',sans-serif;transition:opacity .15s,transform .18s}
+.btn-gold:hover{opacity:.88;transform:translateY(-2px)}
+.btn-ghost{background:transparent;color:var(--text);border:1px solid var(--border2);font-weight:700;font-size:12px;letter-spacing:.8px;text-transform:uppercase;padding:15px 36px;cursor:pointer;font-family:'DM Sans',sans-serif;transition:border-color .18s,color .18s}
+.btn-ghost:hover{border-color:var(--gold-border);color:var(--gold)}
+.scroll-cue{position:absolute;bottom:32px;left:50%;transform:translateX(-50%);z-index:2;display:flex;flex-direction:column;align-items:center;gap:6px;color:var(--muted);font-size:9px;font-weight:700;letter-spacing:3px;text-transform:uppercase;animation:bounce 2.2s ease-in-out infinite;cursor:pointer;opacity:0;animation:fadeUp .6s .7s ease forwards,bounce 2.2s .8s ease-in-out infinite}
+.scroll-cue svg{width:16px;height:16px;opacity:.5}
+@keyframes bounce{0%,100%{transform:translateX(-50%) translateY(0)}50%{transform:translateX(-50%) translateY(7px)}}
 
-/* ─── TICKER ─── */
-.ticker{
-  background:var(--gold);color:#000;
-  padding:10px 0;overflow:hidden;white-space:nowrap;
-}
-.ticker-inner{display:inline-flex;animation:tick 26s linear infinite}
-.ticker-item{padding:0 44px;font-weight:800;font-size:11.5px;letter-spacing:.8px;text-transform:uppercase}
+/* TICKER */
+.ticker{background:var(--red);color:#fff;padding:10px 0;overflow:hidden;white-space:nowrap}
+.ticker-inner{display:inline-flex;animation:tick 28s linear infinite}
+.ticker-item{padding:0 48px;font-weight:800;font-size:11px;letter-spacing:1px;text-transform:uppercase}
+.ticker-dot{color:var(--gold);margin-right:8px}
 @keyframes tick{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 
-/* ─── SPLIT SECTION ─── */
-.split{
-  display:grid;grid-template-columns:1fr 1fr;
-  min-height:520px;
-}
-@media(max-width:768px){.split{grid-template-columns:1fr;min-height:auto}}
-.split-img{
+/* MISSION SPLIT */
+.mission{display:grid;grid-template-columns:1fr 1fr;min-height:540px}
+@media(max-width:768px){.mission{grid-template-columns:1fr}}
+.mission-visual{
+  background:var(--bg2);
   position:relative;overflow:hidden;
-  min-height:340px;
+  display:flex;align-items:center;justify-content:center;
+  min-height:400px;
 }
-.split-img img{
-  width:100%;height:100%;
-  object-fit:cover;object-position:center top;
-}
-.split-img-overlay{
-  position:absolute;inset:0;
-  background:linear-gradient(90deg, transparent 60%, var(--green) 100%);
-}
-@media(max-width:768px){
-  .split-img-overlay{
-    background:linear-gradient(0deg, var(--green) 0%, transparent 50%);
-  }
-}
-.split-body{
-  background:var(--green2);
-  padding:72px 56px;
-  display:flex;flex-direction:column;justify-content:center;
-}
-@media(max-width:768px){.split-body{padding:44px 24px}}
-.split-eyebrow{
-  font-size:10px;font-weight:700;letter-spacing:3.5px;
-  color:var(--gold);text-transform:uppercase;
-  margin-bottom:14px;
-}
-.split-body h2{
-  font-size:clamp(38px,5vw,62px);
-  line-height:.92;margin-bottom:20px;
-}
-.split-body h2 .gold{color:var(--gold)}
-.split-body p{
-  color:var(--muted2);font-size:15px;line-height:1.75;
-  margin-bottom:12px;max-width:420px;
-}
-.split-body p strong{color:var(--text)}
-.split-cta{
-  margin-top:28px;display:inline-block;
-}
+.mission-visual-bg{position:absolute;inset:0;background:radial-gradient(ellipse 70% 60% at 50% 50%,rgba(220,38,38,0.1),transparent 70%)}
+.mission-stat{position:relative;z-index:1;text-align:center}
+.mission-stat-num{font-family:'Bebas Neue',sans-serif;font-size:clamp(80px,12vw,140px);color:var(--red);line-height:.9;letter-spacing:2px}
+.mission-stat-label{font-size:11px;font-weight:700;letter-spacing:3px;color:var(--muted2);text-transform:uppercase;margin-top:8px}
+.mission-stat-sub{font-size:13px;color:var(--muted);margin-top:6px}
+.mission-body{background:var(--bg3);padding:72px 56px;display:flex;flex-direction:column;justify-content:center}
+@media(max-width:768px){.mission-body{padding:44px 24px}}
+.eyebrow{font-size:10px;font-weight:700;letter-spacing:3.5px;color:var(--red);text-transform:uppercase;margin-bottom:14px}
+.eyebrow.gold{color:var(--gold)}
+.mission-body h2{font-size:clamp(40px,5vw,64px);line-height:.9;margin-bottom:20px}
+.mission-body h2 .g{color:var(--gold)}
+.mission-body p{color:var(--muted2);font-size:15px;line-height:1.8;margin-bottom:12px}
+.mission-body p strong{color:var(--text)}
+.mission-body .cta{margin-top:28px}
 
-/* ─── STEPS ─── */
-.steps-section{
-  background:var(--green2);
-  padding:88px 32px;
-}
-.steps-inner{max-width:1100px;margin:0 auto}
-.sec-eyebrow{
-  text-align:center;font-size:10px;font-weight:700;letter-spacing:3.5px;
-  color:var(--gold);text-transform:uppercase;margin-bottom:12px;
-}
-.sec-title{
-  text-align:center;
-  font-size:clamp(36px,5.5vw,64px);
-  line-height:.92;margin-bottom:16px;
-}
-.sec-title .gold{color:var(--gold)}
-.sec-sub{
-  text-align:center;color:var(--muted2);
-  font-size:15px;max-width:460px;
-  margin:0 auto 56px;line-height:1.65;
-}
-.steps-grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-  gap:2px;
-}
-.step{
-  background:var(--green3);
-  padding:36px 28px;
-  border-top:2px solid var(--border);
-  transition:border-color .2s,background .2s;
-  position:relative;
-}
-.step::before{
-  content:'';position:absolute;top:0;left:0;right:0;
-  height:2px;background:var(--gold);
-  transform:scaleX(0);transform-origin:left;
-  transition:transform .3s ease;
-}
-.step:hover::before{transform:scaleX(1)}
-.step:hover{background:var(--green4)}
-.step-num{
-  font-family:'Bebas Neue',sans-serif;
-  font-size:52px;color:var(--gold);
-  line-height:1;margin-bottom:14px;opacity:.25;
-}
-.step h3{font-size:22px;margin-bottom:8px}
-.step p{color:var(--muted);font-size:13.5px;line-height:1.65}
+/* SERVICES */
+.services{background:var(--bg);padding:96px 40px}
+@media(max-width:600px){.services{padding:64px 20px}}
+.services-inner{max-width:1120px;margin:0 auto}
+.sec-top{text-align:center;margin-bottom:60px}
+.sec-top h2{font-size:clamp(40px,6vw,72px);margin-bottom:12px}
+.sec-top h2 .r{color:var(--red)}
+.sec-top h2 .g{color:var(--gold)}
+.sec-top p{color:var(--muted2);font-size:15px;max-width:520px;margin:0 auto;line-height:1.7}
+.services-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:2px}
+.service-card{background:var(--bg2);padding:44px 36px;border-top:2px solid transparent;transition:border-color .25s,background .25s;position:relative;overflow:hidden}
+.service-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;transform:scaleX(0);transform-origin:left;transition:transform .35s ease}
+.service-card.red::before{background:var(--red)}
+.service-card.gold::before{background:var(--gold)}
+.service-card:hover{background:var(--bg3)}
+.service-card:hover::before{transform:scaleX(1)}
+.service-icon{font-size:40px;margin-bottom:20px}
+.service-card h3{font-size:28px;margin-bottom:10px}
+.service-card h3 .r{color:var(--red)}
+.service-card h3 .g{color:var(--gold)}
+.service-card p{color:var(--muted);font-size:14px;line-height:1.75}
+.service-tag{display:inline-block;font-size:9px;font-weight:700;letter-spacing:2px;text-transform:uppercase;padding:4px 10px;margin-bottom:16px}
+.service-tag.red{color:var(--red);border:1px solid var(--red-border);background:var(--red-dim)}
+.service-tag.gold{color:var(--gold);border:1px solid var(--gold-border);background:var(--gold-dim)}
 
-/* ─── JOURNEY ANIMATION ─── */
-.journey{
-  background:var(--green);
-  padding:0;
-  overflow:hidden;
-}
-.journey-step{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  min-height:100vh;
-  position:relative;
-  opacity:0;
-  transform:translateY(50px);
-  transition:opacity .8s ease, transform .8s ease;
-}
+/* JOURNEY */
+.journey{background:var(--bg2)}
+.journey-step{display:grid;grid-template-columns:1fr 1fr;min-height:100vh;opacity:0;transform:translateY(50px);transition:opacity .8s ease,transform .8s ease}
 .journey-step.visible{opacity:1;transform:translateY(0)}
-@media(max-width:768px){
-  .journey-step{grid-template-columns:1fr;min-height:auto}
-  .journey-step:nth-child(even) .j-visual{order:-1}
-}
-.j-visual{
-  position:relative;
-  background:var(--green3);
-  display:flex;align-items:center;justify-content:center;
-  min-height:50vh;
-  overflow:hidden;
-}
-@media(max-width:768px){.j-visual{min-height:55vw}}
-.j-visual-bg{
-  position:absolute;inset:0;
-  background:radial-gradient(ellipse 70% 60% at 50% 50%, rgba(247,147,26,0.07), transparent 70%);
-}
-.j-scene{
-  position:relative;z-index:1;
-  display:flex;align-items:center;justify-content:center;
-  width:100%;height:100%;
-  padding:40px;
-}
-/* Scene 1 — Delivery */
-.scene-delivery{position:relative;width:220px;height:220px}
-.delivery-truck{
-  font-size:80px;
-  position:absolute;
-  top:30px;left:50%;transform:translateX(-50%);
-  animation:truckDrive 2.8s ease-in-out infinite;
-}
-@keyframes truckDrive{
-  0%,100%{transform:translateX(-50%) translateX(-10px)}
-  50%{transform:translateX(-50%) translateX(10px)}
-}
-.delivery-road{
-  position:absolute;bottom:30px;left:0;right:0;
-  height:3px;background:var(--border2);border-radius:2px;
-}
-.delivery-sparks{
-  position:absolute;bottom:33px;left:50%;
-  display:flex;gap:4px;
-  animation:spark 1.4s ease-in-out infinite;
-}
-@keyframes spark{0%,100%{opacity:0}50%{opacity:1}}
-.delivery-spark{width:4px;height:4px;background:var(--gold);border-radius:50%}
-/* Scene 2 — Unbox */
-.scene-unbox{position:relative;width:200px;height:200px}
-.box-body{
-  position:absolute;bottom:20px;left:50%;transform:translateX(-50%);
-  width:120px;height:90px;
-  background:linear-gradient(135deg,#2a1a00,#1a1000);
-  border:2px solid var(--gold-border);
-  border-radius:4px;
-  display:flex;align-items:center;justify-content:center;
-}
-.box-stripe{
-  position:absolute;top:50%;left:0;right:0;
-  height:2px;background:var(--gold);opacity:.4;
-  transform:translateY(-50%);
-}
-.box-lid{
-  position:absolute;bottom:108px;left:50%;transform:translateX(-50%);
-  width:128px;height:24px;
-  background:linear-gradient(135deg,#3a2200,#2a1800);
-  border:2px solid var(--gold-border);
-  border-radius:4px 4px 0 0;
-  transform-origin:bottom center;
-  animation:openLid 2s ease-in-out infinite;
-  transform:translateX(-50%);
-}
-@keyframes openLid{
-  0%,30%,100%{transform:translateX(-50%) rotateX(0deg)}
-  50%,80%{transform:translateX(-50%) rotateX(-55deg)}
-}
-.box-shine{
-  position:absolute;top:30px;left:50%;transform:translateX(-50%);
-  font-size:36px;
-  animation:shine 2s ease-in-out infinite;
-}
-@keyframes shine{0%,30%{opacity:0;transform:translateX(-50%) translateY(10px)}55%,80%{opacity:1;transform:translateX(-50%) translateY(0)}100%{opacity:0}}
-/* Scene 3 — Plug In */
-.scene-plug{position:relative;width:220px;height:220px;perspective:600px}
-.outlet{
-  position:absolute;right:30px;top:50%;transform:translateY(-50%);
-  width:60px;height:80px;
-  background:#1a1820;border:2px solid var(--border2);
-  border-radius:8px;
-  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;
-}
-.outlet-hole{width:8px;height:14px;background:#0a0910;border-radius:3px}
-.plug-cable{
-  position:absolute;left:20px;top:50%;
-  width:80px;height:3px;
-  background:linear-gradient(90deg,var(--gold),rgba(247,147,26,.4));
-  border-radius:2px;
-  transform:translateY(-50%);
-  transform-origin:left center;
-  animation:plugIn 2.2s ease-in-out infinite;
-}
-@keyframes plugIn{
-  0%,100%{width:60px;opacity:.5}
-  50%,70%{width:82px;opacity:1}
-}
-.plug-head{
-  position:absolute;left:76px;top:50%;transform:translateY(-50%);
-  width:14px;height:20px;
-  background:var(--gold);border-radius:3px;
-  animation:plugIn 2.2s ease-in-out infinite;
-}
-.plug-zap{
-  position:absolute;right:10px;top:38%;
-  font-size:22px;
-  animation:zap 2.2s ease-in-out infinite;
-  opacity:0;
-}
-@keyframes zap{0%,40%{opacity:0}55%,75%{opacity:1}90%,100%{opacity:0}}
-.miner-box{
-  position:absolute;left:16px;top:50%;transform:translateY(-50%);
-  width:56px;height:44px;
-  background:linear-gradient(135deg,#1e1c28,#14121a);
-  border:1px solid var(--border2);border-radius:6px;
-  display:flex;align-items:center;justify-content:center;
-}
-.miner-led{width:8px;height:8px;background:#333;border-radius:50%;transition:background .3s}
-/* Scene 4 — Computing */
-.scene-compute{position:relative;width:240px;height:220px}
-.miner-device{
-  position:absolute;left:50%;top:50%;
-  transform:translate(-50%,-50%);
-  width:120px;height:70px;
-  background:linear-gradient(135deg,#1e1c28,#14121a);
-  border:1px solid rgba(247,147,26,.35);
-  border-radius:8px;
-  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;
-  box-shadow:0 0 30px rgba(247,147,26,.15);
-}
-.miner-leds{display:flex;gap:5px}
-.miner-led-dot{
-  width:7px;height:7px;border-radius:50%;
-  background:var(--gold);
-  animation:blink 1s ease-in-out infinite;
-}
-.miner-led-dot:nth-child(2){animation-delay:.33s}
-.miner-led-dot:nth-child(3){animation-delay:.66s}
-@keyframes blink{0%,100%{opacity:.2}50%{opacity:1}}
-.miner-bar{
-  width:80px;height:4px;background:#1a1824;border-radius:2px;overflow:hidden;
-}
-.miner-bar-fill{
-  height:100%;background:var(--gold);border-radius:2px;
-  animation:compute 1.8s ease-in-out infinite;
-}
-@keyframes compute{0%{width:0%}70%{width:100%}100%{width:100%}}
-.hash-stream{
-  position:absolute;
-  font-family:monospace;font-size:9px;color:rgba(247,147,26,.25);
-  letter-spacing:1px;line-height:1.8;
-  top:10px;left:10px;right:10px;
-  overflow:hidden;height:40px;
-}
-.hash-line{animation:hashScroll 2s linear infinite}
-.hash-line:nth-child(2){animation-delay:.5s}
-.hash-line:nth-child(3){animation-delay:1s}
-@keyframes hashScroll{from{opacity:0}20%{opacity:1}80%{opacity:1}to{opacity:0}}
-/* Scene 5 — Win */
-.scene-win{
-  position:relative;width:240px;height:220px;
-  display:flex;align-items:center;justify-content:center;
-}
-.win-burst{
-  position:absolute;inset:0;
-  background:radial-gradient(circle at 50% 50%, rgba(247,147,26,.2) 0%, transparent 65%);
-  animation:burst 1.5s ease-in-out infinite;
-}
-@keyframes burst{0%,100%{transform:scale(.9);opacity:.6}50%{transform:scale(1.1);opacity:1}}
-.win-symbol{
-  font-family:'Bebas Neue',sans-serif;
-  font-size:80px;color:var(--gold);
-  position:relative;z-index:1;
-  animation:winPop 1.5s ease-in-out infinite;
-  text-shadow:0 0 40px rgba(247,147,26,.6);
-}
-@keyframes winPop{0%,100%{transform:scale(1)}50%{transform:scale(1.06)}}
-.win-coins{
-  position:absolute;inset:0;pointer-events:none;
-}
-.coin{
-  position:absolute;font-size:16px;
-  animation:coinFall 2s ease-in infinite;
-  opacity:0;
-}
-.coin:nth-child(1){left:15%;animation-delay:0s}
-.coin:nth-child(2){left:35%;animation-delay:.3s}
-.coin:nth-child(3){left:55%;animation-delay:.6s}
-.coin:nth-child(4){left:75%;animation-delay:.9s}
-.coin:nth-child(5){left:25%;animation-delay:1.2s}
-.coin:nth-child(6){left:65%;animation-delay:1.5s}
-@keyframes coinFall{
-  0%{opacity:0;top:-10px;transform:rotate(0deg)}
-  20%{opacity:1}
-  100%{opacity:0;top:110%;transform:rotate(360deg)}
-}
-/* Journey text panel */
-.j-body{
-  padding:72px 60px;
-  display:flex;flex-direction:column;justify-content:center;
-  background:var(--green2);
-  min-height:50vh;
-}
-@media(max-width:768px){.j-body{padding:40px 24px;min-height:auto}}
-.j-step-num{
-  font-family:'Bebas Neue',sans-serif;
-  font-size:100px;color:var(--gold);
-  line-height:1;margin-bottom:0;opacity:.12;
-  letter-spacing:-2px;
-}
-.j-eyebrow{
-  font-size:10.5px;font-weight:700;letter-spacing:3.5px;
-  color:var(--gold);text-transform:uppercase;margin-bottom:16px;
-  margin-top:-14px;
-}
-.j-body h3{
-  font-size:clamp(44px,5.5vw,72px);
-  line-height:.88;margin-bottom:22px;
-}
-.j-body h3 .gold{color:var(--gold)}
-.j-body p{color:var(--muted2);font-size:16px;line-height:1.8;max-width:440px}
-/* connector line between steps */
-.journey-connector{
-  height:2px;
-  background:linear-gradient(90deg, transparent, var(--gold-border), transparent);
-  margin:0;
-}
-/* scale up all scenes for full-screen */
-.j-scene{transform:scale(1.3)}
+@media(max-width:768px){.journey-step{grid-template-columns:1fr;min-height:auto}}
+.j-visual{background:var(--bg3);display:flex;align-items:center;justify-content:center;min-height:50vh;position:relative;overflow:hidden}
+@media(max-width:768px){.j-visual{min-height:60vw}}
+.j-glow{position:absolute;inset:0;pointer-events:none}
+.j-glow.red{background:radial-gradient(ellipse 70% 60% at 50% 50%,rgba(220,38,38,0.1),transparent 70%)}
+.j-glow.gold{background:radial-gradient(ellipse 70% 60% at 50% 50%,rgba(247,147,26,0.1),transparent 70%)}
+.j-scene{position:relative;z-index:1;transform:scale(1.2);display:flex;align-items:center;justify-content:center;width:100%;height:100%;padding:40px}
 @media(max-width:768px){.j-scene{transform:scale(1)}}
+.j-body{background:var(--bg2);padding:72px 60px;display:flex;flex-direction:column;justify-content:center;min-height:50vh}
+@media(max-width:768px){.j-body{padding:40px 24px;min-height:auto}}
+.j-num{font-family:'Bebas Neue',sans-serif;font-size:110px;line-height:1;color:var(--red);opacity:.12;letter-spacing:-2px}
+.j-eyebrow{font-size:10px;font-weight:700;letter-spacing:3.5px;text-transform:uppercase;margin-bottom:16px;margin-top:-18px}
+.j-eyebrow.red{color:var(--red)}
+.j-eyebrow.gold{color:var(--gold)}
+.j-body h3{font-size:clamp(46px,5.5vw,72px);line-height:.88;margin-bottom:22px}
+.j-body h3 .r{color:var(--red)}
+.j-body h3 .g{color:var(--gold)}
+.j-body p{color:var(--muted2);font-size:15.5px;line-height:1.8;max-width:440px}
+.j-cta{margin-top:28px}
+.j-divider{height:1px;background:linear-gradient(90deg,transparent,rgba(220,38,38,0.25),transparent)}
 
-/* ─── WIN BLOCK ─── */
-.win-section{
-  background:var(--green);
-  padding:88px 32px;
-  position:relative;overflow:hidden;
-}
-.win-section::before{
-  content:'';position:absolute;
-  top:0;left:50%;transform:translateX(-50%);
-  width:800px;height:800px;
-  background:radial-gradient(circle, rgba(247,147,26,0.07) 0%, transparent 65%);
-  pointer-events:none;
-}
-.win-inner{
-  max-width:800px;margin:0 auto;text-align:center;
-  position:relative;z-index:1;
-}
-.win-badge{
-  display:inline-flex;align-items:center;gap:8px;
-  border:1px solid var(--gold-border);
-  padding:7px 16px;border-radius:2px;
-  font-size:10px;font-weight:700;letter-spacing:2.5px;
-  color:var(--gold);text-transform:uppercase;
-  margin-bottom:20px;
-  background:var(--gold-dim);
-}
-.win-dot{
-  width:7px;height:7px;background:var(--gold);
-  border-radius:50%;flex-shrink:0;
-  animation:pulse 1.8s ease-in-out infinite;
-}
-@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.4;transform:scale(.65)}}
-.win-amount{
-  font-family:'Bebas Neue',sans-serif;
-  font-size:clamp(72px,14vw,128px);
-  color:var(--gold);line-height:.88;
-  margin-bottom:16px;letter-spacing:2px;
-}
-.win-detail{
-  color:var(--muted2);font-size:15px;
-  max-width:480px;margin:0 auto 32px;line-height:1.7;
-}
-.win-detail strong{color:var(--text)}
-.win-divider{
-  width:1px;height:60px;background:var(--border2);
-  margin:0 auto;
-}
+/* SCENES */
+.scene-delivery{position:relative;width:240px;height:240px}
+.truck{font-size:90px;position:absolute;top:20px;left:50%;transform:translateX(-50%);animation:truckRock 2.8s ease-in-out infinite}
+@keyframes truckRock{0%,100%{transform:translateX(-50%) translateX(-12px)}50%{transform:translateX(-50%) translateX(12px)}}
+.road{position:absolute;bottom:30px;left:0;right:0;height:3px;background:var(--border2)}
+.road-sparks{position:absolute;bottom:33px;left:50%;display:flex;gap:5px;transform:translateX(-50%);animation:sparkle 1.4s ease-in-out infinite}
+@keyframes sparkle{0%,100%{opacity:0}50%{opacity:1}}
+.spark-dot{width:5px;height:5px;background:var(--gold);border-radius:50%}
 
-/* ─── SHOP ─── */
-.shop-section{
-  background:var(--green2);
-  padding:88px 32px;
-}
-@media(max-width:600px){.shop-section{padding:60px 16px}}
-.shop-inner{max-width:1120px;margin:0 auto}
-.shop-grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fill,minmax(300px,1fr));
-  gap:2px;
-  margin-top:52px;
-}
-.product-card{
-  background:var(--green3);
-  padding:28px 24px;
-  display:flex;flex-direction:column;
-  transition:background .2s;
-  position:relative;
-  border-top:1px solid var(--border);
-}
-.product-card::before{
-  content:'';position:absolute;top:0;left:0;right:0;
-  height:2px;background:var(--gold);
-  transform:scaleX(0);transform-origin:left;
-  transition:transform .3s ease;
-}
+.scene-unbox{position:relative;width:220px;height:220px;perspective:400px}
+.box-base{position:absolute;bottom:20px;left:50%;transform:translateX(-50%);width:130px;height:100px;background:linear-gradient(135deg,#2d1800,#1a1000);border:2px solid rgba(247,147,26,.3);display:flex;align-items:center;justify-content:center}
+.box-logo{font-family:'Bebas Neue',sans-serif;font-size:18px;color:rgba(247,147,26,.4);letter-spacing:2px}
+.box-top{position:absolute;bottom:118px;left:50%;width:138px;height:28px;background:linear-gradient(135deg,#3d2200,#281500);border:2px solid rgba(247,147,26,.3);transform:translateX(-50%);transform-origin:bottom center;animation:lidOpen 2.2s ease-in-out infinite}
+@keyframes lidOpen{0%,25%,100%{transform:translateX(-50%) rotateX(0deg)}45%,80%{transform:translateX(-50%) rotateX(-60deg)}}
+.box-glow{position:absolute;top:20px;left:50%;transform:translateX(-50%);font-size:40px;animation:popOut 2.2s ease-in-out infinite;opacity:0}
+@keyframes popOut{0%,30%{opacity:0;transform:translateX(-50%) translateY(14px)}50%,75%{opacity:1;transform:translateX(-50%) translateY(0)}90%,100%{opacity:0}}
+
+.scene-plug{position:relative;width:260px;height:240px}
+.wall-outlet{position:absolute;right:20px;top:50%;transform:translateY(-50%);width:68px;height:88px;background:#181820;border:2px solid var(--border2);border-radius:8px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px}
+.outlet-slot{width:9px;height:16px;background:#0a0a12;border-radius:3px}
+.power-cable{position:absolute;left:16px;top:50%;height:3px;background:linear-gradient(90deg,var(--gold),rgba(247,147,26,.3));border-radius:2px;transform:translateY(-50%);animation:cableExtend 2.4s ease-in-out infinite}
+@keyframes cableExtend{0%,100%{width:60px;opacity:.4}55%,75%{width:96px;opacity:1}}
+.plug-tip{position:absolute;left:108px;top:50%;transform:translateY(-50%);width:16px;height:22px;background:var(--gold);animation:cableExtend 2.4s ease-in-out infinite}
+.miner-unit{position:absolute;left:10px;top:50%;transform:translateY(-50%);width:60px;height:50px;background:linear-gradient(135deg,#1e1e28,#141420);border:1px solid var(--border2);border-radius:6px;display:flex;align-items:center;justify-content:center}
+.miner-led-small{width:8px;height:8px;background:#333;border-radius:50%;transition:background .5s}
+.zap-icon{position:absolute;right:8px;top:32%;font-size:24px;animation:zapAnim 2.4s ease-in-out infinite;opacity:0}
+@keyframes zapAnim{0%,45%{opacity:0}60%,78%{opacity:1}92%,100%{opacity:0}}
+
+.scene-compute{position:relative;width:260px;height:240px}
+.hash-bg{position:absolute;inset:0;font-family:monospace;font-size:9px;color:rgba(220,38,38,0.18);line-height:2;overflow:hidden;padding:8px;letter-spacing:1px}
+.hash-bg span{display:block;animation:hashFade 2.2s linear infinite;opacity:0}
+.hash-bg span:nth-child(1){animation-delay:0s}
+.hash-bg span:nth-child(2){animation-delay:.55s}
+.hash-bg span:nth-child(3){animation-delay:1.1s}
+.hash-bg span:nth-child(4){animation-delay:1.65s}
+@keyframes hashFade{0%{opacity:0}20%{opacity:1}80%{opacity:1}100%{opacity:0}}
+.miner-device{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:140px;height:80px;background:linear-gradient(135deg,#1e1e2e,#14141e);border:1px solid rgba(220,38,38,.4);border-radius:10px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;box-shadow:0 0 40px rgba(220,38,38,.15),0 0 80px rgba(220,38,38,.05)}
+.device-leds{display:flex;gap:7px}
+.led{width:8px;height:8px;border-radius:50%;animation:ledBlink 1.1s ease-in-out infinite}
+.led.r{background:var(--red);animation-delay:0s}
+.led.g{background:var(--gold);animation-delay:.36s}
+.led.gr{background:#22c55e;animation-delay:.72s}
+@keyframes ledBlink{0%,100%{opacity:.2;transform:scale(.8)}50%{opacity:1;transform:scale(1)}}
+.hash-bar{width:100px;height:5px;background:#1a1a2a;border-radius:3px;overflow:hidden}
+.hash-fill{height:100%;background:linear-gradient(90deg,var(--red),var(--gold));border-radius:3px;animation:hashProgress 2s ease-in-out infinite}
+@keyframes hashProgress{0%{width:0%}65%{width:100%}100%{width:100%}}
+.device-label{font-size:8px;font-weight:700;letter-spacing:2px;color:rgba(255,255,255,.2);text-transform:uppercase}
+
+.scene-win{position:relative;width:280px;height:240px;display:flex;align-items:center;justify-content:center}
+.win-halo{position:absolute;inset:0;background:radial-gradient(circle at 50% 50%,rgba(247,147,26,.25) 0%,transparent 65%);animation:haloPulse 1.6s ease-in-out infinite}
+@keyframes haloPulse{0%,100%{transform:scale(.9);opacity:.6}50%{transform:scale(1.1);opacity:1}}
+.win-b{font-family:'Bebas Neue',sans-serif;font-size:100px;color:var(--gold);position:relative;z-index:1;animation:bPulse 1.6s ease-in-out infinite;text-shadow:0 0 60px rgba(247,147,26,.7)}
+@keyframes bPulse{0%,100%{transform:scale(1)}50%{transform:scale(1.07)}}
+.win-amount-display{position:absolute;bottom:10px;left:50%;transform:translateX(-50%);font-family:'Bebas Neue',sans-serif;font-size:22px;color:var(--gold);letter-spacing:2px;white-space:nowrap;animation:bPulse 1.6s ease-in-out infinite}
+.coins{position:absolute;inset:0;pointer-events:none;overflow:hidden}
+.coin{position:absolute;font-size:14px;animation:coinDrop 2.2s ease-in infinite;opacity:0}
+.coin:nth-child(1){left:10%;animation-delay:0s}
+.coin:nth-child(2){left:25%;animation-delay:.3s}
+.coin:nth-child(3){left:45%;animation-delay:.6s}
+.coin:nth-child(4){left:65%;animation-delay:.9s}
+.coin:nth-child(5){left:80%;animation-delay:1.2s}
+.coin:nth-child(6){left:35%;animation-delay:1.6s}
+@keyframes coinDrop{0%{top:-5%;opacity:0;transform:rotate(0)}15%{opacity:1}100%{top:110%;opacity:0;transform:rotate(420deg)}}
+
+/* SHOP */
+.shop{background:var(--bg);padding:96px 40px}
+@media(max-width:600px){.shop{padding:64px 20px}}
+.shop-inner{max-width:1140px;margin:0 auto}
+.shop-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:2px;margin-top:56px}
+.product-card{background:var(--bg2);padding:28px;display:flex;flex-direction:column;border-top:1px solid var(--border);position:relative;transition:background .2s}
+.product-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:var(--gold);transform:scaleX(0);transform-origin:left;transition:transform .35s}
 .product-card:hover::before{transform:scaleX(1)}
-.product-card:hover{background:var(--green4)}
-.product-tag{
-  display:inline-block;
-  font-size:9px;font-weight:800;letter-spacing:2.5px;
-  text-transform:uppercase;color:var(--gold);
-  margin-bottom:16px;width:fit-content;
-}
-.product-img-wrap{
-  background:rgba(0,0,0,.5);
-  border:1px solid var(--border);
-  display:flex;align-items:center;justify-content:center;
-  height:180px;margin-bottom:20px;overflow:hidden;
-  position:relative;
-}
-.product-img-wrap img{
-  width:100%;height:100%;
-  object-fit:contain;padding:18px;
-}
-.product-name{
-  font-family:'Bebas Neue',sans-serif;
-  font-size:28px;letter-spacing:.5px;margin-bottom:6px;
-}
-.product-desc{
-  color:var(--muted);font-size:13.5px;line-height:1.65;
-  margin-bottom:20px;flex:1;
-}
-.product-specs{
-  display:flex;gap:20px;flex-wrap:wrap;
-  margin-bottom:20px;padding-bottom:20px;
-  border-bottom:1px solid var(--border);
-}
+.product-card:hover{background:var(--bg3)}
+.product-tag{font-size:9px;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:16px;display:block}
+.product-img-wrap{background:#0d0d0d;border:1px solid var(--border);height:180px;display:flex;align-items:center;justify-content:center;margin-bottom:18px;overflow:hidden}
+.product-img-wrap img{width:100%;height:100%;object-fit:contain;padding:16px}
+.product-name{font-family:'Bebas Neue',sans-serif;font-size:28px;margin-bottom:6px;letter-spacing:.3px}
+.product-desc{color:var(--muted);font-size:13.5px;line-height:1.65;margin-bottom:18px;flex:1}
+.product-specs{display:flex;gap:18px;flex-wrap:wrap;padding-bottom:18px;margin-bottom:18px;border-bottom:1px solid var(--border)}
 .spec{font-size:10px;text-transform:uppercase;letter-spacing:.5px;color:var(--muted);font-weight:600}
-.spec strong{
-  display:block;color:var(--text);
-  font-size:13px;text-transform:none;letter-spacing:0;
-  font-weight:700;margin-top:3px;
-}
-.product-price{
-  font-family:'Bebas Neue',sans-serif;
-  font-size:30px;color:var(--gold);
-  margin-bottom:16px;line-height:1;
-}
-.product-price small{
-  font-size:12px;color:var(--muted);
-  font-family:'DM Sans',sans-serif;
-  font-weight:400;margin-left:6px;
-}
-.buy-btn{
-  display:block;text-align:center;
-  background:var(--gold);color:#000;
-  font-weight:800;font-size:12.5px;letter-spacing:.6px;
-  text-transform:uppercase;
-  padding:14px;border-radius:2px;border:none;cursor:pointer;
-  font-family:'DM Sans',sans-serif;
-  transition:opacity .15s,transform .15s;
-}
+.spec strong{display:block;color:var(--text);font-size:13px;text-transform:none;letter-spacing:0;font-weight:700;margin-top:3px}
+.product-price{font-family:'Bebas Neue',sans-serif;font-size:30px;color:var(--gold);margin-bottom:16px}
+.product-price small{font-size:12px;color:var(--muted);font-family:'DM Sans',sans-serif;font-weight:400;margin-left:6px}
+.buy-btn{display:block;text-align:center;background:var(--gold);color:#000;font-weight:800;font-size:12px;letter-spacing:.8px;text-transform:uppercase;padding:14px;border:none;cursor:pointer;font-family:'DM Sans',sans-serif;transition:opacity .15s,transform .15s}
 .buy-btn:hover{opacity:.88;transform:translateY(-1px)}
-.buy-btn:active{transform:translateY(0)}
-.buy-btn:disabled{opacity:.45;cursor:not-allowed;transform:none}
-.buy-btn.outline{
-  background:transparent;
-  border:1px solid var(--gold-border);
-  color:var(--gold);
-}
+.buy-btn:disabled{opacity:.4;cursor:not-allowed;transform:none}
+.buy-btn.outline{background:transparent;border:1px solid var(--gold-border);color:var(--gold)}
 .buy-btn.outline:hover{background:var(--gold-dim)}
 
-/* ─── ABOUT ─── */
-.about-section{
-  background:var(--green);
-}
-.about-inner{
-  max-width:1120px;margin:0 auto;
-  display:grid;grid-template-columns:1fr 1fr;
-  min-height:600px;
-}
-@media(max-width:768px){
-  .about-inner{grid-template-columns:1fr}
-  .about-photo-wrap{min-height:360px}
-}
-.about-photo-wrap{
-  position:relative;overflow:hidden;
-}
-.about-photo-wrap-placeholder{width:100%;height:100%;min-height:500px;background:linear-gradient(135deg,#1a0e00,#0d0c10);display:flex;align-items:center;justify-content:center;font-family:"Bebas Neue",sans-serif;font-size:48px;color:rgba(247,147,26,.3);letter-spacing:4px}.about-photo-wrap img{
-  width:100%;height:100%;
-  object-fit:cover;object-position:center top;
-  display:block;
-}
-.about-photo-wrap::after{
-  content:'';position:absolute;inset:0;
-  background:linear-gradient(90deg,transparent 50%,var(--green) 100%);
-}
-@media(max-width:768px){
-  .about-photo-wrap::after{
-    background:linear-gradient(0deg,var(--green) 0%,transparent 55%);
-  }
-}
-.about-text{
-  padding:72px 56px;
-  display:flex;flex-direction:column;justify-content:center;
-  background:var(--green);
-}
-@media(max-width:768px){.about-text{padding:44px 24px}}
-.about-text .sec-eyebrow{text-align:left}
-.about-text h2{
-  font-size:clamp(40px,5.5vw,66px);
-  line-height:.9;margin-bottom:22px;text-align:left;
-}
-.about-text h2 .gold{color:var(--gold)}
-.about-text p{
-  color:var(--muted2);font-size:15px;line-height:1.8;
-  margin-bottom:14px;
-}
-.about-text p strong{color:var(--text)}
+/* WIN PROOF */
+.win-proof{background:var(--bg2);padding:96px 40px;text-align:center;position:relative;overflow:hidden}
+@media(max-width:600px){.win-proof{padding:64px 20px}}
+.win-proof::before{content:'';position:absolute;top:0;left:50%;transform:translateX(-50%);width:900px;height:900px;background:radial-gradient(circle,rgba(247,147,26,.07) 0%,transparent 60%);pointer-events:none}
+.win-proof-inner{max-width:800px;margin:0 auto;position:relative;z-index:1}
+.win-live-badge{display:inline-flex;align-items:center;gap:8px;border:1px solid var(--gold-border);padding:7px 18px;font-size:10px;font-weight:700;letter-spacing:2.5px;color:var(--gold);text-transform:uppercase;margin-bottom:22px;background:var(--gold-dim)}
+.live-dot{width:7px;height:7px;background:var(--gold);border-radius:50%;animation:livePulse 1.8s ease-in-out infinite}
+@keyframes livePulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.3;transform:scale(.6)}}
+.win-big-num{font-family:'Bebas Neue',sans-serif;font-size:clamp(80px,15vw,140px);color:var(--gold);line-height:.88;letter-spacing:3px;margin-bottom:16px}
+.win-proof-detail{color:var(--muted2);font-size:15px;max-width:500px;margin:0 auto 36px;line-height:1.75}
+.win-proof-detail strong{color:var(--text)}
+.win-proof-divider{width:1px;height:60px;background:var(--border2);margin:0 auto}
+
+/* ABOUT */
+.about{background:var(--bg)}
+.about-inner{max-width:1140px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;min-height:600px}
+@media(max-width:768px){.about-inner{grid-template-columns:1fr}}
+.about-photo{position:relative;overflow:hidden;min-height:500px}
+@media(max-width:768px){.about-photo{min-height:360px}}
+.about-photo img{width:100%;height:100%;object-fit:cover;object-position:center top}
+.about-photo::after{content:'';position:absolute;inset:0;background:linear-gradient(90deg,transparent 50%,var(--bg) 100%)}
+@media(max-width:768px){.about-photo::after{background:linear-gradient(0deg,var(--bg) 0%,transparent 55%)}}
+.about-body{padding:72px 60px;display:flex;flex-direction:column;justify-content:center;background:var(--bg)}
+@media(max-width:768px){.about-body{padding:44px 24px}}
+.about-body h2{font-size:clamp(42px,5.5vw,68px);line-height:.88;margin-bottom:22px}
+.about-body h2 .g{color:var(--gold)}
+.about-body h2 .r{color:var(--red)}
+.about-body p{color:var(--muted2);font-size:15px;line-height:1.8;margin-bottom:14px}
+.about-body p strong{color:var(--text)}
 .social-links{display:flex;gap:8px;flex-wrap:wrap;margin-top:24px}
-.social-link{
-  background:var(--green3);
-  border:1px solid var(--border2);
-  padding:9px 16px;border-radius:2px;
-  font-size:12.5px;font-weight:600;
-  transition:border-color .18s,color .18s;
-}
+.social-link{background:var(--bg2);border:1px solid var(--border2);padding:9px 16px;font-size:12.5px;font-weight:600;transition:border-color .18s,color .18s;cursor:pointer}
 .social-link:hover{border-color:var(--gold-border);color:var(--gold)}
 
-/* ─── REVIEWS ─── */
-.reviews-section{
-  background:var(--green2);
-  padding:88px 32px;
-}
-@media(max-width:600px){.reviews-section{padding:60px 16px}}
-.reviews-inner{max-width:1120px;margin:0 auto}
-.review-score-row{
-  text-align:center;margin-bottom:52px;
-}
-.review-score-num{
-  font-family:'Bebas Neue',sans-serif;
-  font-size:96px;color:var(--gold);line-height:1;
-}
-.review-stars{color:var(--gold);font-size:20px;letter-spacing:4px;margin:8px 0}
-.review-cta-btn{
-  display:inline-flex;align-items:center;gap:8px;
-  background:#fff;border-radius:3px;
-  padding:9px 18px;font-size:12px;font-weight:700;
-  color:#111;margin-top:16px;cursor:pointer;
-  transition:opacity .15s;
-}
+/* REVIEWS */
+.reviews{background:var(--bg2);padding:96px 40px}
+@media(max-width:600px){.reviews{padding:64px 20px}}
+.reviews-inner{max-width:1140px;margin:0 auto}
+.review-top{text-align:center;margin-bottom:52px}
+.review-score{font-family:'Bebas Neue',sans-serif;font-size:100px;color:var(--gold);line-height:1}
+.review-stars{color:var(--gold);font-size:22px;letter-spacing:4px;margin:8px 0}
+.review-cta-btn{display:inline-flex;align-items:center;gap:8px;background:#fff;padding:9px 18px;font-size:12px;font-weight:700;color:#111;margin-top:14px;cursor:pointer;transition:opacity .15s}
 .review-cta-btn:hover{opacity:.88}
-.review-grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(290px,1fr));
-  gap:2px;
-}
-.review-card{
-  background:var(--green3);
-  padding:28px;border-top:1px solid var(--border);
-  transition:background .2s;
-}
-.review-card:hover{background:var(--green4)}
-.r-stars{color:var(--gold);font-size:13px;margin-bottom:14px;letter-spacing:2px}
-.r-text{
-  color:#c8c8b8;font-size:14px;line-height:1.75;
-  margin-bottom:20px;font-style:italic;
-}
+.review-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:2px}
+.review-card{background:var(--bg3);padding:28px;border-top:1px solid var(--border);transition:background .2s}
+.review-card:hover{background:var(--bg4)}
+.r-stars{color:var(--gold);font-size:13px;letter-spacing:2px;margin-bottom:14px}
+.r-text{color:#c8c8be;font-size:14px;line-height:1.75;margin-bottom:18px;font-style:italic}
 .r-author{display:flex;align-items:center;gap:10px}
-.r-avatar{
-  width:40px;height:40px;border-radius:50%;
-  background:var(--gold-dim);border:1px solid var(--gold-border);
-  display:flex;align-items:center;justify-content:center;
-  font-weight:800;font-size:15px;color:var(--gold);flex-shrink:0;
-}
+.r-av{width:40px;height:40px;border-radius:50%;background:var(--gold-dim);border:1px solid var(--gold-border);display:flex;align-items:center;justify-content:center;font-weight:800;font-size:15px;color:var(--gold);flex-shrink:0}
 .r-name{font-weight:700;font-size:13px}
 .r-date{font-size:11px;color:var(--muted)}
 
-/* ─── FAQ ─── */
-.faq-section{
-  background:var(--green);
-  padding:88px 32px;
-}
-@media(max-width:600px){.faq-section{padding:60px 16px}}
+/* FAQ */
+.faq{background:var(--bg);padding:96px 40px}
+@media(max-width:600px){.faq{padding:64px 20px}}
 .faq-inner{max-width:720px;margin:0 auto}
-.faq-list{display:flex;flex-direction:column;gap:2px;margin-top:48px}
-.faq-item{
-  background:var(--green2);
-  border-top:1px solid var(--border);
-  overflow:hidden;transition:border-color .2s;
-}
+.faq-list{margin-top:48px;display:flex;flex-direction:column;gap:2px}
+.faq-item{background:var(--bg2);border-top:1px solid var(--border);transition:border-color .2s}
 .faq-item.open{border-color:var(--gold-border)}
-.faq-q{
-  padding:22px 24px;font-size:15px;font-weight:700;
-  cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:14px;
-}
-.faq-arrow{color:var(--gold);font-size:18px;transition:transform .28s;flex-shrink:0}
-.faq-item.open .faq-arrow{transform:rotate(180deg)}
+.faq-q{padding:22px 24px;font-size:15px;font-weight:700;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:14px}
+.faq-arr{color:var(--gold);font-size:18px;transition:transform .28s;flex-shrink:0}
+.faq-item.open .faq-arr{transform:rotate(180deg)}
 .faq-a{max-height:0;overflow:hidden;transition:max-height .32s ease}
 .faq-item.open .faq-a{max-height:300px}
 .faq-a p{padding:0 24px 22px;color:var(--muted2);font-size:14px;line-height:1.75}
 
-/* ─── JOIN ─── */
-.join-section{
-  background:var(--green2);
-  padding:88px 32px;
-}
-@media(max-width:600px){.join-section{padding:60px 16px}}
+/* JOIN */
+.join{background:var(--bg2);padding:96px 40px}
+@media(max-width:600px){.join{padding:64px 20px}}
 .join-inner{max-width:540px;margin:0 auto;text-align:center}
-.join-inner h2{font-size:clamp(42px,7vw,68px);margin-bottom:16px;line-height:.92}
-.join-inner h2 .gold{color:var(--gold)}
+.join-inner h2{font-size:clamp(44px,7vw,72px);margin-bottom:16px;line-height:.88}
+.join-inner h2 .r{color:var(--red)}
+.join-inner h2 .g{color:var(--gold)}
 .join-sub{color:var(--muted2);font-size:15px;margin-bottom:36px;line-height:1.65}
 .join-form{display:flex;flex-direction:column;gap:12px}
 .form-row{display:flex;gap:10px;flex-wrap:wrap}
 .field-wrap{display:flex;flex-direction:column;gap:7px;flex:1;min-width:160px;text-align:left}
-.field-label{font-size:11px;font-weight:700;color:var(--muted2);letter-spacing:.3px;text-transform:uppercase}
-.req{color:var(--gold)}
-.field-input{
-  width:100%;padding:14px 18px;
-  border:1px solid var(--border2);border-radius:2px;
-  background:#0d0c10;color:var(--text);
-  font-size:14px;font-family:'DM Sans',sans-serif;
-  transition:border-color .18s;
-}
+.field-label{font-size:10.5px;font-weight:700;color:var(--muted2);letter-spacing:.3px;text-transform:uppercase}
+.req{color:var(--red)}
+.field-input{width:100%;padding:14px 18px;border:1px solid var(--border2);background:#111;color:var(--text);font-size:14px;font-family:'DM Sans',sans-serif;transition:border-color .18s}
 .field-input:focus{outline:none;border-color:var(--gold-border)}
-.field-input::placeholder{color:#55527a}
-.sms-row{
-  display:flex;align-items:center;gap:12px;
-  background:var(--gold-dim);border:1px solid var(--gold-border);
-  border-radius:2px;padding:14px 16px;cursor:pointer;text-align:left;
-}
+.field-input::placeholder{color:#444}
+.sms-row{display:flex;align-items:center;gap:12px;background:var(--gold-dim);border:1px solid var(--gold-border);padding:14px 16px;cursor:pointer;text-align:left}
 .sms-text{font-size:13px;font-weight:700;color:var(--text)}
 .sms-hint{font-size:11px;color:var(--muted);margin-top:2px}
-.sms-check{
-  width:20px;height:20px;border-radius:2px;
-  border:2px solid var(--gold);
-  display:flex;align-items:center;justify-content:center;
-  flex-shrink:0;margin-left:auto;
-  font-size:11px;font-weight:900;color:#000;
-  transition:background .15s;
-}
+.sms-check{width:20px;height:20px;border:2px solid var(--gold);display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-left:auto;font-size:11px;font-weight:900;color:#000;transition:background .15s}
 .sms-check.on{background:var(--gold)}
-.join-submit{
-  width:100%;padding:16px;
-  background:var(--gold);color:#000;
-  font-weight:800;font-size:13px;letter-spacing:.6px;text-transform:uppercase;
-  border:none;border-radius:2px;cursor:pointer;
-  font-family:'DM Sans',sans-serif;
-  transition:opacity .15s,transform .15s;
-}
+.join-submit{width:100%;padding:16px;background:var(--red);color:#fff;font-weight:800;font-size:13px;letter-spacing:.6px;text-transform:uppercase;border:none;cursor:pointer;font-family:'DM Sans',sans-serif;transition:opacity .15s,transform .15s}
 .join-submit:hover{opacity:.88;transform:translateY(-1px)}
-.join-perks{
-  display:flex;gap:14px;justify-content:center;flex-wrap:wrap;
-  margin-top:14px;
-}
+.join-perks{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;margin-top:14px}
 .perk{font-size:11.5px;color:var(--muted);display:flex;align-items:center;gap:5px}
 .perk::before{content:'✓';color:var(--gold);font-weight:700}
-.sms-legal{font-size:10.5px;color:#44425e;line-height:1.6;margin-top:6px}
-.join-success{
-  display:none;
-  background:var(--gold-dim);border:1px solid var(--gold-border);
-  border-radius:2px;padding:16px;
-  color:var(--gold);font-weight:700;font-size:14px;
-}
+.sms-legal{font-size:10.5px;color:#444;line-height:1.6;margin-top:6px}
+.join-success{display:none;background:var(--gold-dim);border:1px solid var(--gold-border);padding:16px;color:var(--gold);font-weight:700;font-size:14px}
 
-/* ─── FOOTER ─── */
-footer{
-  background:#060509;
-  padding:56px 32px 36px;
-  border-top:1px solid var(--border);
-}
+/* FOOTER */
+footer{background:#060606;padding:60px 40px 36px;border-top:1px solid var(--border)}
 @media(max-width:600px){footer{padding:44px 20px 32px}}
-.foot-inner{
-  max-width:1120px;margin:0 auto;
-  display:grid;grid-template-columns:repeat(auto-fit,minmax(155px,1fr));
-  gap:36px;margin-bottom:40px;
-}
+.foot-grid{max-width:1140px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:36px;margin-bottom:40px}
 .foot-logo{font-family:'Bebas Neue',sans-serif;font-size:26px;letter-spacing:3px;margin-bottom:10px}
-.foot-logo span{color:var(--gold)}
-.foot-badge{
-  display:inline-block;
-  background:var(--green2);border:1px solid var(--gold-border);
-  padding:6px 12px;border-radius:2px;
-  font-size:9.5px;color:var(--gold);font-weight:700;letter-spacing:.5px;
-  text-transform:uppercase;margin-top:8px;
-}
-.foot-col h5{
-  color:var(--gold);font-size:9px;letter-spacing:3px;
-  text-transform:uppercase;margin-bottom:16px;font-weight:700;
-}
-.foot-col a,.foot-col p{
-  display:block;color:var(--muted);font-size:13px;
-  margin-bottom:9px;transition:color .18s;
-}
+.foot-logo .r{color:var(--red)}
+.foot-logo .g{color:var(--gold)}
+.foot-desc{color:var(--muted);font-size:13px;margin-bottom:10px;line-height:1.6}
+.foot-badge{display:inline-block;border:1px solid var(--gold-border);padding:6px 12px;font-size:9px;color:var(--gold);font-weight:700;letter-spacing:.5px;text-transform:uppercase}
+.foot-col h5{color:var(--red);font-size:9px;letter-spacing:3px;text-transform:uppercase;margin-bottom:16px;font-weight:700}
+.foot-col a{display:block;color:var(--muted);font-size:13px;margin-bottom:9px;transition:color .18s;cursor:pointer}
 .foot-col a:hover{color:var(--text)}
-.legal{
-  text-align:center;color:#3a384a;font-size:10.5px;
-  padding-top:22px;border-top:1px solid var(--border);
-  line-height:1.9;max-width:1120px;margin:0 auto;
-}
+.legal{text-align:center;color:#333;font-size:10.5px;padding-top:22px;border-top:1px solid var(--border);line-height:1.9;max-width:1140px;margin:0 auto}
 
-/* ─── BOT BAR ─── */
-.bot-bar{
-  position:fixed;bottom:0;left:0;right:0;
-  height:var(--bot-h);
-  background:rgba(8,7,12,.96);
-  backdrop-filter:blur(16px);
-  -webkit-backdrop-filter:blur(16px);
-  border-top:1px solid var(--border2);
-  z-index:398;
-  display:flex;align-items:center;justify-content:center;
-  gap:10px;cursor:pointer;
-  transition:background .18s;
-}
-.bot-bar:hover{background:rgba(12,11,16,.98)}
-.bot-icon{
-  width:28px;height:28px;
-  background:var(--gold-dim);border:1px solid var(--gold-border);
-  border-radius:50%;display:flex;align-items:center;justify-content:center;
-  font-size:14px;flex-shrink:0;
-}
+/* BOT BAR */
+.bot-bar{position:fixed;bottom:0;left:0;right:0;height:var(--bot-h);background:rgba(8,8,8,.96);backdrop-filter:blur(16px);border-top:1px solid var(--border2);z-index:400;display:flex;align-items:center;justify-content:center;gap:10px;cursor:pointer;transition:background .18s}
+.bot-bar:hover{background:rgba(14,14,14,.98)}
+.bot-icon{width:28px;height:28px;background:var(--red-dim);border:1px solid var(--red-border);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:14px;flex-shrink:0}
 .bot-label{font-size:12.5px;font-weight:700;color:var(--text);letter-spacing:.3px}
 .bot-label span{color:var(--gold)}
-.bot-up{color:var(--gold);font-size:13px;margin-left:2px}
 
-/* ─── WHATSAPP ─── */
-.wa{
-  position:fixed;
-  bottom:calc(var(--bot-h) + 14px);right:18px;
-  width:50px;height:50px;
-  background:#25D366;border-radius:50%;
-  display:flex;align-items:center;justify-content:center;
-  box-shadow:0 8px 22px rgba(37,211,102,.32);
-  z-index:397;font-size:24px;
-  transition:transform .18s,box-shadow .18s;
-  text-decoration:none;
-}
-.wa:hover{transform:scale(1.1);box-shadow:0 12px 30px rgba(37,211,102,.44)}
+/* WHATSAPP */
+.wa{position:fixed;bottom:calc(var(--bot-h) + 14px);right:18px;width:50px;height:50px;background:#25D366;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 8px 22px rgba(37,211,102,.32);z-index:399;font-size:24px;transition:transform .18s;text-decoration:none}
+.wa:hover{transform:scale(1.1)}
 
-/* ─── PURCHASE MODAL ─── */
-.p-modal{
-  display:none;position:fixed;inset:0;
-  background:rgba(0,0,0,.88);z-index:600;
-  align-items:center;justify-content:center;padding:20px;
-}
+/* PURCHASE MODAL */
+.p-modal{display:none;position:fixed;inset:0;background:rgba(0,0,0,.9);z-index:600;align-items:center;justify-content:center;padding:20px}
 .p-modal.open{display:flex}
-.p-modal-box{
-  background:#0d0c14;
-  border:1px solid var(--gold-border);
-  border-radius:4px;padding:40px 30px;
-  max-width:420px;width:100%;
-  text-align:center;position:relative;
-}
-.p-modal-close{
-  position:absolute;top:14px;right:18px;
-  background:none;border:none;color:#55527a;
-  font-size:22px;cursor:pointer;transition:color .15s;
-}
-.p-modal-close:hover{color:var(--text)}
-.p-modal-icon{font-size:36px;margin-bottom:14px;display:block}
+.p-modal-box{background:#111;border:1px solid var(--gold-border);padding:40px 30px;max-width:420px;width:100%;text-align:center;position:relative}
+.p-close{position:absolute;top:14px;right:18px;background:none;border:none;color:#555;font-size:22px;cursor:pointer;transition:color .15s}
+.p-close:hover{color:var(--text)}
 .p-modal-box h3{font-size:30px;margin-bottom:10px}
 .p-modal-box p{color:var(--muted2);font-size:14px;margin-bottom:24px;line-height:1.6}
 .p-form{display:flex;flex-direction:column;gap:10px}
-.p-input{
-  padding:14px 18px;border-radius:2px;
-  border:1px solid var(--border2);background:#09080e;
-  color:var(--text);font-size:14px;font-family:'DM Sans',sans-serif;
-  transition:border-color .18s;
-}
+.p-input{padding:14px 18px;border:1px solid var(--border2);background:#0a0a0a;color:var(--text);font-size:14px;font-family:'DM Sans',sans-serif;transition:border-color .18s}
 .p-input:focus{outline:none;border-color:var(--gold-border)}
-.p-input::placeholder{color:#44425e}
-.p-submit{
-  padding:15px;background:var(--gold);color:#000;
-  font-weight:800;font-size:13.5px;letter-spacing:.4px;
-  border:none;border-radius:2px;cursor:pointer;
-  font-family:'DM Sans',sans-serif;transition:opacity .15s;
-}
+.p-input::placeholder{color:#444}
+.p-submit{padding:15px;background:var(--gold);color:#000;font-weight:800;font-size:13.5px;border:none;cursor:pointer;font-family:'DM Sans',sans-serif;transition:opacity .15s}
 .p-submit:hover{opacity:.88}
-.p-skip{
-  background:none;border:none;color:#55527a;
-  font-size:13px;cursor:pointer;padding:6px;transition:color .15s;
-}
+.p-skip{background:none;border:none;color:#555;font-size:13px;cursor:pointer;padding:6px;transition:color .15s}
 .p-skip:hover{color:var(--muted2)}
 
-/* ─── MOBILE SCROLL PADDING ─── */
 body{padding-bottom:var(--bot-h)}
-@media(max-width:768px){
-  .steps-grid{gap:2px}
-  .shop-grid{gap:2px}
-  .review-grid{gap:2px}
-}
 @keyframes fadeUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
-.hero-content > *{animation:fadeUp .6s ease forwards}
-.hero-eyebrow{animation-delay:.05s}
-.hero h1{animation-delay:.15s}
-.hero-sub{animation-delay:.28s}
-.hero-btns{animation-delay:.4s}
-.scroll-hint{animation-delay:.55s}
-.hero-eyebrow{animation-delay:0s}
-.hero h1{animation-delay:.1s}
-.hero-sub{animation-delay:.2s}
-.hero-btns{animation-delay:.3s}
-.scroll-hint{animation-delay:.45s}
 </style>
 </head>
 <body>
 
 <!-- NAV -->
 <nav class="nav" id="main-nav">
-  <div class="nav-logo" onclick="scrollToTop()">Bit<span>Solo</span></div>
+  <div class="nav-logo" onclick="goTo('hero')">DIGITAL<span class="r"> APE</span></div>
   <div class="nav-links">
-    <span class="nav-link show-mobile" onclick="scrollToSection('shop')">Shop</span>
-    <span class="nav-link" onclick="scrollToSection('about')">About</span>
-    <span class="nav-link" onclick="scrollToSection('faq')">FAQ</span>
-    <button class="nav-cta" onclick="scrollToSection('shop')">Shop Miners</button>
+    <span class="nav-link mobile" onclick="goTo('shop')">Shop</span>
+    <span class="nav-link" onclick="goTo('services')">Services</span>
+    <span class="nav-link" onclick="goTo('about')">About</span>
+    <span class="nav-link" onclick="goTo('faq')">FAQ</span>
+    <button class="nav-cta" onclick="goTo('shop')">Shop Miners</button>
   </div>
 </nav>
 
@@ -1049,297 +435,280 @@ body{padding-bottom:var(--bot-h)}
   <div class="hero-bg"></div>
   <div class="hero-grid"></div>
   <div class="hero-glow"></div>
-  <div class="hero-content" style="position:relative;z-index:2;display:flex;flex-direction:column;align-items:center;width:100%;padding:0 20px">
-    <p class="hero-eyebrow">Bitcoin Mining Hardware</p>
-    <h1>Own the<br/>Block.<br/><span class="gold">Own the</span><br/><span class="gold">Upside.</span></h1>
-    <p class="hero-sub">Authorized Canaan hardware. Ships same day from the US. No technical background needed.</p>
+  <div class="hero-inner">
+    <p class="hero-eyebrow">Bitcoin Mining · Flare Power · Real Hardware</p>
+    <h1>DIGITAL<br/><span class="r">APE</span></h1>
+    <p class="hero-tagline">Harnessing Energy. Mining Bitcoin. Building Wealth.</p>
+    <p class="hero-sub">Authorized Canaan hardware. Flare gas to Bitcoin. Same-day US shipping. No technical background needed.</p>
     <div class="hero-btns">
-      <button class="btn-solid" onclick="scrollToSection('shop')">Shop Miners</button>
-      <button class="btn-outline" onclick="scrollToSection('how')">Learn More</button>
+      <button class="btn-gold" onclick="goTo('shop')">Shop Miners</button>
+      <button class="btn-red" onclick="goTo('services')">Our Services</button>
+      <button class="btn-ghost" onclick="goTo('journey')">See How It Works</button>
     </div>
-    <div class="scroll-hint" onclick="scrollToSection('ticker')">
-      <span>Scroll</span>
-      <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M8 2v10M3 8l5 5 5-5"/></svg>
-    </div>
+  </div>
+  <div class="scroll-cue" onclick="goTo('ticker')">
+    <span>Scroll</span>
+    <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M8 2v10M3 8l5 5 5-5"/></svg>
   </div>
 </section>
 
 <!-- TICKER -->
 <div class="ticker" id="ticker">
   <div class="ticker-inner">
-    <span class="ticker-item">⚡ Authorized Canaan U.S. Distributor</span>
-    <span class="ticker-item">₿ Same-Day US Shipping</span>
-    <span class="ticker-item">🔌 Plug &amp; Mine in 15 Minutes</span>
-    <span class="ticker-item">🏆 Real Solo Win — $222,012 · April 2026</span>
-    <span class="ticker-item">⚡ Authorized Canaan U.S. Distributor</span>
-    <span class="ticker-item">₿ Same-Day US Shipping</span>
-    <span class="ticker-item">🔌 Plug &amp; Mine in 15 Minutes</span>
-    <span class="ticker-item">🏆 Real Solo Win — $222,012 · April 2026</span>
+    <span class="ticker-item"><span class="ticker-dot">◆</span>Authorized Canaan U.S. Distributor</span>
+    <span class="ticker-item"><span class="ticker-dot">◆</span>Flare Gas to Bitcoin</span>
+    <span class="ticker-item"><span class="ticker-dot">◆</span>Same-Day US Shipping</span>
+    <span class="ticker-item"><span class="ticker-dot">◆</span>Real Solo Win — $222,012 · April 2026</span>
+    <span class="ticker-item"><span class="ticker-dot">◆</span>Plug &amp; Mine in 15 Minutes</span>
+    <span class="ticker-item"><span class="ticker-dot">◆</span>Authorized Canaan U.S. Distributor</span>
+    <span class="ticker-item"><span class="ticker-dot">◆</span>Flare Gas to Bitcoin</span>
+    <span class="ticker-item"><span class="ticker-dot">◆</span>Same-Day US Shipping</span>
+    <span class="ticker-item"><span class="ticker-dot">◆</span>Real Solo Win — $222,012 · April 2026</span>
+    <span class="ticker-item"><span class="ticker-dot">◆</span>Plug &amp; Mine in 15 Minutes</span>
   </div>
 </div>
 
-<!-- JOURNEY ANIMATION -->
-<section class="journey" id="how">
-
-  <!-- Step 1: Delivered -->
-  <div class="journey-step">
-    <div class="j-visual">
-      <div class="j-visual-bg"></div>
-      <div class="j-scene">
-        <div class="scene-delivery">
-          <div class="delivery-truck">🚚</div>
-          <div class="delivery-road"></div>
-          <div class="delivery-sparks">
-            <div class="delivery-spark"></div>
-            <div class="delivery-spark"></div>
-            <div class="delivery-spark"></div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="j-body">
-      <div class="j-step-num">01</div>
-      <p class="j-eyebrow">Same-Day Shipping</p>
-      <h3>Delivered<br/>to Your <span class="gold">Door</span></h3>
-      <p>Order before 2PM and it ships the same day — from US soil. No customs, no overseas delays. Arrives in days.</p>
+<!-- MISSION -->
+<div class="mission" id="mission">
+  <div class="mission-visual">
+    <div class="mission-visual-bg"></div>
+    <div class="mission-stat">
+      <div class="mission-stat-num">$222K</div>
+      <div class="mission-stat-label">Solo Block Win</div>
+      <div class="mission-stat-sub">April 2026 · Block 944306</div>
     </div>
   </div>
-
-  <div class="journey-connector"></div>
-
-  <!-- Step 2: Unbox -->
-  <div class="journey-step">
-    <div class="j-body" style="order:1">
-      <div class="j-step-num">02</div>
-      <p class="j-eyebrow">Unboxing Day</p>
-      <h3>Open the<br/><span class="gold">Box</span></h3>
-      <p>Your authorized Canaan miner arrives ready to run. Pull it out, set it on your desk. That's your Bitcoin mining machine.</p>
-    </div>
-    <div class="j-visual" style="order:2">
-      <div class="j-visual-bg"></div>
-      <div class="j-scene">
-        <div class="scene-unbox">
-          <div class="box-lid"></div>
-          <div class="box-body"><div class="box-stripe"></div></div>
-          <div class="box-shine">✨</div>
-        </div>
-      </div>
+  <div class="mission-body">
+    <p class="eyebrow">The Mission</p>
+    <h2>Flare Power.<br/><span class="g">Bitcoin</span> Wealth.</h2>
+    <p>We harness <strong>oilfield flare gas</strong> — energy that would otherwise be wasted — and convert it into Bitcoin mining power. Clean. Efficient. Unstoppable.</p>
+    <p>We also put <strong>authorized Canaan mining hardware</strong> directly in your hands. Plug it in at home and compete for the full block reward every 10 minutes.</p>
+    <div class="cta">
+      <button class="btn-gold" onclick="goTo('services')">See What We Do →</button>
     </div>
   </div>
+</div>
 
-  <div class="journey-connector"></div>
-
-  <!-- Step 3: Plug In -->
-  <div class="journey-step">
-    <div class="j-visual">
-      <div class="j-visual-bg"></div>
-      <div class="j-scene">
-        <div class="scene-plug">
-          <div class="miner-box"><div class="miner-led"></div></div>
-          <div class="plug-cable"></div>
-          <div class="plug-head"></div>
-          <div class="outlet">
-            <div class="outlet-hole"></div>
-            <div class="outlet-hole"></div>
-          </div>
-          <div class="plug-zap">⚡</div>
-        </div>
+<!-- SERVICES -->
+<section class="services" id="services">
+  <div class="services-inner">
+    <div class="sec-top">
+      <p class="eyebrow gold" style="text-align:center">What We Do</p>
+      <h2>One Company.<br/><span class="r">Two</span> <span class="g">Powerhouses.</span></h2>
+      <p>Bitcoin mining hardware for the home. Flare gas energy consulting for the field. All under one roof.</p>
+    </div>
+    <div class="services-grid">
+      <div class="service-card gold">
+        <span class="service-tag gold">Hardware</span>
+        <div class="service-icon">⛏️</div>
+        <h3>Mining <span class="g">Hardware</span></h3>
+        <p>Authorized Canaan Bitcoin miners — from the beginner-friendly Bitaxe to the full-power Avalon Q. Ships same day from the US. Plug it in and mine.</p>
       </div>
-    </div>
-    <div class="j-body">
-      <div class="j-step-num">03</div>
-      <p class="j-eyebrow">15 Minutes to Live</p>
-      <h3>Plug It<br/>Into the <span class="gold">Wall</span></h3>
-      <p>Wall outlet. Wi-Fi. Your Bitcoin wallet address. That's it. No technical background required — it's truly plug and mine.</p>
-    </div>
-  </div>
-
-  <div class="journey-connector"></div>
-
-  <!-- Step 4: Computing -->
-  <div class="journey-step">
-    <div class="j-body" style="order:1">
-      <div class="j-step-num">04</div>
-      <p class="j-eyebrow">24/7 Non-Stop</p>
-      <h3>Miner Starts<br/><span class="gold">Computing</span></h3>
-      <p>Your miner starts hashing instantly — running billions of calculations per second, competing for the Bitcoin block reward every 10 minutes, around the clock.</p>
-    </div>
-    <div class="j-visual" style="order:2">
-      <div class="j-visual-bg"></div>
-      <div class="j-scene">
-        <div class="scene-compute">
-          <div class="hash-stream">
-            <div class="hash-line">a3f9c2e1d4b7...</div>
-            <div class="hash-line">00000000b8d4...</div>
-            <div class="hash-line">f1e2a4c9b3d7...</div>
-          </div>
-          <div class="miner-device">
-            <div class="miner-leds">
-              <div class="miner-led-dot"></div>
-              <div class="miner-led-dot"></div>
-              <div class="miner-led-dot"></div>
-            </div>
-            <div class="miner-bar"><div class="miner-bar-fill"></div></div>
-          </div>
-        </div>
+      <div class="service-card red">
+        <span class="service-tag red">Energy</span>
+        <div class="service-icon">🔥</div>
+        <h3>Flare <span class="r">Power</span></h3>
+        <p>We convert oilfield flare gas into Bitcoin mining energy. Sustainable, profitable, and built for the future of energy. Consulting available for oil operators.</p>
+      </div>
+      <div class="service-card gold">
+        <span class="service-tag gold">Consulting</span>
+        <div class="service-icon">📊</div>
+        <h3>Bitcoin <span class="g">Consulting</span></h3>
+        <p>From solo mining strategy to full flare-to-Bitcoin deployment, we help businesses and individuals maximize their Bitcoin opportunity.</p>
+      </div>
+      <div class="service-card red">
+        <span class="service-tag red">Education</span>
+        <div class="service-icon">🎓</div>
+        <h3>Hash Over <span class="r">Cash</span></h3>
+        <p>Financial sovereignty through Bitcoin mining. Jill's education movement — making solo mining accessible to everyone, especially those building generational wealth.</p>
       </div>
     </div>
   </div>
-
-  <div class="journey-connector"></div>
-
-  <!-- Step 5: Win -->
-  <div class="journey-step">
-    <div class="j-visual">
-      <div class="j-visual-bg"></div>
-      <div class="j-scene">
-        <div class="scene-win">
-          <div class="win-burst"></div>
-          <div class="win-symbol">₿</div>
-          <div class="win-coins">
-            <span class="coin">🟡</span>
-            <span class="coin">🟡</span>
-            <span class="coin">🟡</span>
-            <span class="coin">🟡</span>
-            <span class="coin">🟡</span>
-            <span class="coin">🟡</span>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="j-body">
-      <div class="j-step-num">05</div>
-      <p class="j-eyebrow">Block Found</p>
-      <h3>Win the<br/><span class="gold">Jackpot</span></h3>
-      <p>When your miner finds a block, you collect the full reward — <strong style="color:var(--text)">3.125 BTC + network fees</strong>. A solo miner won $222,012 in April 2026. Every block is a real shot.</p>
-      <div style="margin-top:24px">
-        <button class="btn-solid" onclick="scrollToSection('shop')">Get Your Miner →</button>
-      </div>
-    </div>
-  </div>
-
 </section>
 
+<!-- JOURNEY ANIMATION -->
+<section id="journey">
 
-<!-- SOLO WIN PROOF -->
-<section class="win-section" id="win">
-  <div class="win-inner">
-    <div class="win-badge"><span class="win-dot"></span>Verified Solo Win — April 9, 2026</div>
-    <div class="win-amount">$222,012</div>
-    <p class="win-detail">
-      A solo miner found Block <strong>944306</strong> and collected <strong>3.125 BTC + network fees</strong>.
-      Every miner on the network has a real shot at the full block reward.
-    </p>
-    <div class="win-divider"></div>
+  <div class="journey-step" id="js1">
+    <div class="j-visual"><div class="j-glow red"></div>
+      <div class="j-scene">
+        <div class="scene-delivery">
+          <div class="truck">🚚</div>
+          <div class="road"></div>
+          <div class="road-sparks"><div class="spark-dot"></div><div class="spark-dot"></div><div class="spark-dot"></div></div>
+        </div>
+      </div>
+    </div>
+    <div class="j-body">
+      <div class="j-num">01</div>
+      <p class="j-eyebrow red">Same-Day Shipping</p>
+      <h3>Delivered to<br/>Your <span class="r">Door</span></h3>
+      <p>Order before 2PM and it ships the same day — straight from US soil. No customs, no overseas delays. Arrives in days, not weeks.</p>
+    </div>
   </div>
+
+  <div class="j-divider"></div>
+
+  <div class="journey-step" id="js2">
+    <div class="j-body" style="order:1">
+      <div class="j-num">02</div>
+      <p class="j-eyebrow gold">Unboxing Day</p>
+      <h3>Open the<br/><span class="g">Box</span></h3>
+      <p>Your authorized Canaan miner arrives sealed and ready. Pull it out, set it on your desk. That's a real Bitcoin mining machine in your hands.</p>
+    </div>
+    <div class="j-visual" style="order:2"><div class="j-glow gold"></div>
+      <div class="j-scene">
+        <div class="scene-unbox">
+          <div class="box-top"></div>
+          <div class="box-base"><div class="box-logo">CANAAN</div></div>
+          <div class="box-glow">✨</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="j-divider"></div>
+
+  <div class="journey-step" id="js3">
+    <div class="j-visual"><div class="j-glow red"></div>
+      <div class="j-scene">
+        <div class="scene-plug">
+          <div class="miner-unit"><div class="miner-led-small"></div></div>
+          <div class="power-cable"></div>
+          <div class="plug-tip"></div>
+          <div class="wall-outlet"><div class="outlet-slot"></div><div class="outlet-slot"></div></div>
+          <div class="zap-icon">⚡</div>
+        </div>
+      </div>
+    </div>
+    <div class="j-body">
+      <div class="j-num">03</div>
+      <p class="j-eyebrow red">15 Minutes to Live</p>
+      <h3>Plug Into<br/>the <span class="r">Wall</span></h3>
+      <p>Wall outlet. Wi-Fi. Your Bitcoin wallet address. That's the entire setup. No technical background needed — if you can plug in a router, you can mine Bitcoin.</p>
+    </div>
+  </div>
+
+  <div class="j-divider"></div>
+
+  <div class="journey-step" id="js4">
+    <div class="j-body" style="order:1">
+      <div class="j-num">04</div>
+      <p class="j-eyebrow gold">24/7 Non-Stop</p>
+      <h3>Miner Starts<br/><span class="g">Computing</span></h3>
+      <p>Your miner starts hashing instantly — running billions of calculations per second, competing for the Bitcoin block reward every 10 minutes, around the clock, forever.</p>
+    </div>
+    <div class="j-visual" style="order:2"><div class="j-glow gold"></div>
+      <div class="j-scene">
+        <div class="scene-compute">
+          <div class="hash-bg">
+            <span>a3f9c2e1d4b7f8a2...</span>
+            <span>00000000b8d4c2f1...</span>
+            <span>f1e2a4c9b3d7e8f0...</span>
+            <span>7c4a1b9e2d8f3c0a...</span>
+          </div>
+          <div class="miner-device">
+            <div class="device-leds"><div class="led r"></div><div class="led g"></div><div class="led gr"></div></div>
+            <div class="hash-bar"><div class="hash-fill"></div></div>
+            <div class="device-label">Mining...</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="j-divider"></div>
+
+  <div class="journey-step" id="js5">
+    <div class="j-visual"><div class="j-glow gold"></div>
+      <div class="j-scene">
+        <div class="scene-win">
+          <div class="win-halo"></div>
+          <div class="win-b">₿</div>
+          <div class="win-amount-display">3.125 BTC</div>
+          <div class="coins">
+            <span class="coin">🟡</span><span class="coin">🟡</span>
+            <span class="coin">🟡</span><span class="coin">🟡</span>
+            <span class="coin">🟡</span><span class="coin">🟡</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="j-body">
+      <div class="j-num">05</div>
+      <p class="j-eyebrow gold">Block Found</p>
+      <h3>Win the<br/><span class="g">Jackpot</span></h3>
+      <p>When your miner finds a block, you collect the full reward — <strong style="color:var(--text)">3.125 BTC + network fees</strong>. A solo miner won $222,012 in April 2026. Every 10 minutes is a real shot.</p>
+      <div class="j-cta"><button class="btn-gold" onclick="goTo('shop')">Get Your Miner →</button></div>
+    </div>
+  </div>
+
 </section>
 
 <!-- SHOP -->
-<section class="shop-section" id="shop">
+<section class="shop" id="shop">
   <div class="shop-inner">
-    <p class="sec-eyebrow">Hardware Lineup</p>
-    <h2 class="sec-title">Shop <span class="gold">Miners</span></h2>
-    <p class="sec-sub">Authorized Canaan units. In stock. Ships same day from the US.</p>
+    <p class="eyebrow gold" style="text-align:center">Hardware Lineup</p>
+    <h2 class="sec-top" style="margin-bottom:0;text-align:center;font-size:clamp(42px,6vw,72px)">Shop <span style="color:var(--gold)">Miners</span></h2>
+    <p style="text-align:center;color:var(--muted2);font-size:15px;margin-top:12px;margin-bottom:0">Authorized Canaan units. In stock. Ships same day from the US.</p>
     <div class="shop-grid">
 
-      <!-- Bitaxe Supra — ~700 GH/s -->
       <div class="product-card">
         <span class="product-tag">Open Source</span>
-        <div class="product-img-wrap">
-          <img src="https://raw.githubusercontent.com/skot/bitaxe/main/doc/bitaxe401Supra.jpg" alt="Bitaxe Supra" onerror="this.parentElement.innerHTML='<span style=&quot;font-size:48px;opacity:.3&quot;>₿</span>'"/>
-        </div>
+        <div class="product-img-wrap"><img src="https://raw.githubusercontent.com/skot/bitaxe/main/doc/bitaxe401Supra.jpg" alt="Bitaxe Supra" onerror="this.parentElement.innerHTML='<span style=&quot;font-size:48px;opacity:.2&quot;>₿</span>'"/></div>
         <div class="product-name">Bitaxe Supra</div>
-        <p class="product-desc">Ultra-low power, near-silent. Runs 24/7 on less electricity than a phone charger.</p>
-        <div class="product-specs">
-          <div class="spec">Hashrate<strong>~700 GH/s</strong></div>
-          <div class="spec">Power<strong>~15W</strong></div>
-          <div class="spec">Noise<strong>Silent</strong></div>
-        </div>
+        <p class="product-desc">Ultra-low power, near-silent. Runs 24/7 on less power than a phone charger.</p>
+        <div class="product-specs"><div class="spec">Hashrate<strong>~700 GH/s</strong></div><div class="spec">Power<strong>~15W</strong></div><div class="spec">Noise<strong>Silent</strong></div></div>
         <div class="product-price">Contact for Price <small>In Stock</small></div>
         <button class="buy-btn outline" data-product="bitaxe-supra-hex" onclick="buyMiner('bitaxe-supra-hex')">View &amp; Buy</button>
       </div>
 
-      <!-- Bitaxe Gamma 601 — 1.2 TH/s -->
       <div class="product-card">
         <span class="product-tag">Entry Level</span>
-        <div class="product-img-wrap">
-          <img src="https://raw.githubusercontent.com/skot/bitaxe/main/doc/bitaxe601Gamma.jpg" alt="Bitaxe Gamma 601" onerror="this.parentElement.innerHTML='<span style=&quot;font-size:48px;opacity:.3&quot;>₿</span>'"/>
-        </div>
+        <div class="product-img-wrap"><img src="https://raw.githubusercontent.com/skot/bitaxe/main/doc/bitaxe601Gamma.jpg" alt="Bitaxe Gamma 601" onerror="this.parentElement.innerHTML='<span style=&quot;font-size:48px;opacity:.2&quot;>₿</span>'"/></div>
         <div class="product-name">Bitaxe Gamma 601</div>
         <p class="product-desc">Open-source ASIC. Runs 24/7 on less power than a light bulb. Perfect first miner.</p>
-        <div class="product-specs">
-          <div class="spec">Hashrate<strong>1.2 TH/s</strong></div>
-          <div class="spec">Power<strong>~17W</strong></div>
-          <div class="spec">Noise<strong>~35 dB</strong></div>
-        </div>
+        <div class="product-specs"><div class="spec">Hashrate<strong>1.2 TH/s</strong></div><div class="spec">Power<strong>~17W</strong></div><div class="spec">Noise<strong>~35 dB</strong></div></div>
         <div class="product-price">Contact for Price <small>In Stock</small></div>
         <button class="buy-btn outline" data-product="bitaxe-gamma-601" onclick="buyMiner('bitaxe-gamma-601')">View &amp; Buy</button>
       </div>
 
-      <!-- Bitaxe GT — 2+ TH/s -->
       <div class="product-card">
         <span class="product-tag">Top Bitaxe</span>
-        <div class="product-img-wrap">
-          <img src="https://raw.githubusercontent.com/skot/bitaxe/main/doc/bitaxe801GT.jpg" alt="Bitaxe GT 801" onerror="this.parentElement.innerHTML='<span style=&quot;font-size:48px;opacity:.3&quot;>₿</span>'"/>
-        </div>
+        <div class="product-img-wrap"><img src="https://raw.githubusercontent.com/skot/bitaxe/main/doc/bitaxe801GT.jpg" alt="Bitaxe GT 801" onerror="this.parentElement.innerHTML='<span style=&quot;font-size:48px;opacity:.2&quot;>₿</span>'"/></div>
         <div class="product-name">Bitaxe GT 801</div>
-        <p class="product-desc">Dual-chip BM1370. Most powerful Bitaxe made — over 2 TH/s in a compact, quiet form.</p>
-        <div class="product-specs">
-          <div class="spec">Hashrate<strong>2+ TH/s</strong></div>
-          <div class="spec">Power<strong>35–43W</strong></div>
-          <div class="spec">Noise<strong>Low</strong></div>
-        </div>
+        <p class="product-desc">Dual-chip BM1370. Most powerful Bitaxe — over 2 TH/s in a compact, quiet form.</p>
+        <div class="product-specs"><div class="spec">Hashrate<strong>2+ TH/s</strong></div><div class="spec">Power<strong>35–43W</strong></div><div class="spec">Noise<strong>Low</strong></div></div>
         <div class="product-price">Contact for Price <small>Limited Stock</small></div>
         <button class="buy-btn outline" data-product="bitaxe-gt" onclick="buyMiner('bitaxe-gt')">View &amp; Buy</button>
       </div>
 
-      <!-- Avalon Nano 3S — 6 TH/s -->
       <div class="product-card">
         <span class="product-tag">⭐ Best Starter</span>
-        <div class="product-img-wrap">
-          <img src="https://asicmarketplace.com/wp-content/uploads/2025/01/Avalon-Nano-3S.webp" alt="Avalon Nano 3S" onerror="this.parentElement.innerHTML='<span style=&quot;font-size:48px;opacity:.3&quot;>₿</span>'"/>
-        </div>
+        <div class="product-img-wrap"><img src="https://asicmarketplace.com/wp-content/uploads/2025/01/Avalon-Nano-3S.webp" alt="Avalon Nano 3S" onerror="this.parentElement.innerHTML='<span style=&quot;font-size:48px;opacity:.2&quot;>₿</span>'"/></div>
         <div class="product-name">Avalon Nano 3S</div>
-        <p class="product-desc">Recommended for home miners. Near-silent, beginner-friendly. Plugs into any standard outlet.</p>
-        <div class="product-specs">
-          <div class="spec">Hashrate<strong>6 TH/s</strong></div>
-          <div class="spec">Power<strong>140W</strong></div>
-          <div class="spec">Noise<strong>33–40 dB</strong></div>
-        </div>
+        <p class="product-desc">Recommended for home miners. Near-silent, beginner-friendly. Plugs into any outlet.</p>
+        <div class="product-specs"><div class="spec">Hashrate<strong>6 TH/s</strong></div><div class="spec">Power<strong>140W</strong></div><div class="spec">Noise<strong>33–40 dB</strong></div></div>
         <div class="product-price">Contact for Price <small>In Stock</small></div>
         <button class="buy-btn" data-product="canaan-nano3s" onclick="buyMiner('canaan-nano3s')">Buy Now</button>
       </div>
 
-      <!-- Avalon Mini 3 — 37.5 TH/s -->
       <div class="product-card">
         <span class="product-tag">Home Friendly</span>
-        <div class="product-img-wrap">
-          <img src="https://asicmarketplace.com/wp-content/uploads/2025/01/Mini-3.webp" alt="Avalon Mini 3" onerror="this.parentElement.innerHTML='<span style=&quot;font-size:48px;opacity:.3&quot;>₿</span>'"/>
-        </div>
+        <div class="product-img-wrap"><img src="https://asicmarketplace.com/wp-content/uploads/2025/01/Mini-3.webp" alt="Avalon Mini 3" onerror="this.parentElement.innerHTML='<span style=&quot;font-size:48px;opacity:.2&quot;>₿</span>'"/></div>
         <div class="product-name">Avalon Mini 3</div>
         <p class="product-desc">Compact footprint, serious Canaan performance. Built for home environments.</p>
-        <div class="product-specs">
-          <div class="spec">Hashrate<strong>37.5 TH/s</strong></div>
-          <div class="spec">Power<strong>800W</strong></div>
-          <div class="spec">Noise<strong>55 dB</strong></div>
-        </div>
+        <div class="product-specs"><div class="spec">Hashrate<strong>37.5 TH/s</strong></div><div class="spec">Power<strong>800W</strong></div><div class="spec">Noise<strong>55 dB</strong></div></div>
         <div class="product-price">Contact for Price <small>In Stock</small></div>
         <button class="buy-btn" data-product="canaan-mini-3" onclick="buyMiner('canaan-mini-3')">Buy Now</button>
       </div>
 
-      <!-- Canaan Avalon Q — 90 TH/s -->
       <div class="product-card">
         <span class="product-tag">🔥 Most Powerful</span>
-        <div class="product-img-wrap">
-          <img src="https://asicmarketplace.com/wp-content/uploads/2025/02/Q.webp" alt="Canaan Avalon Q" onerror="this.parentElement.innerHTML='<span style=&quot;font-size:48px;opacity:.3&quot;>₿</span>'"/>
-        </div>
+        <div class="product-img-wrap"><img src="https://asicmarketplace.com/wp-content/uploads/2025/02/Q.webp" alt="Canaan Avalon Q" onerror="this.parentElement.innerHTML='<span style=&quot;font-size:48px;opacity:.2&quot;>₿</span>'"/></div>
         <div class="product-name">Canaan Avalon Q</div>
-        <p class="product-desc">Full-size ASIC. Maximum hashrate for serious miners — built for 24/7 continuous operation.</p>
-        <div class="product-specs">
-          <div class="spec">Hashrate<strong>90 TH/s</strong></div>
-          <div class="spec">Power<strong>1,674W</strong></div>
-          <div class="spec">Noise<strong>45–65 dB</strong></div>
-        </div>
+        <p class="product-desc">Full-size ASIC. Maximum hashrate — built for 24/7 continuous operation.</p>
+        <div class="product-specs"><div class="spec">Hashrate<strong>90 TH/s</strong></div><div class="spec">Power<strong>1,674W</strong></div><div class="spec">Noise<strong>45–65 dB</strong></div></div>
         <div class="product-price">Contact for Price <small>In Stock</small></div>
         <button class="buy-btn" data-product="canaan-avalon-q" onclick="buyMiner('canaan-avalon-q')">Buy Now</button>
       </div>
@@ -1348,145 +717,91 @@ body{padding-bottom:var(--bot-h)}
   </div>
 </section>
 
+<!-- WIN PROOF -->
+<section class="win-proof" id="win">
+  <div class="win-proof-inner">
+    <div class="win-live-badge"><span class="live-dot"></span>Verified Solo Win — April 9, 2026</div>
+    <div class="win-big-num">$222,012</div>
+    <p class="win-proof-detail">A solo miner found Block <strong>944306</strong> and collected <strong>3.125 BTC + network fees</strong>. Every miner on the network competes for the full reward every 10 minutes.</p>
+    <div class="win-proof-divider"></div>
+  </div>
+</section>
+
 <!-- ABOUT -->
-<section class="about-section" id="about">
+<section class="about" id="about">
   <div class="about-inner">
-    <div class="about-photo-wrap">
-      <div class="about-photo-wrap-placeholder">JILL FORD</div>
+    <div class="about-photo">
+      <img src="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22400%22 height=%22400%22%3E%3Crect width=%22400%22 height=%22400%22 fill=%22%23111%22/%3E%3Ctext x=%22200%22 y=%22200%22 text-anchor=%22middle%22 fill=%22%23f7931a%22 font-size=%2224%22%3EJill%3C/text%3E%3C/svg%3E" alt="Jill — Founder"/>
     </div>
-    <div class="about-text">
-      <p class="sec-eyebrow">The Founder</p>
-      <h2>Meet<br/><span class="gold">Jill Ford</span></h2>
-      <p>Jill Ford is a <strong>Bitcoin educator, entrepreneur, and advocate</strong> on a mission to make solo Bitcoin mining accessible to everyday people — especially those who've been left out of the financial system.</p>
-      <p>Known as <strong>@BitcoinJill</strong>, Jill built BitSolo under Ford Digital LLC to bring <strong>authorized Canaan hardware</strong> directly to US customers — no technical background, no exchange, no middleman.</p>
-      <p>Her movement — <strong>Hash Over Cash</strong> — is about financial sovereignty, generational wealth, and owning your own upside.</p>
+    <div class="about-body">
+      <p class="eyebrow gold">The Founder</p>
+      <h2>Meet<br/><span class="g">Jill</span></h2>
+      <p>Bitcoin educator, entrepreneur, and advocate. On a mission to make solo Bitcoin mining accessible to everyday people — especially those building generational wealth.</p>
+      <p>Known as <strong>@BitcoinJill</strong>, Jill built this movement to bring <strong>authorized Canaan hardware</strong> directly to US customers and connect the energy industry to Bitcoin through flare gas mining.</p>
+      <p>Her movement — <strong>Hash Over Cash</strong> — is about owning your upside, not renting it.</p>
       <div class="social-links">
-        <a href="https://instagram.com/bitcoinjill" class="social-link" target="_blank" rel="noopener">📸 @bitcoinjill</a>
-        <a href="https://x.com/BitcoinJill" class="social-link" target="_blank" rel="noopener">𝕏 @BitcoinJill</a>
-        <a href="https://instagram.com/officialbitsolo" class="social-link" target="_blank" rel="noopener">📸 @officialbitsolo</a>
+        <a href="https://instagram.com/bitcoinjill" class="social-link" target="_blank">📸 @bitcoinjill</a>
+        <a href="https://x.com/BitcoinJill" class="social-link" target="_blank">𝕏 @BitcoinJill</a>
+        <a href="https://instagram.com/officialbitsolo" class="social-link" target="_blank">📸 @officialbitsolo</a>
       </div>
     </div>
   </div>
 </section>
 
 <!-- REVIEWS -->
-<section class="reviews-section" id="reviews">
+<section class="reviews" id="reviews">
   <div class="reviews-inner">
-    <p class="sec-eyebrow">Google Reviews</p>
-    <h2 class="sec-title">What Customers<br/><span class="gold">Say</span></h2>
-    <div class="review-score-row">
-      <div class="review-score-num">5.0</div>
+    <p class="eyebrow gold" style="text-align:center">Google Reviews</p>
+    <h2 style="text-align:center;font-size:clamp(42px,6vw,72px)">What Customers <span style="color:var(--gold)">Say</span></h2>
+    <div class="review-top">
+      <div class="review-score">5.0</div>
       <div class="review-stars">★★★★★</div>
-      <div style="color:var(--muted);font-size:13px;margin-bottom:14px">Based on Google Reviews</div>
-      <a href="https://g.page/r/bitsolo/review" target="_blank" rel="noopener" class="review-cta-btn">
-        <span style="color:#4285F4;font-size:15px;font-weight:900">G</span> Leave a Google Review
-      </a>
+      <div style="color:var(--muted);font-size:13px;margin-bottom:16px">Based on Google Reviews</div>
+      <a href="https://g.page/r/bitsolo/review" target="_blank" class="review-cta-btn"><span style="color:#4285F4;font-size:15px;font-weight:900">G</span> Leave a Google Review</a>
     </div>
     <div class="review-grid">
-      <div class="review-card">
-        <div class="r-stars">★★★★★</div>
-        <p class="r-text">"Ordered my Avalon Nano 3S on a Tuesday — it was on my doorstep Wednesday. Setup took 10 minutes. BitSolo is the real deal."</p>
-        <div class="r-author"><div class="r-avatar">M</div><div><div class="r-name">Marcus T.</div><div class="r-date">Google Review · April 2026</div></div></div>
-      </div>
-      <div class="review-card">
-        <div class="r-stars">★★★★★</div>
-        <p class="r-text">"Jill answered every question personally. The miner arrived fast, instructions were clear, and customer service is unlike anything I've seen."</p>
-        <div class="r-author"><div class="r-avatar">D</div><div><div class="r-name">Denise R.</div><div class="r-date">Google Review · March 2026</div></div></div>
-      </div>
-      <div class="review-card">
-        <div class="r-stars">★★★★★</div>
-        <p class="r-text">"Plug and play is NOT an exaggeration. I know nothing about crypto tech and had my miner running in under 15 minutes."</p>
-        <div class="r-author"><div class="r-avatar">R</div><div><div class="r-name">Rico A.</div><div class="r-date">Google Review · March 2026</div></div></div>
-      </div>
-      <div class="review-card">
-        <div class="r-stars">★★★★★</div>
-        <p class="r-text">"Authorized Canaan distributor — that matters. BitSolo gave me confidence and the hardware is legit. Already ordered a second one."</p>
-        <div class="r-author"><div class="r-avatar">T</div><div><div class="r-name">Tasha W.</div><div class="r-date">Google Review · February 2026</div></div></div>
-      </div>
-      <div class="review-card">
-        <div class="r-stars">★★★★★</div>
-        <p class="r-text">"Same-day shipping is real. Ordered before noon, shipped that afternoon. Fast, legit, and Jill is accessible on Instagram. 10/10."</p>
-        <div class="r-author"><div class="r-avatar">J</div><div><div class="r-name">James O.</div><div class="r-date">Google Review · February 2026</div></div></div>
-      </div>
-      <div class="review-card">
-        <div class="r-stars">★★★★★</div>
-        <p class="r-text">"My Bitaxe Gamma has been running 3 months straight without a single issue. Barely uses electricity, sits on my desk silently."</p>
-        <div class="r-author"><div class="r-avatar">K</div><div><div class="r-name">Kevin L.</div><div class="r-date">Google Review · January 2026</div></div></div>
-      </div>
+      <div class="review-card"><div class="r-stars">★★★★★</div><p class="r-text">"Ordered my Avalon Nano 3S on a Tuesday — it was on my doorstep Wednesday. Setup took 10 minutes. The real deal."</p><div class="r-author"><div class="r-av">M</div><div><div class="r-name">Marcus T.</div><div class="r-date">Google Review · April 2026</div></div></div></div>
+      <div class="review-card"><div class="r-stars">★★★★★</div><p class="r-text">"Jill answered every question personally. Miner arrived fast, instructions were clear. Customer service unlike anything I've seen."</p><div class="r-author"><div class="r-av">D</div><div><div class="r-name">Denise R.</div><div class="r-date">Google Review · March 2026</div></div></div></div>
+      <div class="review-card"><div class="r-stars">★★★★★</div><p class="r-text">"Plug and play is NOT an exaggeration. I know nothing about crypto tech and had my miner running in under 15 minutes."</p><div class="r-author"><div class="r-av">R</div><div><div class="r-name">Rico A.</div><div class="r-date">Google Review · March 2026</div></div></div></div>
+      <div class="review-card"><div class="r-stars">★★★★★</div><p class="r-text">"Authorized Canaan distributor — that matters. Gave me confidence and the hardware is legit. Already ordered a second."</p><div class="r-author"><div class="r-av">T</div><div><div class="r-name">Tasha W.</div><div class="r-date">Google Review · February 2026</div></div></div></div>
+      <div class="review-card"><div class="r-stars">★★★★★</div><p class="r-text">"Same-day shipping is real. Ordered before noon, shipped that afternoon. Fast, legit, Jill is accessible on Instagram. 10/10."</p><div class="r-author"><div class="r-av">J</div><div><div class="r-name">James O.</div><div class="r-date">Google Review · February 2026</div></div></div></div>
+      <div class="review-card"><div class="r-stars">★★★★★</div><p class="r-text">"My Bitaxe Gamma has been running 3 months straight. Barely uses electricity, sits on my desk silently. Love it."</p><div class="r-author"><div class="r-av">K</div><div><div class="r-name">Kevin L.</div><div class="r-date">Google Review · January 2026</div></div></div></div>
     </div>
   </div>
 </section>
 
 <!-- FAQ -->
-<section class="faq-section" id="faq">
+<section class="faq" id="faq">
   <div class="faq-inner">
-    <p class="sec-eyebrow">Got Questions</p>
-    <h2 class="sec-title">FAQ</h2>
+    <p class="eyebrow" style="text-align:center">Got Questions</p>
+    <h2 style="text-align:center;font-size:clamp(42px,6vw,72px)">FAQ</h2>
     <div class="faq-list">
-      <div class="faq-item">
-        <div class="faq-q" onclick="toggleFAQ(this)">What is solo Bitcoin mining? <span class="faq-arrow">▾</span></div>
-        <div class="faq-a"><p>Solo mining means your miner competes directly against the Bitcoin network to find the next block. If you find it, you collect the full block reward — currently 3.125 BTC + network fees. It's a real lottery with real payouts.</p></div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-q" onclick="toggleFAQ(this)">Is BitSolo an authorized Canaan distributor? <span class="faq-arrow">▾</span></div>
-        <div class="faq-a"><p>Yes. BitSolo (Ford Digital LLC DBA BitFord Digital) is an authorized U.S. distributor of Canaan Avalon miners. Every unit is authentic, warranted, and ships from US stock.</p></div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-q" onclick="toggleFAQ(this)">How hard is setup? <span class="faq-arrow">▾</span></div>
-        <div class="faq-a"><p>Plug it in, connect to Wi-Fi, enter your Bitcoin wallet address. Done. Takes under 15 minutes. No technical background required — if you can set up a router, you can run a miner.</p></div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-q" onclick="toggleFAQ(this)">How fast does it ship? <span class="faq-arrow">▾</span></div>
-        <div class="faq-a"><p>Same-day shipping on orders placed before 2PM. We ship to all 50 states from US soil — no customs delays.</p></div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-q" onclick="toggleFAQ(this)">What is the block reward? <span class="faq-arrow">▾</span></div>
-        <div class="faq-a"><p>The current block reward is 3.125 BTC plus network fees. A solo miner found Block 944306 in April 2026 and collected 3.128 BTC — over $222,000 at the time.</p></div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-q" onclick="toggleFAQ(this)">How loud are the miners? <span class="faq-arrow">▾</span></div>
-        <div class="faq-a"><p>Bitaxe units are near-silent — comparable to a laptop fan. Canaan Nano and Mini units produce some fan noise but are far quieter than commercial data center ASICs. Most customers run them at home without issue.</p></div>
-      </div>
+      <div class="faq-item"><div class="faq-q" onclick="toggleFAQ(this)">What is solo Bitcoin mining? <span class="faq-arr">▾</span></div><div class="faq-a"><p>Solo mining means your miner competes directly against the Bitcoin network to find the next block. If you find it, you collect the full block reward — currently 3.125 BTC + network fees.</p></div></div>
+      <div class="faq-item"><div class="faq-q" onclick="toggleFAQ(this)">Are you an authorized Canaan distributor? <span class="faq-arr">▾</span></div><div class="faq-a"><p>Yes. We are an authorized U.S. distributor of Canaan Avalon miners. Every unit is authentic, warranted, and ships from US stock.</p></div></div>
+      <div class="faq-item"><div class="faq-q" onclick="toggleFAQ(this)">How hard is setup? <span class="faq-arr">▾</span></div><div class="faq-a"><p>Plug it in, connect to Wi-Fi, enter your Bitcoin wallet address. Done in under 15 minutes. No technical background required.</p></div></div>
+      <div class="faq-item"><div class="faq-q" onclick="toggleFAQ(this)">How fast does it ship? <span class="faq-arr">▾</span></div><div class="faq-a"><p>Same-day shipping on orders placed before 2PM. We ship to all 50 states from US soil — no customs delays.</p></div></div>
+      <div class="faq-item"><div class="faq-q" onclick="toggleFAQ(this)">What is flare gas Bitcoin mining? <span class="faq-arr">▾</span></div><div class="faq-a"><p>Oilfield flare gas is energy that would otherwise be burned off and wasted. We capture it and use it to power Bitcoin miners — turning waste energy into Bitcoin. We consult oil operators on how to implement this.</p></div></div>
+      <div class="faq-item"><div class="faq-q" onclick="toggleFAQ(this)">How loud are the miners? <span class="faq-arr">▾</span></div><div class="faq-a"><p>Bitaxe units are near-silent — like a laptop fan. Canaan Nano and Mini units produce some fan noise but are far quieter than commercial ASICs. Most customers run them at home without issue.</p></div></div>
     </div>
   </div>
 </section>
 
 <!-- JOIN -->
-<section class="join-section" id="join">
+<section class="join" id="join">
   <div class="join-inner">
-    <p class="sec-eyebrow">Stay in the Loop</p>
-    <h2>The BitSolo<br/><span class="gold">Inner Circle</span></h2>
-    <p class="join-sub">Solo wins. Hardware drops. Jill's Bitcoin takes. Straight to your inbox.</p>
+    <p class="eyebrow" style="text-align:center">Stay Connected</p>
+    <h2>The <span class="r">Digital</span><br/><span class="g">Ape</span> Circle</h2>
+    <p class="join-sub">Solo wins. Hardware drops. Flare mining news. Jill's Bitcoin takes. Straight to you.</p>
     <form class="join-form" onsubmit="handleJoin(event)">
       <div class="form-row">
-        <div class="field-wrap">
-          <label class="field-label" for="j-name">First Name <span class="req">*</span></label>
-          <input class="field-input" type="text" id="j-name" placeholder="e.g. Marcus" required/>
-        </div>
-        <div class="field-wrap">
-          <label class="field-label" for="j-email">Email <span class="req">*</span></label>
-          <input class="field-input" type="email" id="j-email" placeholder="your@email.com" required/>
-        </div>
+        <div class="field-wrap"><label class="field-label" for="j-name">First Name <span class="req">*</span></label><input class="field-input" type="text" id="j-name" placeholder="e.g. Marcus" required/></div>
+        <div class="field-wrap"><label class="field-label" for="j-email">Email <span class="req">*</span></label><input class="field-input" type="email" id="j-email" placeholder="your@email.com" required/></div>
       </div>
-      <div class="field-wrap">
-        <label class="field-label" for="j-phone">Phone <span style="font-weight:400;color:var(--muted);text-transform:none;letter-spacing:0">— Optional · SMS alerts</span></label>
-        <input class="field-input" type="tel" id="j-phone" placeholder="(281) 000-0000"/>
-      </div>
-      <div class="sms-row" onclick="toggleSMS()" id="sms-row">
-        <span style="font-size:20px;flex-shrink:0">📲</span>
-        <div>
-          <div class="sms-text">Yes — text me solo wins &amp; drops</div>
-          <div class="sms-hint">Reply STOP anytime.</div>
-        </div>
-        <div class="sms-check on" id="sms-check">✓</div>
-      </div>
-      <button class="join-submit" type="submit">Join the Inner Circle — It's Free</button>
-      <div class="join-perks">
-        <span class="perk">Solo win alerts</span>
-        <span class="perk">Hardware drops</span>
-        <span class="perk">SMS updates</span>
-      </div>
-      <p class="sms-legal">By submitting you agree to receive emails from BitSolo. Adding a phone number opts you into SMS updates. Reply STOP to unsubscribe anytime.</p>
+      <div class="field-wrap"><label class="field-label" for="j-phone">Phone <span style="font-weight:400;color:var(--muted);text-transform:none;letter-spacing:0">— Optional · SMS</span></label><input class="field-input" type="tel" id="j-phone" placeholder="(281) 000-0000"/></div>
+      <div class="sms-row" onclick="toggleSMS()"><span style="font-size:20px;flex-shrink:0">📲</span><div><div class="sms-text">Yes — text me wins &amp; drops</div><div class="sms-hint">Reply STOP anytime.</div></div><div class="sms-check on" id="sms-check">✓</div></div>
+      <button class="join-submit" type="submit">Join the Circle — It's Free</button>
+      <div class="join-perks"><span class="perk">Solo win alerts</span><span class="perk">Hardware drops</span><span class="perk">Flare mining news</span></div>
+      <p class="sms-legal">By submitting you agree to receive emails. Adding a phone opts you into SMS. Reply STOP to unsubscribe.</p>
       <div class="join-success" id="join-success"></div>
     </form>
   </div>
@@ -1494,55 +809,53 @@ body{padding-bottom:var(--bot-h)}
 
 <!-- FOOTER -->
 <footer>
-  <div class="foot-inner">
+  <div class="foot-grid">
     <div>
-      <div class="foot-logo">Bit<span>Solo</span></div>
-      <p style="color:var(--muted);font-size:13px;margin-bottom:8px">Canaan-powered. Authorized U.S. distributor.</p>
+      <div class="foot-logo">DIGITAL<span class="r"> APE</span></div>
+      <p class="foot-desc">Bitcoin mining hardware + flare gas energy. Authorized Canaan U.S. distributor.</p>
       <div class="foot-badge">✓ Authorized Canaan Distributor</div>
     </div>
     <div class="foot-col">
       <h5>Shop</h5>
-      <a href="#shop" onclick="scrollToSection('shop')">Bitaxe Supra</a>
-      <a href="#shop" onclick="scrollToSection('shop')">Bitaxe Gamma 601</a>
-      <a href="#shop" onclick="scrollToSection('shop')">Bitaxe GT 801</a>
-      <a href="#shop" onclick="scrollToSection('shop')">Avalon Nano 3S</a>
-      <a href="#shop" onclick="scrollToSection('shop')">Avalon Mini 3</a>
-      <a href="#shop" onclick="scrollToSection('shop')">Canaan Avalon Q</a>
+      <a onclick="goTo('shop')">Bitaxe Supra</a>
+      <a onclick="goTo('shop')">Bitaxe Gamma 601</a>
+      <a onclick="goTo('shop')">Bitaxe GT 801</a>
+      <a onclick="goTo('shop')">Avalon Nano 3S</a>
+      <a onclick="goTo('shop')">Avalon Mini 3</a>
+      <a onclick="goTo('shop')">Canaan Avalon Q</a>
     </div>
     <div class="foot-col">
       <h5>Company</h5>
-      <a href="#about" onclick="scrollToSection('about')">About Jill</a>
-      <a href="#how" onclick="scrollToSection('how')">How It Works</a>
-      <a href="#reviews" onclick="scrollToSection('reviews')">Reviews</a>
-      <a href="#faq" onclick="scrollToSection('faq')">FAQ</a>
-      <a href="#join" onclick="scrollToSection('join')">Join Inner Circle</a>
+      <a onclick="goTo('services')">Services</a>
+      <a onclick="goTo('about')">About Jill</a>
+      <a onclick="goTo('journey')">How It Works</a>
+      <a onclick="goTo('reviews')">Reviews</a>
+      <a onclick="goTo('faq')">FAQ</a>
     </div>
     <div class="foot-col">
-      <h5>Social</h5>
-      <a href="https://instagram.com/officialbitsolo" target="_blank" rel="noopener">📸 @officialbitsolo</a>
-      <a href="https://instagram.com/bitcoinjill" target="_blank" rel="noopener">📸 @bitcoinjill</a>
-      <a href="https://x.com/BitcoinJill" target="_blank" rel="noopener">𝕏 @BitcoinJill</a>
+      <h5>Connect</h5>
+      <a href="https://instagram.com/officialbitsolo" target="_blank">📸 @officialbitsolo</a>
+      <a href="https://instagram.com/bitcoinjill" target="_blank">📸 @bitcoinjill</a>
+      <a href="https://x.com/BitcoinJill" target="_blank">𝕏 @BitcoinJill</a>
       <a href="mailto:contact@bitsolo.co">✉️ contact@bitsolo.co</a>
     </div>
   </div>
-  <div class="legal">
-    © 2026 Ford Digital LLC DBA BitFord Digital · 13101 Preston Rd. Ste 110-5002, Dallas, TX 75240 · Authorized Canaan U.S. Distributor
-  </div>
+  <div class="legal">© 2026 Digital Ape · Authorized Canaan U.S. Distributor · All rights reserved</div>
 </footer>
 
 <!-- PURCHASE MODAL -->
 <div class="p-modal" id="purchase-modal">
   <div class="p-modal-box">
-    <button class="p-modal-close" onclick="closeModal()">✕</button>
-    <span class="p-modal-icon">₿</span>
+    <button class="p-close" onclick="closeModal()">✕</button>
+    <span style="font-size:36px;display:block;margin-bottom:14px">₿</span>
     <h3>One More Step</h3>
-    <p>Get your order updates and solo win alerts sent directly to you.</p>
+    <p>Get order updates and solo win alerts sent directly to you.</p>
     <form class="p-form" onsubmit="completePurchase(event)">
       <input class="p-input" id="pm-name" type="text" placeholder="First Name" required/>
       <input class="p-input" id="pm-email" type="email" placeholder="Email for order updates" required/>
-      <input class="p-input" id="pm-phone" type="tel" placeholder="Phone — Optional (SMS alerts)"/>
+      <input class="p-input" id="pm-phone" type="tel" placeholder="Phone — Optional"/>
       <button class="p-submit" type="submit">Continue to Purchase →</button>
-      <button class="p-skip" type="button" onclick="completePurchase(null)">Skip &amp; continue without signing up</button>
+      <button class="p-skip" type="button" onclick="completePurchase(null)">Skip &amp; continue</button>
     </form>
   </div>
 </div>
@@ -1550,161 +863,77 @@ body{padding-bottom:var(--bot-h)}
 <!-- BOT BAR -->
 <div class="bot-bar" onclick="openBot()">
   <div class="bot-icon">🤖</div>
-  <span class="bot-label">Ask the <span>BitSolo Bot</span></span>
-  <span class="bot-up">↑</span>
+  <span class="bot-label">Ask the <span>Digital Ape Bot</span></span>
+  <span style="color:var(--gold);margin-left:4px">↑</span>
 </div>
 
 <!-- WHATSAPP -->
-<a href="https://wa.me/" class="wa" title="Chat on WhatsApp" target="_blank" rel="noopener">💬</a>
+<a href="https://wa.me/" class="wa" title="WhatsApp" target="_blank">💬</a>
 
 <script>
-// ─── JOURNEY SCROLL REVEAL ───
-(function(){
-  var steps = document.querySelectorAll('.journey-step');
-  if(!steps.length) return;
-  // Make first step visible immediately
-  steps.forEach(function(s,i){
-    if(i===0) s.classList.add('visible');
-  });
-  // Use IntersectionObserver if available
-  if('IntersectionObserver' in window){
-    var io = new IntersectionObserver(function(entries){
-      entries.forEach(function(e){
-        if(e.isIntersecting) e.target.classList.add('visible');
-      });
-    },{threshold:0.1,rootMargin:'0px 0px -50px 0px'});
-    steps.forEach(function(s){io.observe(s)});
-  } else {
-    // Fallback: make all visible immediately
-    steps.forEach(function(s){s.classList.add('visible')});
-  }
-  // Safety fallback: reveal all after 1.5s
-  setTimeout(function(){
-    steps.forEach(function(s){s.classList.add('visible')});
-  },1500);
-})();
+// NAV
+window.addEventListener('scroll',function(){document.getElementById('main-nav').classList.toggle('scrolled',window.scrollY>40)},{passive:true});
 
-// ─── NAV SCROLL ───
-window.addEventListener('scroll',function(){
-  var nav = document.getElementById('main-nav');
-  if(nav) nav.classList.toggle('scrolled', window.scrollY > 40);
-},{passive:true});
+// SCROLL
+function goTo(id){var el=document.getElementById(id);if(el)el.scrollIntoView({behavior:'smooth',block:'start'})}
 
-// ─── SCROLL HELPERS ───
-function scrollToTop(){window.scrollTo({top:0,behavior:'smooth'})}
-function scrollToSection(id){
-  var el = document.getElementById(id);
-  if(el) el.scrollIntoView({behavior:'smooth',block:'start'});
-}
+// FAQ
+function toggleFAQ(el){var item=el.parentElement;var open=item.classList.contains('open');document.querySelectorAll('.faq-item').forEach(function(i){i.classList.remove('open')});if(!open)item.classList.add('open')}
 
-// ─── FAQ TOGGLE ───
-function toggleFAQ(el){
-  var item = el.parentElement;
-  var isOpen = item.classList.contains('open');
-  document.querySelectorAll('.faq-item').forEach(function(i){i.classList.remove('open')});
-  if(!isOpen) item.classList.add('open');
-}
+// SMS
+var smsOn=true;
+function toggleSMS(){smsOn=!smsOn;var c=document.getElementById('sms-check');if(c){c.classList.toggle('on',smsOn);c.textContent=smsOn?'✓':''}}
 
-// ─── SMS TOGGLE ───
-var smsOn = true;
-function toggleSMS(){
-  smsOn = !smsOn;
-  var c = document.getElementById('sms-check');
-  if(c){c.classList.toggle('on',smsOn);c.textContent=smsOn?'✓':'';}
-}
-
-// ─── SIGNUP API ───
+// SIGNUP
 function submitSignup(name,email,phone,source,successEl,formEl){
-  fetch('/api/signup',{
-    method:'POST',
-    headers:{'Content-Type':'application/json'},
-    body:JSON.stringify({name:name,email:email,phone:phone,source:source})
-  }).then(function(r){return r.json();}).then(function(){
-    if(window.fbq) fbq('track','Lead',{content_name:source});
-    if(successEl){
-      successEl.style.display='block';
-      successEl.textContent='Welcome '+name+'! You\'re in the BitSolo Inner Circle.'+(phone?' Text alerts are ON.':'');
-    }
-    if(formEl) formEl.querySelectorAll('input').forEach(function(i){i.value='';});
-  }).catch(function(){
-    if(successEl){successEl.style.display='block';successEl.textContent='Something went wrong. Please try again.';}
-  });
+  fetch('/api/signup',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({name:name,email:email,phone:phone,source:source})})
+  .then(function(r){return r.json()}).then(function(){
+    if(window.fbq)fbq('track','Lead',{content_name:source});
+    if(successEl){successEl.style.display='block';successEl.textContent='Welcome '+name+'! You\'re in.'+(phone?' Text alerts ON.':'')}
+    if(formEl)formEl.querySelectorAll('input').forEach(function(i){i.value=''})
+  }).catch(function(){if(successEl){successEl.style.display='block';successEl.textContent='Something went wrong. Try again.'}})
 }
 
-// ─── JOIN FORM ───
+// JOIN FORM
 function handleJoin(e){
   e.preventDefault();
-  submitSignup(
-    document.getElementById('j-name').value,
-    document.getElementById('j-email').value,
-    document.getElementById('j-phone').value,
-    'join-section',
-    document.getElementById('join-success'),
-    e.target
-  );
+  submitSignup(document.getElementById('j-name').value,document.getElementById('j-email').value,document.getElementById('j-phone').value,'join',document.getElementById('join-success'),e.target)
 }
 
-// ─── BUY MINER → Stripe checkout ───
-var _pendingProductId = null;
-
-function buyMiner(productId){
-  _pendingProductId = productId;
-  var modal = document.getElementById('purchase-modal');
-  if(modal) modal.classList.add('open');
-}
-
-function closeModal(){
-  var modal = document.getElementById('purchase-modal');
-  if(modal) modal.classList.remove('open');
-}
-
+// BUY MINER
+var _pid=null;
+function buyMiner(productId){_pid=productId;document.getElementById('purchase-modal').classList.add('open')}
+function closeModal(){document.getElementById('purchase-modal').classList.remove('open')}
 function completePurchase(e){
-  if(e) e.preventDefault();
-
-  var name  = (document.getElementById('pm-name')  || {}).value || '';
-  var email = (document.getElementById('pm-email') || {}).value || '';
-  var phone = (document.getElementById('pm-phone') || {}).value || '';
-
-  if(email){
-    submitSignup(name,email,phone,'purchase-modal',null,null);
-    if(window.fbq) fbq('track','InitiateCheckout');
-  }
-
+  if(e)e.preventDefault();
+  var name=(document.getElementById('pm-name')||{}).value||'';
+  var email=(document.getElementById('pm-email')||{}).value||'';
+  var phone=(document.getElementById('pm-phone')||{}).value||'';
+  if(email){submitSignup(name,email,phone,'purchase',null,null);if(window.fbq)fbq('track','InitiateCheckout')}
   closeModal();
-
-  var productId = _pendingProductId;
-  if(!productId) return;
-
-  var btn = document.querySelector('[data-product="'+productId+'"]');
-  if(btn){btn.disabled=true;btn.textContent='Loading...';}
-
-  fetch('/api/checkout',{
-    method:'POST',
-    headers:{'Content-Type':'application/json'},
-    body:JSON.stringify({productId:productId,name:name,email:email,phone:phone})
-  }).then(function(r){return r.json();}).then(function(data){
-    if(data && data.url){
-      window.location.href = data.url;
-    } else {
-      if(btn){btn.disabled=false;btn.textContent=btn.classList.contains('outline')?'View & Buy':'Buy Now';}
-      alert('Unable to start checkout. Please try again or contact us at contact@bitsolo.co');
-    }
-  }).catch(function(){
-    if(btn){btn.disabled=false;btn.textContent=btn.classList.contains('outline')?'View & Buy':'Buy Now';}
-    alert('Unable to start checkout. Please try again or contact us at contact@bitsolo.co');
-  });
+  var productId=_pid;if(!productId)return;
+  var btn=document.querySelector('[data-product="'+productId+'"]');
+  if(btn){btn.disabled=true;btn.textContent='Loading...'}
+  fetch('/api/checkout',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({productId:productId,name:name,email:email,phone:phone})})
+  .then(function(r){return r.json()}).then(function(d){
+    if(d&&d.url){window.location.href=d.url}else{if(btn){btn.disabled=false;btn.textContent=btn.classList.contains('outline')?'View & Buy':'Buy Now'}alert('Unable to start checkout. Contact us at contact@bitsolo.co')}
+  }).catch(function(){if(btn){btn.disabled=false;btn.textContent=btn.classList.contains('outline')?'View & Buy':'Buy Now'}alert('Unable to start checkout. Contact us at contact@bitsolo.co')})
 }
+document.getElementById('purchase-modal').addEventListener('click',function(e){if(e.target===this)closeModal()});
 
-// Close modal on backdrop click
-document.getElementById('purchase-modal').addEventListener('click',function(e){
-  if(e.target===this) closeModal();
-});
+// BOT
+function openBot(){window.open('https://wa.me/','_blank','noopener')}
 
-// ─── BOT ───
-function openBot(){
-  window.open('https://wa.me/','_blank','noopener');
-}
+// JOURNEY REVEAL
+(function(){
+  var steps=document.querySelectorAll('.journey-step');
+  steps.forEach(function(s,i){if(i===0)s.classList.add('visible')});
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting)e.target.classList.add('visible')})},{threshold:0.1,rootMargin:'0px 0px -60px 0px'});
+    steps.forEach(function(s){io.observe(s)})
+  }else{steps.forEach(function(s){s.classList.add('visible')})}
+  setTimeout(function(){steps.forEach(function(s){s.classList.add('visible')})},1200);
+})();
 </script>
-
 </body>
 </html>
