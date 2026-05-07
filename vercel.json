@@ -28,6 +28,10 @@
     {
       "src": "favicon.svg",
       "use": "@vercel/static"
+    },
+    {
+      "src": "digital_ape_preview.html",
+      "use": "@vercel/static"
     }
   ],
   "routes": [
@@ -58,6 +62,10 @@
     {
       "src": "/raffle.html",
       "dest": "/raffle.html"
+    },
+    {
+      "src": "/digital_ape_preview.html",
+      "dest": "/digital_ape_preview.html"
     },
     {
       "src": "/(.*)",
